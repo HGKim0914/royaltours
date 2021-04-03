@@ -1,0 +1,164 @@
+
+/* NAVIGATION */
+.navigationbar {
+    background: rgb(51, 103, 175);
+    /* background: white; */
+    /* border-bottom: 1px solid rgb(100, 102, 105); */
+    /* box-shadow: 2px 1px 10px rgb(0, 0, 0); */
+    /* box-shadow: 0px 0px; */
+}
+.navigationbar .inner{
+    width: 1000px;
+    margin: auto;
+}
+.navigationbar .logo{
+    margin-left: 20px;
+}
+.navigationbar .logo h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+.navigationbar .inner .nav-wrapper a{
+    color: white;
+    font-size: 0.8em;
+}
+.navigationbar img{
+    width: 28px;
+    opacity: 0.9;
+}
+.navigationbar .inner .nav-content .tabs .tab a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    color: whtie;
+}
+.navigationbar .user-info{
+    font-size: 0.8em;
+    color: white;
+    /* width: 230px; */
+    width: 100%;
+}
+.navigationbar .user-info img{
+    width: 18px;
+    margin-top: 22px;
+}
+.navigationbar .user-info span{
+    padding: 10px;
+    padding-left: 0px;
+}
+.navigationbar .user-info #name{
+    color: rgb(255, 254, 236);
+    /* font-weight: bold; */
+    font-weight: 600;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.navigationbar .inner .nav-wrapper .btn-logout{
+    background: rgb(0, 55, 105);
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgb(102, 102, 102);
+}
+
+.navigationbar .user-info #name:hover{
+    text-decoration: underline
+}
+/* My Account */
+.myaccount{
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+}
+.myaccount .title h6{
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.myaccount .title p{
+    font-size: 0.75em;
+}
+.myaccount .title p #name{
+    font-size: 1.2em;
+    color: rgb(51, 103, 175);
+    font-weight: bold;
+}
+.myaccount .user-info{
+    width: 600px;
+    height: 300px;
+    font-size: 0.8em;
+}
+.myaccount .user-info #title{
+    background: rgb(238, 238, 238);
+    padding: 20px;
+}
+.myaccount .user-info #desc{
+    background: rgb(250, 250, 250);
+    padding: 20px;
+    padding-left: 50px;
+}
+.myaccount .user-info #password #desc input{
+    width: 200px;
+    border: 1px solid rgb(236, 233, 233);
+    font-size: 0.9em;
+    padding-left: 20px; 
+    background: white;
+}
+.myaccount .user-info #btn-save{
+    margin-left: 83.5%;
+    margin-top: 20px;
+    width: 100px;
+    background: rgb(51, 103, 175);
+}
+.myaccount .user-info Table tbody tr td #msg-pwdValidation{
+    font-size: 0.8em;
+    color: red;
+    margin-bottom: 5px;
+}
+.myaccount .user-info Table tbody tr td #msg-pwdValidation img{
+    width: 10px;
+}
+.myaccount .user-info img{
+    width: 18px;
+    margin-top: 22px;
+}
+.myaccount .user-info #msg-pwdValidation{
+    color: red;
+    padding-bottom: 10px;
+    font-size: 0.9em;
+}
+.myaccount .user-info #msg-pwdSaved{
+    color: green;
+    padding-bottom: 10px;
+    font-size: 0.9em;
+}
+
+/* Page not exist */
+.pagenotexist-title{
+    border-bottom: 1px solid rgb(51, 103, 175);
+    width: 100%;
+}
+.pagenotexist-title .inner{
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+.pagenotexist-title .inner h6{
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+}
+.pagenotexist-title .inner img{
+    width: 25px;
+}
+.pagenotexist-desc{
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+}
+.pagenotexist-desc h6{
+    font-size: 1em;
+    font-weight: bold;
+}
+.pagenotexist-desc p{
+    font-size: 0.8em;
+}

@@ -1,0 +1,369 @@
+/* COM 콤관리 */
+.setting-com{
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 0.8em;
+}
+.setting-com .title h6{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.setting-com .option{
+    font-size: 0.9em;
+}
+.setting-com .option #input-option{
+    height: 40px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+.setting-com .display Table{
+    width: 800px;
+    margin-bottom: 50px;
+}
+.setting-com .display Table thead{
+    background: rgb(79, 88, 88);
+    border: 2px solid rgb(79, 88, 88);
+}
+.setting-com .display Table thead tr th{
+    width: 400px;
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+}
+.setting-com .display Table tbody tr td{
+    padding: 0;
+    padding-left: 50px;
+    border: 1px solid rgb(238, 240, 243); 
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    height: 70px;
+}
+.setting-com .display Table tbody tr td #input-com{
+    width: 200px;
+    border: 1px solid rgb(238, 240, 243); 
+    height: 40px;
+}
+.setting-com .display Table tbody tr #empty{
+    border: 1px solid white;
+}
+.setting-com .display Table thead tr #empty{
+    border: 2px solid white;
+    background: white;
+}
+.setting-com .display #btn-edit,
+.setting-com .display #btn-save{
+    background: rgb(51, 103, 175);
+    font-size: 0.9em;
+    width: 150px;
+    margin-top: 5px;
+    height: 35px;
+}
+.setting-com .display #btn-edit{
+    background: rgb(0, 55, 105);
+}
+.setting-com .display p{
+    font-size: 0.9em;
+    color: red;
+}
+.setting-com .display img{
+    width: 10px;
+}
+
+/* 환경설정 관리 */
+.setting-option{
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+}
+.setting-option .title h6{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.setting-option .option{
+    font-size: 0.8em;
+}
+.setting-option .option #input-option{
+    height: 40px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+.setting-option .display Table{
+    width: 1000px;
+    font-size: 0.8em;
+    margin-top: 30px;
+    border: 1px solid rgb(65, 72, 73);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+.setting-option .display Table thead{
+    background: rgb(79, 88, 88);
+    border: 2px solid rgb(79, 88, 88);
+}
+.setting-option .display Table thead tr th{
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+}
+.setting-option .display Table thead tr #delete{
+    width: 10px;
+    background: rgb(79, 88, 88);
+    border: 2px solid rgb(79, 88, 88);
+}
+.setting-option .display Table tbody tr td{
+    padding: 10px;
+    padding-left: 30px;
+    border: 1px solid rgb(238, 240, 243); 
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+.setting-option .display Table tbody tr td #input-name{
+    width: 250px;
+    height: 35px;
+    font-size: 0.8em;
+    border: 1px solid rgb(238, 240, 243); 
+}
+.setting-option .display Table tbody tr td #input-place{
+    width: 250px;
+}
+.setting-option .display Table tbody .input td{
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+.setting-option .display Table tbody .input #delete{
+    border-right: 1px solid rgb(238, 240, 243);
+}
+.setting-option .display Table tbody .input #btn-add{
+    width: 150px;
+    font-size: 0.9em;
+    padding-top: 3px;
+    margin-top: 15px;
+    height: 40px;
+    background: rgb(51, 103, 175);
+}
+.setting-option .display #delete{
+    width: 210px;
+    margin: auto;
+    margin-left: 83%;
+}
+.setting-option .display #btn-delete{
+    background: rgb(163, 58, 58);
+    width: 150px;
+    font-size: 0.8em;
+    padding-top: 3px;
+    height: 40px;
+    margin: 20px;
+    margin-bottom: 50px; 
+}
+.setting-option .display #msg-warning{
+    font-size: 0.7em;
+    color: red;
+}
+.setting-option .display #msg-warning img{
+    width: 10px;
+}
+.setting-option .display .addComponentWihtoutPlace Table{
+    width: 600px;
+    margin-bottom: 20px;
+}
+.setting-option .display .addComponentWihtoutPlace Table tbody td{
+    text-align: center;
+}
+
+/* 직원관리 */
+.setting-user {
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.setting-user .title #title{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.setting-user .title #title #search label{
+    font-weight: lighter;
+    font-size: 0.6em;
+}
+.setting-user .title #title #input-search{
+    width: 180px;
+    /* margin-left: 30px; */
+    height: 40px;
+    border: 1px solid rgb(238, 240, 243); 
+    background: rgb(238, 240, 243); 
+    font-size: 0.6em;
+    padding-left: 10px;
+}
+.setting-user .title #title #btn-search{
+    width: 50px;
+    height: 41.5px;
+    /* margin-top: -4px; */
+    background: rgb(238, 240, 243); 
+    padding-left: 15px;
+}
+.setting-user .title #title #btn-search img{
+    width: 20px;
+    margin-top: 10px;
+}
+.setting-user .display Table{
+    width: 1000px;
+    font-size: 0.8em;
+    margin-top: 0px;
+}
+.setting-user .display Table thead{
+    background: rgb(79, 88, 88);
+    border: 4px solid rgb(79, 88, 88);
+    color: white;
+    
+}
+.setting-user .display Table thead tr th{
+    text-align: center;
+    font-weight: 300;
+}
+.setting-user .display Table thead tr #delete{
+    width: 10px;
+    padding: 10px;
+    background: rgb(79, 88, 88);
+    border: 4px solid rgb(79, 88, 88);
+}
+.setting-user .display Table tbody tr td{
+    border: 1px solid rgb(238, 240, 243); 
+    /* border: 1px solid rgb(65, 72, 73); */
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    text-align: center;
+}
+.setting-user .display Table tbody tr #delete{
+    padding-left: 30px;
+    padding-right: 10px;
+}
+.setting-user .display Table tbody tr #password{
+    text-align: left;
+    width: 230px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.setting-user .display Table tbody tr #password input{
+    border: 1px solid rgb(238, 240, 243); 
+    width: 200px;
+    height: 40px;
+    background: rgb(248, 248, 248);
+    box-shadow: 1px 1px 3px rgb(245, 244, 244);
+}
+.setting-user .display Table tbody tr #authorization{
+    text-align: left;
+    padding-left: 50px;
+}
+.setting-user .display Table tbody tr #authorization label span{
+    font-size: 1em;
+}
+.setting-user .display .save{
+    width: 330px;
+    margin: auto;
+    margin-top: 15px;
+}
+.setting-user .display .save #btn-save{
+    width: 150px;
+    background: rgb(51, 103, 175);
+    font-size: 0.8em;
+    margin: 5px;
+}
+.setting-user .display .save #btn-delete{
+    width: 150px;
+    font-size: 0.8em;
+    margin: 5px;
+    background: rgb(163, 58, 58);
+}
+.setting-user .display #msg-warning{
+    font-size: 0.7em;
+    color: red;
+}
+.setting-user .display #msg-warning img{
+    width: 12px;
+}
+.setting-user .display #com{
+    text-align: center;
+}
+.setting-user .display #com label{
+    margin-left: 40px;
+}
+.setting-user .display #com input{
+    width: 200px;
+    margin-left: 40px;
+    border: 1px solid rgb(238, 240, 243);
+    height: 40px;
+}
+.setting-user .display #com #com-unable{
+    text-align: center;
+}
+.setting-user .display #btn-guide-com{
+    background: rgb(153, 160, 168);
+}
+/* Modal */
+.user-com-wrapper{
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    text-align: center;
+}
+.user-com-wrapper h5{
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.user-com-wrapper table thead{
+    height: 50px;
+    margin-top: 30px;
+    background: rgb(79, 88, 88);
+    border: 2px solid rgb(79, 88, 88);
+    color: white;
+    text-align: center;
+}
+.user-com-wrapper table th,
+.user-com-wrapper table td{
+    font-weight: 200;
+    text-align: center;
+    width: 50%;
+}
+h5 #guide-name{
+    font-weight: normal;
+    font-size: 0.6em;
+}
+.user-com-wrapper #btn-edit, 
+.user-com-wrapper #btn-delete{
+    margin: auto;
+    width: 150px;
+    font-size: 0.85em;
+    margin-top: 25px;
+}
+.user-com-wrapper #input-guide-com{
+    width: 200px;
+    text-align: center;
+    border: 1px solid rgb(201, 201, 201);
+}
+.user-com-wrapper label{
+    margin-right: 150px;
+}
+.user-com-wrapper #btn-edit{
+    background: rgb(26, 66, 122);
+    margin-right: 5px;
+}
+.user-com-wrapper #btn-delete{
+    background: rgb(51, 103, 175);
+    margin-left: 5px;
+}
+
+
+.font-green{
+    color: rgb(4, 71, 4);
+}
+
+.small{
+    font-size: 0.85em !important;
+}
+
+.left{
+    text-align: left;
+}

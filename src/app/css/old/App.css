@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+/* NAVIGATION BAR */
+.navigation-bar {
+  background: rgb(51, 103, 175);
+  
+}
+.navigation-bar a{
+  color: white;
+  font-size: 0.8em;
+}
+.navigation-bar #dropdown-menu{
+  font-size: 0.9em;
+  color: rgb(58, 58, 58);
+  text-align: center;
+}
+

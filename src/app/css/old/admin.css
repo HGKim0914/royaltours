@@ -1,0 +1,216 @@
+/* MAIN */
+.admin-bg {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+}
+.admin-bg .user-info{
+    width: 180px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.admin-bg .user-info span{
+    font-size: 0.8em;
+}
+.admin-bg .user-info img{
+    width: 25px;
+    padding: 2px;
+    opacity: 0.7;
+}
+.admin-bg .dir-btn img{
+    width: 180px;
+    height: 180px;
+}
+.admin-bg .dir-btn p{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.admin-bg a{
+    color: black;
+}
+.admin-bg a:hover{
+    color: rgb(51, 103, 175);
+}
+
+
+/* Total Tour List */
+.admin-accounting-list{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+.admin-accounting-list .title{
+    background: rgb(57, 64, 73);
+    width: 90%;
+    margin: auto;
+    color: white;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.admin-accounting-list Table{
+    margin-bottom: 100px;
+    width: 90%;
+    margin: auto;
+}
+.admin-accounting-list Table thead tr{
+    background: rgb(201, 198, 188);
+    color: white;
+}
+.admin-accounting-list Table thead th{
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid white;
+}
+.admin-accounting-list Table tbody td{
+    text-align: center;
+    padding: 5px;
+}
+.admin-accounting-list tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+.admin-accounting-list .tourlist-search{
+    width: 80%;
+    margin: auto;
+}.admin-accounting-list Table .modify-btn{
+    background: rgb(112, 112, 155);
+    margin: 5px;
+}
+.admin-accounting-list Table .view-btn{
+    background: rgb(51, 103, 175);
+    margin: 5px;
+}
+.admin-accounting-list a:link, .admin-accounting-list a:active, .admin-accounting-list a:visited{
+    color: white;
+}
+
+/* .admin-accounting-list #search-inbound{
+    background: rgb(106, 134, 172);
+    color: white;
+} */
+
+/* Monthly NetIncome */
+.monthlyNetIncome{
+    margin-bottom: 100px;
+}
+.monthlyNetIncome .table Table thead tr th{
+    font-size: 0.7em;
+}
+.monthlyNetIncome .table Table tbody tr td{
+    font-size: 0.7em;
+}
+
+.monthlyNetIncome .table Table tfoot tr{
+    background:rgb(182, 124, 114);
+    color: white;
+    font-size: 0.7em;
+}
+.monthlyNetIncome .table Table tfoot td{
+    text-align: center;
+    border-radius: 0;
+}
+.monthlyNetIncome .table Table thead #totalExpense-title{
+    background: rgb(128, 69, 69);
+    border: 2px solid rgb(128, 69, 69);
+}
+.monthlyNetIncome .table Table thead #totalProfit-title{
+    background: rgb(57, 57, 95);
+    border: 2px solid rgb(57, 57, 95);
+}
+.monthlyNetIncome .table thead #totalNetIncome-title{
+    background: rgb(202, 202, 52);
+    border: 2px solid rgb(202, 202, 52);
+}
+.monthlyNetIncome .table Table tbody #totalProfit{
+    background: rgb(101, 101, 158);
+    /* border: 2px solid rgb(101, 101, 158); */
+}
+.monthlyNetIncome .table Table tbody #profit{
+    background: rgb(237, 237, 255);
+    /* border: 2px solid rgb(237, 237, 255); */
+}
+.monthlyNetIncome .table Table tbody #totalExpense{
+    background: rgb(185, 109, 109);
+    /* border: 2px solid rgb(185, 109, 109); */
+}
+.monthlyNetIncome .table Table tbody #expense{
+    background: rgb(255, 238, 238);
+}
+.monthlyNetIncome .table Table tbody #netincome{
+    background: rgb(230, 230, 202);
+}
+.monthlyNetIncome .table Table tfoot #totalExpense-result{
+    background: rgb(165, 75, 75);
+}
+.monthlyNetIncome .table Table tfoot #totalProfit-result{
+    background: rgb(73, 73, 143);
+}
+.monthlyNetIncome .table Table tfoot #netIncome-result{
+    background: rgb(202, 202, 57);
+}
+
+/* Yearly Income */
+.yearlyNetIncome{
+    width: 100%;
+    margin-bottom: 100px;
+}
+.yearlyNetIncome .tourlist-search{
+    width: 40%;
+    margin-left: 0;
+    padding-left: 50px;
+}
+.yearlyNetIncome .table Table thead th{
+    background: rgb(172, 167, 150);
+    border-radius: 0px;
+}
+.yearlyNetIncome .table Table tbody th{
+    background: rgb(201, 198, 188);
+    border-radius: 0px;
+    color: white;
+}
+.yearlyNetIncome .table Table thead #inbound{
+    width: 38px;
+}
+.yearlyNetIncome .table Table thead #local{
+    width: 38px;
+}
+.yearlyNetIncome .table Table thead #content-desc{
+    width: 50px;
+}
+.yearlyNetIncome .table Table tbody #content-group{
+    background: rgb(172, 167, 150);
+    width: 30px;
+}
+.yearlyNetIncome .table Table th{
+    font-size: xx-small;
+    padding: 0px;
+    border: 1px solid rgb(194, 194, 194);
+    text-align: center;
+}
+.yearlyNetIncome .table Table td{
+    border: 1px solid rgb(194, 194, 194);
+    text-align: center;
+    padding: 0;
+}
+
+/* Add Tour */
+.add-tour{
+    margin-top: 100px;
+}
+.admin-accounting-list .tourComponent{
+    text-align: center;
+    width: 320px;
+    margin: auto;
+}
+.admin-accounting-list .tourComponent #tour-date,
+.admin-accounting-list .tourComponent #tour-name,
+.admin-accounting-list .tourComponent #tour-guide{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}

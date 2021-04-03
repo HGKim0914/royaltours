@@ -1,0 +1,62 @@
+.accounting-report{
+    width: 8.5in;
+    height: 11in;
+    margin: auto;
+    margin-top: 50px;
+}
+.accounting-report h6{
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+.accounting-report Table{
+    border: 1px solid black;
+}
+.accounting-report Table thead th, .accounting-report Table thead td{
+    text-align: center;
+    border: 1px solid black;
+    font-size: 0.85em;
+    padding: 0px;
+    width: 1%;
+}
+.accounting-report Table thead{
+    border: 2px solid black;
+}
+.accounting-report Table thead th{
+    background: rgb(231, 231, 231);
+}
+.accounting-report Table tbody{
+    border: 2px solid black;
+}
+.accounting-report Table #title{
+    font-weight: 700;
+    background: rgb(145, 145, 145);
+}
+.accounting-report Table tbody #title-expense{
+    font-weight: 700;
+    background: rgb(238, 205, 205);
+}
+.accounting-report Table tbody th, .accounting-report Table tbody td{
+    text-align: center;
+    padding: 0px;
+    border: 1px solid black;
+    font-size: 0.85em;
+}
+.accounting-report Table tbody .title-desc th{
+    background: rgb(231, 231, 231);
+}
+.accounting-report Table tfoot th, .accounting-report Table tfoot td{
+    text-align: center;
+    padding: 0px;
+    border: 1px solid black;
+    font-size: 0.85em;
+}
+.accounting-report Table tfoot{
+    border: 2px solid black;
+}
+.accounting-report Table tfoot .title-desc th{
+    background: rgb(231, 231, 231);
+}
+.accounting-report Table tfoot #netincome{
+    font-weight: 700;
+    background: rgb(238, 205, 205);
+}

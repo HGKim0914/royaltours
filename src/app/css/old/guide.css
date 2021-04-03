@@ -1,0 +1,245 @@
+.guide-accounting-list, .guide-accounting-form{
+    width: 75%;
+    text-align: left;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.guide-accounting-list p{
+    font-size: 1.2em;
+}
+
+/* Guide List */
+.guide-accounting-list Table thead tr{
+    background: rgb(201, 198, 188);
+    color: white;
+}
+.guide-accounting-list Table thead th{
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid white;
+}
+.guide-accounting-list Table tbody td{
+    text-align: center;
+    padding: 5px;
+}
+.guide-accounting-list tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+.guide-accounting-list Table .modify-btn{
+    background: rgb(112, 112, 155);
+    margin: 5px;
+}
+.guide-accounting-list Table .view-btn{
+    background: rgb(51, 103, 175);
+    margin: 5px;
+}
+.guide-accounting-list a:link, .guide-accounting-list a:active, .guide-accounting-list a:visited{
+    color: white;
+}
+/* Guide accounting form */
+.guide-accounting-form .info{
+    width: 100%;
+    padding-left: 2%;
+    margin-bottom: 0px;
+}
+.guide-accounting-form .info h4{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    font-size: 1.5em;
+}
+.guide-accounting-form .info p{
+    font-size: 0.95em;
+}
+.guide-accounting-form .title{
+    background: rgb(51, 103, 175);
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    font-weight: 600;
+    color: white;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px rgb(170, 170, 170);
+}
+.guide-accounting-form .tour-info{
+    width: 95%;
+    margin-bottom: 50px;
+}
+.guide-accounting-form .tour-info #txtInput{
+    width: 120%;
+}
+.guide-accounting-form #dropdown-menu {
+    width: 95%;
+    margin: auto;
+}
+.guide-accounting-form .tc {
+    padding: 21px;
+    padding-top: 30px;
+    width: 100%;
+}
+/* Settlement */
+.guide-accounting-form .settlement{
+    width: 100%;
+    margin-top: -120px;
+}
+.guide-accounting-form .settlement .form-tour-total-income,
+.guide-accounting-form .settlement .form-tour-total-expense,
+.guide-accounting-form .settlement .form-tour-total-inbound,
+.guide-accounting-form .settlement .form-tour-total-local{
+    text-align: right;
+}
+.guide-accounting-form .settlement .guide-portion{
+    width: 95%;
+    margin: auto;
+}
+.guide-accounting-form .settlement hr{
+    opacity: .4;
+}
+.guide-accounting-form .settlement h6{
+    margin-top: 50px;
+    font-weight: 700;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+.guide-accounting-form .settlement p{
+    padding: 20px;
+    font-size: 0.9em;
+}
+.guide-accounting-form .settlement span{
+    font-size: 0.9em;
+}
+
+/* Profit */
+.guide-accounting-form .profit{
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+.guide-accounting-form .profit .form-shopping-add{
+    text-align: right;
+}
+.guide-accounting-form .profit .form-option-add{
+    text-align: right;
+}
+.guide-accounting-form .profit h6{
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.guide-accounting-form .profit hr{
+    opacity: 0.4;
+}
+
+/* Expense */
+.guide-accounting-form .expense{
+    width: 100%;
+    margin-bottom: -30px;
+    margin-top: -10px;
+}
+.guide-accounting-form .expense h6{
+    font-weight: 700;
+    padding-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: rgb(41, 44, 48);
+    font-size: 1.2em;
+}
+.guide-accounting-form .expense hr {
+    opacity: 0.3;
+    margin-top: 50px;
+}
+.guide-accounting-form .form-restaurant-add, .guide-accounting-form .form-hotel-add,
+.guide-accounting-form .form-attraction-add, .guide-accounting-form .form-car-add,
+.guide-accounting-form .form-misc-add{
+    text-align: right;
+}
+.guide-accounting-form .add-btn, .guide-accounting-form .remove-btn{
+    width: 40px;
+    margin-right: 5px;
+    border-radius: 50px;
+    /* background: rgb(153, 183, 224); */
+    background: rgb(51, 103, 175);
+
+}
+.guide-accounting-form .remove-btn:hover, .guide-accounting-form .add-btn:hover{
+    background: rgb(156, 158, 161);
+}
+.guide-accounting-form .expense p{
+    padding: 10px;
+    font-size: 0.9em;
+}
+.guide-accounting-form .expense .hotel-expense span{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.guide-accounting-form .expense .hotel-expense{
+    width: 90%;
+    margin: auto;
+}
+.guide-accounting-form .form-submit{
+    text-align: center;
+}
+.guide-accounting-form .form-submit-btn {
+    width: 200px;
+    margin-top: -300px;
+    background: rgb(51, 103, 175);
+}
+.guide-accounting-form .form-submit-btn:hover {
+    background: rgb(27, 56, 97);
+}
+
+
+/* Account Total */
+.guide-accounting-form .account-total{
+    width: 95%;
+}
+.guide-accounting-form .account-total .title{
+    background: rgb(106, 134, 172);
+    color: white;
+}
+.guide-accounting-form table{
+    width: 95%;
+}
+.guide-accounting-form tr{
+    border-color: rgb(230, 230, 230);
+}
+.guide-accounting-form tr:nth-child(even){
+    background-color: #f5f5f5;
+    
+}
+.guide-accounting-form td{
+    padding-left: 40px;
+    font-size: 0.9em;
+}
+.guide-accounting-form tr #revenue{
+    font-weight: 800;
+    font-size: 1.1em;
+    color: rgb(27, 56, 97);
+}
+.guide-accounting-form tr #amount{
+    text-align: right;
+    padding-right: 40px;
+}
+
+@media screen and (max-width: 600px){
+    .guide-accounting-form{
+        width: 100%;
+    }
+    .guide-accounting-form .tour-info{
+        width: 100%;
+    }
+    .guide-accounting-form .expense{
+        width: 100%;
+    }
+    .guide-accounting-form .expense p{
+        font-size: 0.1em;
+    }
+    .guide-accounting-form .tour-info #txtInput{
+        width: 100%;
+    }
+}

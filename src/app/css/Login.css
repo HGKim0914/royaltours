@@ -1,0 +1,149 @@
+/* LOGIN */
+/*---------------------------------*/
+.login-title{
+    border-bottom: 1px solid rgb(51, 103, 175);
+    width: 100%;
+}
+.login-title .inner{
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+.login-title .inner h6{
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+}
+.login-title .inner img{
+    width: 25px;
+}
+.login-title a:link{
+    color: black;
+}
+/* body */
+.login {
+    width: 1000px;
+    margin: auto;
+    padding-left: 350px;
+    padding-right: 350px;
+    padding-top: 100px;
+}
+.login h6{
+    font-weight: bolder;
+}
+.login #input-id, .login #input-pwd{
+    border: 1px solid rgb(189, 189, 189);
+    font-size: 0.8em;
+    padding-left: 10px;
+}
+.login #btn-login{
+    background: rgb(32, 70, 124);
+    width: 310px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+.login #btn-login:hover{
+    background: rgb(30, 61, 105);
+}
+.login .dir-register{
+    width: 100%;
+    text-align: right;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.login .dir-register a:link,
+.login .dir-register a:visited{
+    color: rgb(112, 112, 112);
+}
+.login .dir-register a:hover{
+    text-decoration: underline;
+}
+
+/* footer */
+.login-footer{
+    font-size: 0.8em;
+    text-align: center;
+    color: rgb(150, 150, 150);
+    margin-top: 280px;
+}
+
+.login #msg-registration{
+    font-size: 0.75em;
+    color: green;
+}
+
+.login #msg-registration-fail,
+.login #msg-login-fail{
+    font-size: 0.75em;
+    color: red;
+}
+.login #msg-registration-fail img,
+.login #msg-login-fail img{
+    width: 15px;
+}
+
+/*---------------------------------*/
+
+/* REGISTER */
+.register-title{
+    border-bottom: 1px solid rgb(51, 103, 175);
+    width: 100%;
+}
+.register-title .inner{
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+.register-title .inner h6{
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+}
+.register-title .inner img{
+    width: 25px;
+}
+.register-title .inner a:link,
+.register-title .inner a:visited{
+    color: black;
+}
+.register{
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    padding-left: 350px;
+    padding-right: 350px;
+}
+.register h6{
+    font-weight: bolder;
+}
+.register #input-id,
+.register #input-pwd,
+.register #input-pwd2,
+.register #input-name,
+.register #input-code{
+    border: 1px solid rgb(189, 189, 189);
+    font-size: 0.8em;
+    padding-left: 10px;
+}
+
+.register #btn-register{
+    background: rgb(32, 70, 124);
+    width: 310px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+.register #msg-inputValidation{
+    font-size: 0.75em;
+    color: red;
+}
+
+.register #msg-pwdValidation{
+    font-size: 0.75em;
+    color: red;
+    
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.register #msg-pwdValidation img{
+    width: 10px;
+}
