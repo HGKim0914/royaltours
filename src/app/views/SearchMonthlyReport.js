@@ -109,6 +109,9 @@ class MonthlyReport extends Component{
             optionProfitInbound: [],
             optionProfitLocal: [],
 
+            hbProfitInbound: [],
+            hbProfitLocal: [],
+
             carRentalExpenseInbound: [],
             carRentalExpenseLocal: [],
 
@@ -153,6 +156,7 @@ class MonthlyReport extends Component{
         var totalTourProfitArr = [[],[]];
         var totalShoppingProfitArr = [[],[]];
         var totalOptionProfitArr = [[], []];
+        var totalHBProfitArr = [[],[]];
         var totalGuideProfitArr = [[],[]];
         var totalProfitPartArr = [[],[]];
         var totalProfitArr = [[],[]];
@@ -188,6 +192,9 @@ class MonthlyReport extends Component{
 
             totalOptionProfitArr[0].push(0);
             totalOptionProfitArr[1].push(0);
+
+            totalHBProfitArr[0].push(0);
+            totalHBProfitArr[1].push(0);
 
             totalGuideProfitArr[0].push(0);
             totalGuideProfitArr[1].push(0);
@@ -333,6 +340,36 @@ class MonthlyReport extends Component{
             }
         }
 
+        // Honey, Beef Data
+        for(ind=0; ind<this.state.hbProfitLocal.length; ind++){
+            for(x=0; x<this.state.monthAndYear.length; x++){
+                listDate = new Date(this.state.hbProfitLocal[ind][3]);
+                startDate = new Date(this.state.monthAndYear[x]+"-1");
+               
+                //Last date
+                dateArr = this.state.monthAndYear[x].split("-");
+                lastDate = new Date(dateArr[0], dateArr[1], 0);
+
+                if(listDate >= startDate && listDate <= lastDate){
+                    totalHBProfitArr[1][x] += parseFloat(this.state.hbProfitLocal[ind][2]);
+                }
+            }
+        }
+        for(ind=0; ind<this.state.hbProfitInbound.length; ind++){
+            for(x=0; x<this.state.monthAndYear.length; x++){
+                listDate = new Date(this.state.hbProfitInbound[ind][3]);
+                startDate = new Date(this.state.monthAndYear[x]+"-1");
+               
+                //Last date
+                dateArr = this.state.monthAndYear[x].split("-");
+                lastDate = new Date(dateArr[0], dateArr[1], 0);
+
+                if(listDate >= startDate && listDate <= lastDate){
+                    totalHBProfitArr[0][x] += parseFloat(this.state.hbProfitInbound[ind][2]);
+                }
+            }
+        }
+
          //Guide Profit
          for(ind = 0; ind<this.state.guideProfitInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
@@ -368,17 +405,20 @@ class MonthlyReport extends Component{
         
         //GET TOTAL FOR PROFIT
         for(ind = 0; ind < this.state.months.length; ind++){
-            //Get tour profit
+            // Get tour profit
             totalProfitArr[0][ind] += totalTourProfitArr[0][ind];
             totalProfitArr[1][ind] += totalTourProfitArr[1][ind];
-            //Get option
+            // Get option
             totalProfitPartArr[0][ind] += totalOptionProfitArr[0][ind];
             totalProfitPartArr[1][ind] += totalOptionProfitArr[1][ind];
-            //Get shopping
+            // Get Honey, Beef
+            totalProfitPartArr[0][ind] += totalHBProfitArr[0][ind];
+            totalProfitPartArr[1][ind] += totalHBProfitArr[1][ind];
+            // Get shopping
             totalProfitPartArr[0][ind] += totalShoppingProfitArr[0][ind];
             totalProfitPartArr[1][ind] += totalShoppingProfitArr[1][ind];
 
-            //Get guide
+            // Get guide
             totalProfitPartArr[0][ind] += totalGuideProfitArr[0][ind];
             totalProfitPartArr[1][ind] += totalGuideProfitArr[1][ind];
 
@@ -568,7 +608,6 @@ class MonthlyReport extends Component{
             }
         }
 
-        console.log(this.state.gasExpenseLocal);
         //Parking
         for(ind = 0; ind<this.state.parkingExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
@@ -738,6 +777,7 @@ class MonthlyReport extends Component{
         const tourProfitObj = [];
         const shoppingObj = [];
         const optionObj = [];
+        const hbObj = [];
         const guideProfitObj = [];
         const totalProfitPartObj = [];
         const totalProfitObj = [];
@@ -773,125 +813,135 @@ class MonthlyReport extends Component{
             );
             //Profit
             tourProfitObj.push(
-                <td key={"inbound"+idx}>{totalTourProfitArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalTourProfitArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             tourProfitObj.push(
-                <td key={"local"+idx}>{totalTourProfitArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalTourProfitArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             shoppingObj.push(
-                <td key={"inbound"+idx}>{totalShoppingProfitArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalShoppingProfitArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             shoppingObj.push(
-                <td key={"local"+idx}>{totalShoppingProfitArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalShoppingProfitArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             optionObj.push(
-                <td key={"inbound"+idx}>{totalOptionProfitArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalOptionProfitArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             optionObj.push(
-                <td key={"local"+idx}>{totalOptionProfitArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalOptionProfitArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
+            );
+            hbObj.push(
+                <td key={"inbound"+idx}>{totalHBProfitArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
+            );
+            hbObj.push(
+                <td key={"local"+idx}>{totalHBProfitArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             
             guideProfitObj.push(
-                <td key={"inbound"+idx}>{totalGuideProfitArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalGuideProfitArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             guideProfitObj.push(
-                <td key={"local"+idx}>{totalGuideProfitArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalGuideProfitArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
+            );
+
+            // 수입 소계 구하기
+            totalProfitPartObj.push(
+                <td key={"inbound"+idx} id="part-totalamount">{totalProfitPartArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             totalProfitPartObj.push(
-                <td key={"inbound"+idx} id="part-totalamount">{totalProfitPartArr[0][idx].toFixed(2)}</td>
+                <td key={"local"+idx} id="part-totalamount">{totalProfitPartArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
-            totalProfitPartObj.push(
-                <td key={"local"+idx} id="part-totalamount">{totalProfitPartArr[1][idx].toFixed(2)}</td>
+
+            // 수입 총액 구하기
+            totalProfitObj.push(
+                <td key={"inbound"+idx} id="totalamount">{totalProfitArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             totalProfitObj.push(
-                <td key={"inbound"+idx} id="totalamount">${totalProfitArr[0][idx].toFixed(2)}</td>
-            );
-            totalProfitObj.push(
-                <td key={"local"+idx} id="totalamount">${totalProfitArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx} id="totalamount">{totalProfitArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
 
             //Expense
             carRentalExpenseObj.push(
-                <td key={"inbound"+idx}>{totalCarRentalExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalCarRentalExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             carRentalExpenseObj.push(
-                <td key={"local"+idx}>{totalCarRentalExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalCarRentalExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             gasExpenseObj.push(
-                <td key={"inbound"+idx}>{totalGasExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalGasExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             gasExpenseObj.push(
-                <td key={"local"+idx}>{totalGasExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalGasExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             parkingExpenseObj.push(
-                <td key={"inbound"+idx}>{totalParkingExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalParkingExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             parkingExpenseObj.push(
-                <td key={"local"+idx}>{totalParkingExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalParkingExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             totalCarExpensesObj.push(
-                <td key={"inbound"+idx} id="part-totalamount">{totalCarExpensesArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx} id="part-totalamount">{totalCarExpensesArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             totalCarExpensesObj.push(
-                <td key={"local"+idx} id="part-totalamount">{totalCarExpensesArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx} id="part-totalamount">{totalCarExpensesArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             restExpenseObj.push(
-                <td key={"inbound"+idx}>{totalRestExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalRestExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             restExpenseObj.push(
-                <td key={"local"+idx}>{totalRestExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalRestExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             attrExpenseObj.push(
-                <td key={"inbound"+idx}>{totalAttrExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalAttrExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             attrExpenseObj.push(
-                <td key={"local"+idx}>{totalAttrExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalAttrExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             )
             hotelExpenseObj.push(
-                <td key={"inbound"+idx}>{totalHotelExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalHotelExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             hotelExpenseObj.push(
-                <td key={"local"+idx}>{totalHotelExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalHotelExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             guideExpenseObj.push(
-                <td key={"inbound"+idx}>{totalGuideExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalGuideExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             guideExpenseObj.push(
-                <td key={"local"+idx}>{totalGuideExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalGuideExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             miscExpenseObj.push(
-                <td key={"inbound"+idx}>{totalMiscExpesneArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx}>{totalMiscExpesneArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
 
             miscExpenseObj.push(
-                <td key={"local"+idx}>{totalMiscExpesneArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx}>{totalMiscExpesneArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
 
             totalExpensePartObj.push(
-                <td key={"inbound"+idx} id="part-totalamount">{totalExpensePartArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx} id="part-totalamount">{totalExpensePartArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             totalExpensePartObj.push(
-                <td key={"local"+idx} id="part-totalamount">{totalExpensePartArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx} id="part-totalamount">{totalExpensePartArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             totalExpenseObj.push(
-                <td key={"inbound"+idx} id="totalamount">${totalExpenseArr[0][idx].toFixed(2)}</td>
+                <td key={"inbound"+idx} id="totalamount">{totalExpenseArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
             totalExpenseObj.push(
-                <td key={"local"+idx} id="totalamount">${totalExpenseArr[1][idx].toFixed(2)}</td>
+                <td key={"local"+idx} id="totalamount">{totalExpenseArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
             );
 
             //Net Income
             totalNetIncomeInboundAndLocalObj.push(
-                <th key={"inbound"+idx} id="totalamount">${totalNetIncomeInboundAndLocalArr[0][idx].toFixed(2)}</th>
+                <th key={"inbound"+idx} id="totalamount">{totalNetIncomeInboundAndLocalArr[0][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</th>
             );
             totalNetIncomeInboundAndLocalObj.push(
-                <th key={"local"+idx} id="totalamount">${totalNetIncomeInboundAndLocalArr[1][idx].toFixed(2)}</th>
+                <th key={"local"+idx} id="totalamount">{totalNetIncomeInboundAndLocalArr[1][idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</th>
             );
             totalNetIncomeObj.push(
-                <th colSpan={2} key={"local"+idx} id="totalamount">${totalNetIncomeArr[idx].toFixed(2)}</th>
+                <th colSpan={2} key={"local"+idx} id="totalamount">{totalNetIncomeArr[idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</th>
             );
             totalNetIncomeAccumulatedObj.push(
-                <th colSpan={2} key={"local"+idx} id="totalamount">${totalNetIncomeAccumulatedArr[idx].toFixed(2)}</th>
+                <th colSpan={2} key={"local"+idx} id="totalamount">{totalNetIncomeAccumulatedArr[idx].toLocaleString("en-US", {style: "currency",currency: "USD"})}</th>
             );
         }
 
@@ -913,17 +963,21 @@ class MonthlyReport extends Component{
                     <tbody>
                         {/* Profit */}
                         <tr>
-                            <td rowSpan="6" style={{width: "70px"}}>행사수입</td>
-                            <td >행사비수입</td>
+                            <td rowSpan="7" style={{width: "70px"}}>행사수입</td>
+                            <td>행사비수입</td>
                             {tourProfitObj}
                         </tr>
                         <tr>
-                            <td >쇼핑</td>
+                            <td>쇼핑</td>
                             {shoppingObj}
                         </tr>
                         <tr>
-                            <td >옵션</td>
+                            <td>옵션</td>
                             {optionObj}
+                        </tr>
+                        <tr>
+                            <td>꿀, 육포 수입</td>
+                            {hbObj}
                         </tr>
                         <tr>
                             <td >가이드수입</td>
@@ -1051,6 +1105,7 @@ class MonthlyReport extends Component{
             this.callTourProfitData();
             this.callShoppingData();
             this.callOptionData();
+            this.callHBData();
         }
     }
 
@@ -1150,6 +1205,32 @@ class MonthlyReport extends Component{
             },
             success: (result) =>{
                 this.setOptionDataLocal(result);
+            }
+        });
+    }
+
+    callHBData = () => {
+        //Inbound
+        $.ajax({
+            url: DatabaseConnectionHelper() + "GetMonthlyHBDataController.php",
+            type: "POST",
+            data: {
+                data: this.state.inboundData
+            },
+            success: (result) =>{
+                this.setHBDataInbound(result);
+            }
+        });
+
+        //Local
+        $.ajax({
+            url: DatabaseConnectionHelper() + "GetMonthlyHBDataController.php",
+            type: "POST",
+            data: {
+                data: this.state.localData
+            },
+            success: (result) =>{
+                this.setHBDataLocal(result);
             }
         });
     }
@@ -1640,6 +1721,26 @@ class MonthlyReport extends Component{
 
             this.setState({
                 optionProfitLocal: data
+            });
+        }
+    }
+
+    setHBDataInbound = (result) => {
+        if(result !== "" && result !== "false"){
+            var data = JSON.parse(result);
+
+            this.setState({
+                hbProfitInbound: data
+            });
+        }
+    }
+
+    setHBDataLocal = (result) => {
+        if(result !== "" && result !== "false"){
+            var data = JSON.parse(result);
+
+            this.setState({
+                hbProfitLocal: data
             });
         }
     }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import './app/css/App.css';
 import {
   BrowserRouter as Router,

@@ -60,10 +60,11 @@
     height: 25px;
     border: 1px solid white;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 4px;
     font-weight: 600;
     color: grey;
+    cursor: pointer;
 }
 .tourlist .list-pages .list-page-prev{
     margin-left: -15px;
@@ -73,10 +74,11 @@
     height: 25px;
     border: 1px solid white;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 4px;
     font-weight: 600;
     color: grey;
+    cursor: pointer;
 }
 .tourlist .list-page:hover,
 .tourlist .list-pages .list-page-prev:hover,
@@ -379,6 +381,10 @@
     text-align: center;
     background: rgb(201, 132, 132);
     border-radius: 0px;
+}
+
+#totalamount {
+    border-bottom: 2px solid black;
 }
 
 .monthly-report table tbody,

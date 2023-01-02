@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component, Suspense} from 'react';
 import $ from 'jquery';
 import DatabaseConnectionHelper from '../../helper/DatabaseConnectionHelper';
 
 //Import each section of table
 import FirstTable from './AccountingReportTableFirst';
 import SecondTable from './AccountingReportTableSecond';
-import TotalTable from './AccountingReportTableTotal';
+const TotalTable = React.lazy(() => import("./AccountingReportTableTotal"));
 
 var totalProfitShopping = 0;
 var totalProfitOption = 0;
@@ -94,7 +94,7 @@ class AccountingReportTable extends Component{
         var minusfactor = [];
         var guideTipInbound = [];
         var guideTipLocal = [];
-
+        
         if(this.props.tourinfo) tourinfo = this.props.tourinfo;
 
         //Expense
@@ -129,13 +129,14 @@ class AccountingReportTable extends Component{
         }
 
         //Only authorized user can see the total netincome
-        const totalNetIncome = [];
+        let totalNetIncome = [];
         if(this.state.department !== "가이드"){
-            totalNetIncome.push(<TotalTable key="totalNetIncome" 
-                tourProfit={this.state.tourProfit}
-                shoppingProfit={totalProfitShopping} 
-                optionProfit={totalProfitOption}
-                bhProfit={totalProfitHB}
+            totalNetIncome.push(
+                <TotalTable key="totalNetIncome" 
+                    tourProfit={this.state.tourProfit}
+                    shoppingProfit={totalProfitShopping} 
+                    optionProfit={totalProfitOption}
+                    bhProfit={totalProfitHB}
                 />
             );
         }
@@ -153,26 +154,33 @@ class AccountingReportTable extends Component{
             guideTipLocal = this.state.guideTipLocal;
         }
         return(
-            <div>
-                <FirstTable tourinfo={tourinfo}
-                    restaurantExpense={restaurantExpense}
-                    hotelExpense={hotelExpense}
-                    attrExpense={attrExpense}
-                    carExpense={carrentalExpense}
-                    miscExpense={miscExpense}
-                    shoppingProfit={shoppingProfit}
-                    optionProfit={optionProfit}
-                    hbProfit={hbProfit}
-                    totalData={this.getTotal}
-                />
-                <SecondTable plusfactor={plusfactor}
-                    minusfactor={minusfactor}
-                    guideTipInbound={guideTipInbound}
-                    guideTipLocal={guideTipLocal}
-                />
-                <MemoTable data={this.state.additionalNote}/>
-                {totalNetIncome}
-            </div>
+            <Suspense fallback={
+                <div className="loading">
+                    <img id="loading-image"src={require('../../imgs/loading.gif')} alt="Loading..." /><br />
+                    로딩중입니다. 잠시만 기다려주세요.
+                </div>}
+            >
+                <div>
+                    <FirstTable tourinfo={tourinfo}
+                        restaurantExpense={restaurantExpense}
+                        hotelExpense={hotelExpense}
+                        attrExpense={attrExpense}
+                        carExpense={carrentalExpense}
+                        miscExpense={miscExpense}
+                        shoppingProfit={shoppingProfit}
+                        optionProfit={optionProfit}
+                        hbProfit={hbProfit}
+                        totalData={this.getTotal}
+                    />
+                    <SecondTable plusfactor={plusfactor}
+                        minusfactor={minusfactor}
+                        guideTipInbound={guideTipInbound}
+                        guideTipLocal={guideTipLocal}
+                    />
+                    <MemoTable data={this.state.additionalNote}/>
+                    {totalNetIncome}
+                </div>
+            </Suspense>
         );
     }
     getTotal = (obj, data) => {

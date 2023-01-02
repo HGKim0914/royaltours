@@ -147,7 +147,8 @@
 }
 .accounting-form .tour-info .input .desc #input-num,
 .accounting-form .tour-info .input .desc #input-roomnum{
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    /* background-color: #dbdbdb; */
     /* margin-top: 20px; */
     font-size: 1em;
     padding-left: 10px;
@@ -158,6 +159,8 @@
 .accounting-form .tour-info .input .desc #input-tourtype{
     height: 42px;
     width: 225px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .tour-info .input .desc #cbx-tc{
     /* padding: 50px; */
@@ -186,7 +189,8 @@
 }
 .accounting-form .cash-settlement Table tbody tr td #input-plus-amount,
 .accounting-form .cash-settlement Table tbody tr td #input-minus-amount{
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     height: 40px;
     font-size: 0.9em;
     padding-left: 20px;
@@ -198,14 +202,16 @@
     font-size: 0.9em;
     padding-left: 20px;
     width: 400px;
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .cash-settlement hr{
     opacity: 0.2;
 }
 .accounting-form .cash-settlement Table tbody tr td #input-guide-inbound-numpax,
 .accounting-form .cash-settlement Table tbody tr td #input-guide-inbound-amount{
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     font-size: 0.9em;
     padding-left: 20px;
     width: 220px;
@@ -213,13 +219,15 @@
     /* border-right: 1px solid white; */
 }
 .accounting-form .cash-settlement Table tbody tr td #last{
-    border-right: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .cash-settlement Table tbody tr td #input-guide-inbound-memo{
     font-size: 0.9em;
     width: 220px;
     height: 40px;
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     padding-left: 20px;
 }
 .accounting-form .cash-settlement Table tbody tr td #input-guide-local-age{
@@ -233,7 +241,8 @@
 .accounting-form .cash-settlement Table tbody tr td #input-guide-local-amount{
     height: 40px;
     font-size: 0.9em;
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     width: 200px;
     margin-right: 5px;
     margin-top: 6px;
@@ -248,7 +257,8 @@
 .accounting-form .cash-settlement Table tbody tr td #input-guide-local-memo{
     font-size: 0.9em;
     height: 40px;
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     width: 250px;
     margin-top: 6px;
     padding-left: 20px;
@@ -273,6 +283,8 @@
 .accounting-form .expense Table tbody tr #option-rest-name{
     width: 200px;
     height: 43px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-rest-amount,
 .accounting-form .expense Table tbody tr #input-rest-num-people{
@@ -280,7 +292,8 @@
     height: 40px;
     font-size: 0.9em;
     margin-right: 5px;
-    border: 1px solid rgb(243,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     padding-left: 20px;
     margin-top: 5px;
 }
@@ -288,6 +301,8 @@
 .accounting-form .expense Table tbody tr #option-rest-paymentmethod{
     width: 200px;
     height: 42px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 /* Hotel */
 .accounting-form .expense Table tbody tr #title-hotel{
@@ -298,7 +313,18 @@
     height: 40px;
     font-size: 0.9em;
     margin-right: 10px;
-    border: 1px solid rgb(243,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    padding-left: 20px;
+    margin-bottom: -10px;
+}
+#option-hotel-paymentmethod{
+    width: 260px;
+    height: 40px;
+    font-size: 0.9em;
+    margin-right: 10px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     padding-left: 20px;
     margin-bottom: -10px;
 }
@@ -306,30 +332,38 @@
 .accounting-form .expense Table tbody tr #input-hotel-checkout,
 .accounting-form .expense Table tbody tr #input-hotel-num-room,
 .accounting-form .expense Table tbody tr #input-hotel-amount{
-    border: 1px solid rgb(243,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     width: 240px;
     height: 40px;
     font-size: 0.9em;
     padding-left: 20px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-amount{
-    margin-top: 16px;
+    /* margin-top: 16px; */
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-expense-option{
     width: 280px;
     height: 42px;
     margin-top: 10px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-expense-option-payment-method{
     width: 270px;
     height: 42px;
     margin-bottom: 9px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 /* Attraction */
 .accounting-form .expense Table tbody tr #input-attr-amount,
 .accounting-form .expense Table tbody tr #input-attr-num-people,
 .accounting-form .expense Table tbody tr #input-attr-date{
-    border: 1px solid rgb(243, 242, 242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     width: 170px;
     height: 40px;
     font-size: 0.9em;
@@ -340,6 +374,8 @@
     width: 180px;
     height: 42px;
     margin-bottom: 10px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 /* Car rental */
 .accounting-form .expense Table tbody tr #title-carrental{
@@ -348,11 +384,14 @@
 .accounting-form .expense Table tbody tr #option-carrental-carcompany{
     width: 250px;
     height: 42px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-carrental-from,
 .accounting-form .expense Table tbody tr #input-carrental-to,
 .accounting-form .expense Table tbody tr #input-carrental-amount{
-    border: 1px solid rgb(242,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     width: 230px;
     height: 40px;
     font-size: 0.9em;
@@ -363,16 +402,21 @@
     height: 42px;
     margin-bottom: 23px;
     width: 250px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #title-misc{
     width: 400px;
 }
 .accounting-form .expense Table tbody tr #input-misc-amount{
-    border: 1px solid rgb(242,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     width: 200px;
     height: 40px;
     font-size: 0.9em;
-    padding-left: 20px;   
+    padding-left: 20px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 /* .accounting-form .expense Table tbody tr #option-carrental-paymentmethod{
     height: 42px;
@@ -380,7 +424,8 @@
 } */
 /* Misc */
 .accounting-form .expense Table tbody tr #input-misc-memo{
-    border: 1px solid rgb(242,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     font-size: 0.9em;
     height: 40px;
     width: 260px;
@@ -388,7 +433,8 @@
     padding-left: 20px;
 }
 .accounting-form .expense Table tbody tr #input-misc-name{
-    border: 1px solid rgb(242,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     font-size: 0.9em;
     height: 40px;
     padding-left: 20px;
@@ -397,10 +443,14 @@
 }
 .accounting-form .expense Table tbody tr #input-misc-amount{
     margin-top: 8px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #option-misc-paymentmethod{
     height: 42px;
     width: 200px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .expense hr,
 .accounting-form .profit hr{
@@ -426,6 +476,8 @@
     width: 270px;
     margin: 0px;
     margin-top: 5px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
 }
 .accounting-form .profit Table tbody tr #input-shopping-amount,
 .accounting-form .profit Table tbody tr #input-option-originalprice,
@@ -434,13 +486,16 @@
     width: 250px;
     font-size: 0.9em;
     padding-left: 20px;
-    border: 1px solid rgb(243,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     height: 40px;
     margin-top: 9px;
 }
 .accounting-form .profit Table tbody tr #option-beefandhoney-com{
     height: 43px;
     width: 210px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     /* margin: 0px; */
 }
 
@@ -448,7 +503,8 @@
     width: 210px;
     font-size: 0.9em;
     padding-left: 20px;
-    border: 1px solid rgb(243,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     height: 40px;
     margin-top: 8px;
 }
@@ -457,7 +513,8 @@
     width: 210px;
     font-size: 0.9em;
     padding-left: 20px;
-    border: 1px solid rgb(243,242,242);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     height: 40px;
     margin-top: 8px;
 }
@@ -529,7 +586,8 @@
     margin-top: 50px;
 }
 .accounting-form .additional-note .input #input-additiona-note{
-    border: 1px solid rgb(235, 235, 235);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     padding-left: 10px;
     padding-top: 10px;
     height: 150px;
@@ -538,7 +596,8 @@
     padding: 10px;
 }
 .accounting-form .admin-section .input .input #input-tour-profit{
-    border: 1px solid rgb(235, 235, 235);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
     padding-left: 10px;
     font-size: 0.9em;
     margin-top: 8px;
