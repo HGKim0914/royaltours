@@ -32,10 +32,9 @@ class TourList extends Component{
 
     tourlist = (props) => {
         const tourlist = [];
-        for(var idx=0; idx < this.state.data.length; idx++){
-            if(this.state.data.length < 10){
-                tourlist.push(<this.tourComponent key={idx} data={this.state.data[idx]} />);
-            }
+        // console.log(this.state.data)
+        for(var idx=0; idx < 10; idx++){
+            tourlist.push(<this.tourComponent key={idx} data={this.state.data[idx]} />);
         }
 
         return(
