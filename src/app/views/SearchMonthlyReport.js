@@ -803,10 +803,10 @@ class MonthlyReport extends Component{
         //Set months
         for(var idx=0; idx<this.state.months.length; idx++){
             months.push(
-              <th key={idx} colSpan={2}>{this.state.months[idx] + 1}월</th>
+              <th key={idx} colSpan={2} style={{minWidth: "20px"}}>{this.state.months[idx] + 1}월</th>
             );
             localOrInbound.push(
-                <th key={"inbound"+idx} id="inbound">인바운드</th>
+                <th key={"inbound"+idx} id="inbound">인바</th>
             );
             localOrInbound.push(
                 <th key={"local"+idx}id="local">로컬</th>
@@ -963,8 +963,8 @@ class MonthlyReport extends Component{
                     <tbody>
                         {/* Profit */}
                         <tr>
-                            <td rowSpan="7" style={{width: "70px"}}>행사수입</td>
-                            <td>행사비수입</td>
+                            <td rowSpan="7" style={{minWidth: "38px"}}>수입</td>
+                            <td style={{minWidth: "52px"}}>행사비</td>
                             {tourProfitObj}
                         </tr>
                         <tr>
@@ -976,11 +976,11 @@ class MonthlyReport extends Component{
                             {optionObj}
                         </tr>
                         <tr>
-                            <td>꿀, 육포 수입</td>
+                            <td>기타</td>
                             {hbObj}
                         </tr>
                         <tr>
-                            <td >가이드수입</td>
+                            <td >가이드</td>
                             {guideProfitObj}
                         </tr>
                         <tr>
@@ -994,7 +994,7 @@ class MonthlyReport extends Component{
 
                         {/* Expense */}
                         <tr>
-                            <td rowSpan="11">행사지출</td>
+                            <td rowSpan="11">지출</td>
                             <td >BUS렌트</td>
                             {carRentalExpenseObj}
                         </tr>
@@ -1007,15 +1007,15 @@ class MonthlyReport extends Component{
                             {parkingExpenseObj}
                         </tr>
                         <tr>
-                            <td id="part-totalamount">차량비소계</td>
+                            <td id="part-totalamount">소계</td>
                             {totalCarExpensesObj}
                         </tr>
                         <tr>
-                            <td>기타비용</td>
+                            <td>기타</td>
                             {miscExpenseObj}
                         </tr>
                         <tr>
-                            <td>식사대</td>
+                            <td>식사</td>
                             {restExpenseObj}
                         </tr>
                         <tr>
@@ -1023,7 +1023,7 @@ class MonthlyReport extends Component{
                             {attrExpenseObj}
                         </tr>
                         <tr>
-                            <td>호텔료</td>
+                            <td>호텔</td>
                             {hotelExpenseObj}
                         </tr>
                         <tr>
