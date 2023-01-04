@@ -38,7 +38,7 @@ class TourList extends Component{
                         <td>행사명</td>
                         <td>가이드 성명</td>
                         <td>투어 종류</td>
-                        <td style={{width: "100px"}}></td>
+                        <td style={{width: "100px"}}>정산여부</td>
                         <td style={{width: "50px"}}></td>
                         <td style={{width: "50px"}}></td>
                         <td></td>
@@ -79,16 +79,19 @@ class DisplayTour extends Component {
         //Office & Admin view
         }else{
             //If data is confirmed
-            if(parseInt(this.props.data[4]) === 0){
+            // data[4]: confirmation, data[5]: sent
+            if(parseInt(this.props.data[5]) === 0){
                 confirmation.push(<img key="img-confirmed" src={require('../imgs/message.png')} alt="img-not-confirmed" id="img-confirmed"/>);
-            }else{
+            }else if (parseInt(this.props.data[5]) === 1 && parseInt(this.props.data[4]) === 0){
                 confirmation.push(<img key="img-confirmed" src={require('../imgs/message2.png')} alt="img-confirmed" id="img-confirmed"/>);
+            } else if (parseInt(this.props.data[5]) === 1 && parseInt(this.props.data[4]) === 1){
+                confirmation.push(<div key="text-confirmed" style={{fontWeight: "bold"}}>CONFIRM</div>);
             }
     
             btnFirst.push(<div key="view-btn" className="waves-effect waves-light btn btn-view" onClick={this.accountingReportClickHandler}>보기</div>);
             btnSecond.push(<div key="delete-btn" className="waves-effect waves-light btn btn-delete" onClick={this.deleteTour}>삭제</div>);
         }
-    
+        console.log(this.props.data)
         return(
             <tr>
                 <td>{this.props.data[0]}</td>

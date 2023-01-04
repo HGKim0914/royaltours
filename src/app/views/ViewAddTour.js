@@ -57,7 +57,6 @@ class ViewAddTour extends Component{
         var getMsg = sessionStorage.getItem("err-msg");
         var msg = "";
         if(getMsg !== null)msg = getMsg.toString();
-        console.log(getMsg);
         if(msg === "1"){
             this.setState({
                 msgError: <p id="err-date"><img src={require('../imgs/warning.png')} alt="img-warning"/>투어 생성에 실패했습니다. </p>

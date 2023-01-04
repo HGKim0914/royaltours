@@ -65,7 +65,7 @@ class ViewTotalTourList extends Component{
     callData = () => {
         fetch(DatabaseConnectionHelper() + "DisplayTotalTourList.php")
         .then(res => res.json())
-        .then((result) => 
+        .then((result) =>
             this.setData(result)
         );
     }

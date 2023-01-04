@@ -19,9 +19,9 @@ class TourList extends Component{
         this.callData();
     }
     render(){
-        var tourlist = "";
+        var tourlist = null;
         if(this.state.data.length > 0){
-            tourlist = <this.tourlist />
+            tourlist = <this.tourlistTableComponent />
         }
         return(
             <Col s={12}>
@@ -30,11 +30,11 @@ class TourList extends Component{
         );
     }
 
-    tourlist = (props) => {
-        const tourlist = [];
-        // console.log(this.state.data)
-        for(var idx=0; idx < 10; idx++){
-            tourlist.push(<this.tourComponent key={idx} data={this.state.data[idx]} />);
+    tourlistTableComponent = () => {
+        var tourlist = [];
+        for(var idx=0; idx < this.state.data.length; idx++){
+            if (idx < 10) tourlist.push(<this.tourComponent key={idx} data={this.state.data[idx]} />);
+            else break;
         }
 
         return(

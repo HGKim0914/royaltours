@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component } from 'react';
 import './app/css/App.css';
 import {
   BrowserRouter as Router,
@@ -47,7 +47,6 @@ class App extends Component {
             <Route path="/accounting-form" component={AccountingForm} />
             <Route path="/usercode-management" component={UserCodeManagement} />
             {/* <Route path="/test" component={Test}/> */}
-            
             <Route path="/" exact component={Login} />
           </Switch>
         </div>
