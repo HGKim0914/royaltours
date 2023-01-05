@@ -150,7 +150,6 @@ class ViewAddTour extends Component{
                     </div>
                 </Col>
 
-                {/* LIST OF TOURS CREATED */}
                 <TourList id={this.state.id} />
             </Row>
         );

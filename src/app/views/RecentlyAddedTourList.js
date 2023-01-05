@@ -19,21 +19,25 @@ class TourList extends Component{
         this.callData();
     }
     render(){
-        var tourlist = null;
-        if(this.state.data.length > 0){
-            tourlist = <this.tourlistTableComponent />
-        }
         return(
             <Col s={12}>
-                {tourlist}
+                {this.state.data.length > 0 ? <this.TourlistTableComponent /> : ''}
             </Col>
         );
     }
 
-    tourlistTableComponent = () => {
-        var tourlist = [];
+    TourlistTableComponent = () => {
+        let tourlist = [];
         for(var idx=0; idx < this.state.data.length; idx++){
-            if (idx < 10) tourlist.push(<this.tourComponent key={idx} data={this.state.data[idx]} />);
+            // if (idx < 10) tourlist.push(<this.TourComponent key={idx} data={this.state.data[idx]} />);
+            if (idx < 10) tourlist.push(
+                <tr key={this.state.data[idx][3]}>
+                    <td>{this.state.data[idx][0]}</td>
+                    <td>{this.state.data[idx][1]} - {this.state.data[idx][2]}</td>
+                    <td>{this.state.data[idx][3]}</td>
+                    <td><div key="delete-btn" className="waves-effect waves-light btn btn-delete" id={this.state.data[idx][3]} onClick={this.deleteTour}>삭제</div></td>
+                </tr>
+            );
             else break;
         }
 
@@ -61,16 +65,16 @@ class TourList extends Component{
         );
     }
 
-    tourComponent = (props) => {
-        return(
-            <tr>
-                <td>{props.data[0]}</td>
-                <td>{props.data[1]} - {props.data[2]}</td>
-                <td>{props.data[3]}</td>
-                <td><div key="delete-btn" className="waves-effect waves-light btn btn-delete" id={props.data[3]} onClick={this.deleteTour}>삭제</div></td>
-            </tr>
-        );
-    }
+    // TourComponent = (props) => {
+    //     return(
+    //         <tr>
+    //             <td>{props.data[0]}</td>
+    //             <td>{props.data[1]} - {props.data[2]}</td>
+    //             <td>{props.data[3]}</td>
+    //             <td><div key="delete-btn" className="waves-effect waves-light btn btn-delete" id={props.data[3]} onClick={this.deleteTour}>삭제</div></td>
+    //         </tr>
+    //     );
+    // }
 
     //Delete tour
     deleteTour = async (event) => {
