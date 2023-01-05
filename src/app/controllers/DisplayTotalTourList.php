@@ -8,7 +8,7 @@
     include('./DatabaseHelper.php');
     
     if($mysqli){
-        $query = "SELECT tour.startdate, tour.tourcode, users.name, tour.inboundlocal, tour.confirmation FROM tour, users WHERE tour.guideid = users.id AND tour.sent = true ORDER BY tour.startdate DESC";
+        $query = "SELECT tour.startdate, tour.tourcode, users.name, tour.inboundlocal, tour.confirmation, tour.sent FROM tour, users WHERE tour.guideid = users.id ORDER BY case when tour.sent = false then 1 else 2 end, tour.startdate DESC";
         $qresult = mysqli_query($mysqli, $query);
         $count = mysqli_num_rows($qresult);
 
