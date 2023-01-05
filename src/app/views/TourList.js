@@ -91,7 +91,7 @@ class DisplayTour extends Component {
             btnFirst.push(<div key="view-btn" className="waves-effect waves-light btn btn-view" onClick={this.accountingReportClickHandler}>보기</div>);
             btnSecond.push(<div key="delete-btn" className="waves-effect waves-light btn btn-delete" onClick={this.deleteTour}>삭제</div>);
         }
-        console.log(this.props.data)
+        
         return(
             <tr>
                 <td>{this.props.data[0]}</td>

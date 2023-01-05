@@ -112,7 +112,9 @@ class ViewTotalTourList extends Component{
             }
             //Set the lowest page number
             if(currentPageNum >= 3){
+                let lastPage = Math.ceil(this.state.data.length / 10);
                 lowestPageNum = lowestDataNum / 10 - 1;
+                if (lowestPageNum + 10 >= lastPage) lowestPageNum = lastPage - 9;
             }else if(currentPageNum < 3){
                 lowestPageNum = 1;
             }
@@ -130,7 +132,6 @@ class ViewTotalTourList extends Component{
                     if(pages[ind] !== null){
                         if(pages[ind].id === currentPageNum.toString()){
                             pages[ind].style.color = "blue";
-                            
                         }else{
                             pages[ind].style.color = "grey";
                         }
@@ -152,7 +153,9 @@ class ViewTotalTourList extends Component{
 
             //Set the lowest page number
             if(currentPageNum >= 3){
+                let lastPage = Math.ceil(this.state.data.length / 10);
                 lowestPageNum = lowestDataNum / 10 - 1;
+                if (lowestPageNum + 10 >= lastPage) lowestPageNum = lastPage - 9;
             }else if(currentPageNum < 3){
                 lowestPageNum = 1;
             }
@@ -170,7 +173,6 @@ class ViewTotalTourList extends Component{
                     if(pages[ind] !== null){
                         if(pages[ind].id === currentPageNum.toString()){
                             pages[ind].style.color = "blue";
-                            
                         }else{
                             pages[ind].style.color = "grey";
                         }
