@@ -106,7 +106,7 @@ class OptionProfit extends Component{
                         <label>수입분배</label>
                         <select className="browser-default" id="option-option-com" name={this.props.idx} value={com} onChange={this.updateCom} ref={(obj) => this.comObj = obj}>
                             <option defaultValue="-">수입분배</option>
-                            <option value="2">9 : 1</option>
+                            <option value="1">9 : 1</option>
                             <option value="2">8 : 2</option>
                             <option value="3">7 : 3</option>
                             <option value="4">6 : 4</option>
