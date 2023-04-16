@@ -122,7 +122,7 @@ class ViewTotalTourList extends Component{
             //Set data
             this.setState({
                 eachPageData: currentPageData,
-                lowestPageNum: lowestPageNum,
+                lowestPageNum: lowestPageNum > 0 ? lowestPageNum : 1,
                 currentPageNum: currentPageNum,
             });
 
@@ -163,7 +163,7 @@ class ViewTotalTourList extends Component{
             //Set data
             this.setState({
                 eachPageData: currentPageData,
-                lowestPageNum: lowestPageNum,
+                lowestPageNum: lowestPageNum > 0 ? lowestPageNum : 1,
                 currentPageNum: currentPageNum,
             });
 
@@ -202,7 +202,7 @@ class ViewTotalTourList extends Component{
             this.setState({
                 eachPageData: currentPageData,
                 // pageObj: [...this.state.pageObj, props.target],
-                lowestPageNum: lowestPageNum,
+                lowestPageNum: lowestPageNum > 0 ? lowestPageNum : 1,
                 currentPageNum: currentPageNum,
             });
 
