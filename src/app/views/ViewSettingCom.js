@@ -144,7 +144,6 @@ class ViewSettingCom extends Component{
 
     //OptionEventHandler
     changeOption = (obj) => {
-        console.log(obj.target.value);
         this.callData(obj.target.value);
         this.setState({
             selectedItem: obj.target.value,

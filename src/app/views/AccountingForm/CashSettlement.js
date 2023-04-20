@@ -188,7 +188,6 @@ class CashSettlement extends Component{
                 }
             }
             var numOfExtra = ind - this.state.numPlusFactor + 1;
-            console.log(numOfExtra);
             var data = dataPlusFactorCopy[dataPlusFactorCopy.length - numOfExtra];
             this.setState({
                 numPlusFactor: this.state.numPlusFactor - 1,

@@ -81,7 +81,6 @@ class GuideView extends Component {
             var rawData = JSON.parse(result);
             var data = this.displayData(rawData, firstDayOfThisYear, today, null);
     
-            console.log(data);
             //Get 10 tour items in each page
             //Get first 10 items when the page is loaded
             var eachPageData = [];

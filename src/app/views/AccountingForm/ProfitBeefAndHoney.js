@@ -108,7 +108,6 @@ class ProfitHoneyAndBeef extends Component{
         this.props.onChange(event, existingObjArr);
     }
     updateNum = (event) => {
-        console.log(event.target.value);
         this.setState({
             num: event.target.value,
         });

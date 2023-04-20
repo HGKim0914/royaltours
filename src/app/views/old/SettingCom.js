@@ -179,7 +179,6 @@ const DisplayComponent = (props) => {
 }
 //Display T/C
 const DisplayTC = (props) => {
-    console.log(typeof props.tc);
     return(
         <Table>
             <thead>

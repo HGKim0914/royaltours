@@ -38,7 +38,6 @@ class GuideView extends Component {
       department: getDepartment,
       authorization: getAuthorization
     }
-    console.log(this.state.department);
   }
 
   render() {

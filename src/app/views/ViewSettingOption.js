@@ -167,7 +167,6 @@ class ViewSettingOption extends Component{
                     items: this.state.deletedItems,
                 },
                 success: function(result){
-                    console.log(result);
                     sessionStorage.setItem("currentoption", result);
                     reloadePage();
                 }

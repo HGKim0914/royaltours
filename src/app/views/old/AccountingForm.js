@@ -352,8 +352,6 @@ class AccountingForm extends Component {
     }
 
     handleChangeProfit = (input) => {
-        console.log(input.target.id);
-        console.log(input.target.name);
         var idx = input.target.id;
         var value = input.target.value;
 

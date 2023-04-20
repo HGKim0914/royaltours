@@ -254,7 +254,6 @@ class ViewAccountingform extends Component {
     //Update data
     updateTourInfo = (event) => {
         if(event.target.id === "input-num"){
-            console.log(event.target.value);
             this.setState({
                 numpax: event.target.value,
             });

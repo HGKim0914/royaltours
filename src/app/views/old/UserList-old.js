@@ -165,8 +165,6 @@ class GuideComAdjustment extends Component{
         const list = [];
         var shoppingList = this.props.shoppingList;
         if(this.state.comUpdated) shoppingList = this.state.data;
-
-        console.log(shoppingList);
         
         //Get shopping center list
         if(shoppingList.length > 0){

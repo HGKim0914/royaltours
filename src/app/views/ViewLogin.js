@@ -109,7 +109,6 @@ class Loginpage extends Component{
                     password: this.pwdObj.value,
                 },
                 success: (result) => {
-                    console.log(result);
                     if(result === "false"){
                         this.setState({
                             msg: <p id="msg-login-fail"><img src={require('../imgs/warning.png')} alt="img-warning"/>아이디나 비밀번호가 맞지 않습니다.</p>

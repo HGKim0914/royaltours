@@ -32,7 +32,6 @@ class LoginView extends Component {
     //Display the error message
     var getMsg = getCookie("invalidLogin");
     var getLoginStatus = getCookie("error-msg");
-    console.log(getCookie("what"));
     if(getMsg !== ""){
       this.setState({
         invalidLoginAttemp: <p style={{fontSize: '0.8em', color: 'red'}}>아이디나 비밀번호가 맞지 않습니다.</p>,

@@ -12,7 +12,6 @@ class TourInfoInput extends Component{
 
         //TC Checked or not
         var tcObj = "";
-        console.log(tc);
         if(tc !== undefined){
             if(tc === "1"){
                 tcObj = <Checkbox label="TC" value={tc} id="input-tc" onChange={this.props.onChange} checked={true} />

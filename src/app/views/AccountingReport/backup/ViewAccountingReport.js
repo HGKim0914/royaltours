@@ -99,7 +99,6 @@ class AccountingReport extends Component{
                 tourcode: this.state.tourcode,
             },
             success: (result) => {
-                console.log(result);
                 reloadePage();
             }
         });

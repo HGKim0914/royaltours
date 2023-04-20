@@ -658,7 +658,7 @@ class ViewAccountingform extends Component {
                                                                           
         //Restaurant
         var index = -1;
-        var restaurant = ($("select[id='option-rest-name'").map(function(){
+        var restaurant = ($("select[id='option-rest-name']").map(function(){
             index = $(this).prop("name");
             var result = [];
             result.push([index, 
@@ -860,7 +860,7 @@ class ViewAccountingform extends Component {
                     plusfactor: this.state.rmPlusFactorData,
                 },
                 success: function(result){
-                    console.log(result);
+
                 }
             });
 
@@ -874,7 +874,7 @@ class ViewAccountingform extends Component {
                     minusfactor: this.state.rmMinusFactorData,
                 },
                 success: function(result){
-                    console.log(result);
+                    
                 }
             });
         }

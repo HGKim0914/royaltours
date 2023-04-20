@@ -51,7 +51,6 @@ class UserList extends Component{
             .then(res => res.json())
             .then((result) => {
                 this.setShoppinglist(result);
-                console.log(result);
             }
         );
     }

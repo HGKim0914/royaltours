@@ -52,7 +52,6 @@ class RegisterView extends Component {
 
 
     if(getMsg !== ""){
-      console.log(getMsg);
       if(getMsg === "1"){
         this.setState({
           invalidInputErrorMsg: <p id="msg-validation">사용하는 아이디 입니다.</p>,

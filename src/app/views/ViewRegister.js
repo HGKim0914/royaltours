@@ -180,7 +180,6 @@ class ViewRegister extends Component{
                     },
                     success: (result) => {
                         var data;
-                        console.log(result);
                         // if(isJson(result))
                             data = JSON.parse(result);
 

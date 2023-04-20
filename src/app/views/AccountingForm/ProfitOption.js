@@ -181,7 +181,6 @@ class OptionProfit extends Component{
         if(this.originalPriceObj.value !== "" && dataChanged !== "originalPrice"){
             objArr.push(this.originalPriceObj);
         }
-        console.log(objArr);
 
         return objArr;
     }

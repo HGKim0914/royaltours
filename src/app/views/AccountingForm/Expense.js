@@ -563,7 +563,7 @@ class Expense extends Component{
             
             if(dataRestCopy.length > 0){
                 var dataArr = [];
-                console.log(this.state.numOfRest); //5 number of components: 6
+                //5 number of components: 6
                 
                 for(idx=0; idx<dataRestCopy.length; idx++){
                     temp = dataRestCopy[idx][2].split(".");

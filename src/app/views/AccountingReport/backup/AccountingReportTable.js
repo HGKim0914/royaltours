@@ -321,7 +321,6 @@ class AccountingReportTable extends Component{
             this.setState({
                 carrentalExpense: data,
             });
-            console.log(result);
         }
     }
     //Misc

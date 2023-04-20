@@ -46,7 +46,6 @@ class CashSettlementPlusFactor extends Component{
         })
         var existingObjArr = this.checkDefaultDataExist("amount");
         this.props.onChange(event, existingObjArr);
-        console.log(this.props.idx);
     }
 
     updateMemo = (event) => {

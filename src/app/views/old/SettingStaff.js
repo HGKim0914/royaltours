@@ -284,7 +284,6 @@ class SettingStaff extends Component{
             if(checkedStaff[idx] === this.state.id){
                 validatedStaff = checkedStaff.splice(idx, 1);
                 errDelete = true;
-                console.log(validatedStaff);
             }
         }
         if(errDelete){
@@ -293,7 +292,6 @@ class SettingStaff extends Component{
             });
         }
         var selectedStaff = JSON.stringify(checkedStaff);
-        console.log(selectedStaff);
         $.ajax({
             url: "http://localhost:8888/StaffManagement.php",
             type: "POST",

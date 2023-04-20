@@ -9,7 +9,7 @@ export const setData = (URL, param) => {
             param: param
         },
         success: function(r){
-            console.log(r);
+            // console.log(r);
         }
     });
 
