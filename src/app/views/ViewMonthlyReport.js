@@ -86,9 +86,8 @@ class SearchData extends Component{
         var date = new Date();
         var month = date.getMonth();
         month = month + 1;
-        if(month < 10){
-            month = "0" + month;
-        }
+        month = month < 10 ? "0" + month : month;
+
         var year = date.getFullYear();
         var enddate = year.toString() + "-" + month.toString();
         var startdate = year + "-01";
@@ -140,6 +139,14 @@ class SearchData extends Component{
     }
     //Event Handler
     searchDataHandler = () => {
+        // var date = new Date();
+        // var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+        // console.log(firstDay)
+        // console.log("TimeStamp: " + Date.parse(this.startObj.value));
+        // console.log("TimeStamp: " + Date.parse(this.endObj.value));
+
+        // console.log(new Date(Date.parse(this.startObj.value)));
+        // console.log(new Date(Date.parse(this.endObj.value)));
         this.props.onClick(this.startObj.value, this.endObj.value, this.guideObj.value);
     }
 

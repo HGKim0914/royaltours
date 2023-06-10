@@ -24,12 +24,15 @@ class MonthlyReport extends Component{
         var guideId = formURL[formURL.length - 1];
         var dates = dateURL.split("~");
         var startdate = dates[0] + "-01";
+        // const nextMonth = new Date(dates[1].split("-")[0], dates[1].split("-")[1], 1);
+        // const lastDayOfMonth = new Date(nextMonth.getTime() - 86400000);
+        // var enddate = dates[1] + "-" + lastDayOfMonth.getDate();
         var enddate = dates[1] + "-01";
 
         //Calculating monthes in between startdate and enddate
         //And store in array
         var startmonth = new Date(startdate);
-        var endmonth = new Date(enddate) ;
+        var endmonth = new Date(enddate);
 
         var current = startmonth;
         var months = [];
@@ -75,12 +78,11 @@ class MonthlyReport extends Component{
         var ind = 0;
 
         for(idx=0; idx<months.length; idx++){
-            monthAndYear.push(years[ind] + "-" + (months[idx]+1));
+            monthAndYear.push(years[ind] + "-" + (months[idx]+1 < 10 ? `0${months[idx]+1}` : months[idx]+1));
             if(months[idx] === 11){
                 ind++;
             }
         }
-
 
         this.state = {
             startdate: startdate,
@@ -252,7 +254,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.tourProfitInbound.length; ind++){
             for(var x=0; x<this.state.monthAndYear.length; x++){
                 var listDate = new Date(this.state.tourProfitInbound[ind][2]);
-                var startDate = new Date(this.state.monthAndYear[x]+"-1");
+                var startDate = new Date(this.state.monthAndYear[x]+"-01");
 
                 //Last date
                 var dateArr = this.state.monthAndYear[x].split("-");
@@ -267,7 +269,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.tourProfitLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.tourProfitLocal[ind][2]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
 
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -283,7 +285,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.shoppingProfitLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.shoppingProfitLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -298,7 +300,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.shoppingProfitInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.shoppingProfitInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -314,7 +316,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.optionProfitLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.optionProfitLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -328,7 +330,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.optionProfitInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.optionProfitInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -344,7 +346,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.hbProfitLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.hbProfitLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -358,7 +360,7 @@ class MonthlyReport extends Component{
         for(ind=0; ind<this.state.hbProfitInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.hbProfitInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -374,7 +376,7 @@ class MonthlyReport extends Component{
          for(ind = 0; ind<this.state.guideProfitInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.guideProfitInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
 
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -389,7 +391,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.guideProfitLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.guideProfitLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
 
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -430,7 +432,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.carRentalExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.carRentalExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -445,7 +447,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.carRentalExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.carRentalExpenseLocal[ind][3]); //get tour start date
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -460,7 +462,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.carRentalExtraExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.carRentalExtraExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -475,7 +477,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.carRentalExtraExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.carRentalExtraExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -491,7 +493,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.restExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.restExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -505,7 +507,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.restExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.restExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -520,7 +522,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.hotelExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.hotelExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -535,7 +537,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.hotelExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.hotelExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -550,7 +552,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.attrExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.attrExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -565,7 +567,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.attrExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.attrExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -581,7 +583,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.gasExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.gasExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -596,7 +598,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.gasExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.gasExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -612,7 +614,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.parkingExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.parkingExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -627,7 +629,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.parkingExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.parkingExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -643,7 +645,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.guideExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.guideExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -659,7 +661,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.guideExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.guideExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -674,7 +676,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.guidePickupExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.guidePickupExpenseInbound[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -689,7 +691,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.guidePickupExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.guidePickupExpenseLocal[ind][3]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -705,7 +707,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.miscExpenseInbound.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.miscExpenseInbound[ind][2]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -720,7 +722,7 @@ class MonthlyReport extends Component{
         for(ind = 0; ind<this.state.miscExpenseLocal.length; ind++){
             for(x=0; x<this.state.monthAndYear.length; x++){
                 listDate = new Date(this.state.miscExpenseLocal[ind][2]);
-                startDate = new Date(this.state.monthAndYear[x]+"-1");
+                startDate = new Date(this.state.monthAndYear[x]+"-01");
                
                 //Last date
                 dateArr = this.state.monthAndYear[x].split("-");
@@ -1079,6 +1081,7 @@ class MonthlyReport extends Component{
         var data = JSON.parse(result);
         var localData = [];
         var inboundData = [];
+        // console.log(data)
 
         for(var idx=0; idx < data.length; idx++){
             if(data[idx][9] === "로컬"){
