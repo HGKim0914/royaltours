@@ -30,9 +30,9 @@ class TourList extends Component{
         let tourlist = [];
         for(var idx=0; idx < this.state.data.length; idx++){
             // if (idx < 10) tourlist.push(<this.TourComponent key={idx} data={this.state.data[idx]} />);
-            if (idx < 10) tourlist.push(
+            if (idx < 20) tourlist.push(
                 <tr key={this.state.data[idx][3]}>
-                    <td>{this.state.data[idx][0]}</td>
+                    <td>{this.state.data[idx][0].split(" ")[0]}</td>
                     <td>{this.state.data[idx][1]} - {this.state.data[idx][2]}</td>
                     <td>{this.state.data[idx][3]}</td>
                     <td><div key="delete-btn" className="waves-effect waves-light btn btn-delete" id={this.state.data[idx][3]} onClick={this.deleteTour}>삭제</div></td>

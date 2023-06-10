@@ -39,7 +39,7 @@
                     if(isset($_POST['uploader'])){
                         $id = $_POST['uploader'];
                         $dt = new DateTime('now', new DateTimezone('America/Vancouver'));
-                        $date = $dt->format("Y-m-d");
+                        $date = $dt->format("Y-m-d H:i:s");
 
                         $query = "INSERT INTO tour_uploaderinfo VALUES('$tourcode', '$id', '$date')";
                         $qresult = mysqli_query($mysqli, $query);
