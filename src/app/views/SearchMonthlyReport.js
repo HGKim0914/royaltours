@@ -73,16 +73,21 @@ class MonthlyReport extends Component{
                 years.push(current.getFullYear());
             }
         }
+        console.log(months.length)
+        console.log(years)
 
         var monthAndYear = [];
         var ind = 0;
-
+        // console.log("current: " + current)
+        // console.log("months: " + months)
+        // console.log("years: " + years)
         for(idx=0; idx<months.length; idx++){
             monthAndYear.push(years[ind] + "-" + (months[idx]+1 < 10 ? `0${months[idx]+1}` : months[idx]+1));
             if(months[idx] === 11){
                 ind++;
             }
         }
+        console.log("monthAndYear: " + monthAndYear)
 
         this.state = {
             startdate: startdate,
@@ -183,7 +188,7 @@ class MonthlyReport extends Component{
         var totalNetIncomeInboundAndLocalArr = [[], []];
         var totalNetIncomeArr = [];
         var totalNetIncomeAccumulatedArr = [];
-
+        
         for(var ind=0; ind<this.state.monthAndYear.length; ind++){
             //Profit
             totalTourProfitArr[0].push(0);
@@ -249,6 +254,7 @@ class MonthlyReport extends Component{
             totalNetIncomeArr.push(0);
             totalNetIncomeAccumulatedArr.push(0);
         }
+        console.log(this.state)
 
         // Tour Profit
         for(ind=0; ind<this.state.tourProfitInbound.length; ind++){
@@ -1060,6 +1066,9 @@ class MonthlyReport extends Component{
     }
 
     callData = (startdate, enddate, guideId) => {
+        console.log(startdate, enddate, guideId)
+        console.log(Date.parse(startdate))
+        console.log(Date.parse(enddate))
         if(startdate !== undefined && enddate !== undefined){
             $.ajax({
                 url: DatabaseConnectionHelper() + "GetMonthlyTourDataController.php",
