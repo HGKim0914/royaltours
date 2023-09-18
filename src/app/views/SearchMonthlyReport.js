@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Suspense} from 'react';
 import $ from 'jquery';
 import DatabaseConnectionHelper from '../helper/DatabaseConnectionHelper';
 import { setData } from '../js/model';
@@ -29,7 +29,7 @@ class MonthlyReport extends Component{
         // var enddate = dates[1] + "-" + lastDayOfMonth.getDate();
         var enddate = dates[1] + "-01";
 
-        //Calculating monthes in between startdate and enddate
+        //Calculating months in between startdate and enddate
         //And store in array
         var startmonth = new Date(startdate);
         var endmonth = new Date(enddate);
@@ -73,8 +73,8 @@ class MonthlyReport extends Component{
                 years.push(current.getFullYear());
             }
         }
-        console.log(months.length)
-        console.log(years)
+        // console.log(months.length)
+        // console.log(years)
 
         var monthAndYear = [];
         var ind = 0;
@@ -255,6 +255,11 @@ class MonthlyReport extends Component{
             totalNetIncomeAccumulatedArr.push(0);
         }
         console.log(this.state)
+        // for (let i = 0; i < this.state.tourProfitInbound.length; i++) {
+        //     if (this.state.tourProfitInbound[i][2].includes('2023-08')) {
+        //         console.log(Date.parse(this.state.tourProfitInbound[i][2]));
+        //     }
+        // }
 
         // Tour Profit
         for(ind=0; ind<this.state.tourProfitInbound.length; ind++){
@@ -1080,6 +1085,7 @@ class MonthlyReport extends Component{
                 },
                 success: (result) =>{
                     this.setTourData(result);
+                    console.log(JSON.parse(result))
                 }
             });
         }
@@ -1090,12 +1096,16 @@ class MonthlyReport extends Component{
         var data = JSON.parse(result);
         var localData = [];
         var inboundData = [];
-        // console.log(data)
 
         for(var idx=0; idx < data.length; idx++){
-            if(data[idx][9] === "로컬"){
+            // if(data[idx][9] === "로컬"){
+            //     localData.push(data[idx]);
+            // }else if(data[idx][9]  === "인바운드"){
+            //     inboundData.push(data[idx]);
+            // };
+            if(data[idx][1] === "로컬"){
                 localData.push(data[idx]);
-            }else if(data[idx][9]  === "인바운드"){
+            }else if(data[idx][1]  === "인바운드"){
                 inboundData.push(data[idx]);
             };
         }
@@ -1144,29 +1154,31 @@ class MonthlyReport extends Component{
     }
 
     callTourProfitData = () => {
-        //Inbound
+        //Inbound, local
         $.ajax({
             url: DatabaseConnectionHelper() + "GetMonthlyTourProfitDataController.php",
             type: "POST",
             data: {
-                data: this.state.inboundData
+                // data: this.state.inboundData
+                data: this.state.data
             },
             success: (result) =>{
-                this.setTourProfitDataInbound(result);
+                this.setTourProfitData(result);
+                // this.setTourProfitDataLocal(result);
             }
         });
 
-        //Local
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyTourProfitDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.localData
-            },
-            success: (result) =>{
-                this.setTourProfitDataLocal(result);
-            }
-        });
+        // Local
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyTourProfitDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.localData
+        //     },
+        //     success: (result) =>{
+        //         this.setTourProfitDataLocal(result);
+        //     }
+        // });
     }
 
     callShoppingData = () => {
@@ -1518,23 +1530,32 @@ class MonthlyReport extends Component{
         }
     }
     
-    setTourProfitDataInbound = (result) => {
+    setTourProfitData = (result) => {
         if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
+            let data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+            
+            for (let i = 0; i < data.length; i++) {
+                data[i][3] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                tourProfitInbound: data,
+                tourProfitInbound: inbound,
+                tourProfitLocal: local
+                // tourProfitInbound: inbound,
+                // tourProfitLocal: local
             })
         }
     }
 
-    setTourProfitDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                tourProfitLocal: data,
-            })
-        }
-    }
+    // setTourProfitDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             tourProfitLocal: data,
+    //         })
+    //     }
+    // }
 
     setGuideExpenseDataInbound = (result) => {
         if(result !== "" && result !== "false"){

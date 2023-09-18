@@ -12,9 +12,9 @@
             $guide = $_POST['guideId'];
 
             if($guide == "all"){
-                $query = "SELECT * FROM tour WHERE startdate >= '$startdate' AND startdate <= '$enddate' AND confirmation = 1"; //Confirm requires
+                $query = "SELECT tourcode, inboundlocal FROM tour WHERE startdate >= '$startdate' AND startdate <= '$enddate' AND confirmation = 1"; //Confirm requires
             }else{
-                $query = "SELECT * FROM tour WHERE startdate >= '$startdate' AND startdate <= '$enddate' AND confirmation = 1 AND guideid = '$guide'"; 
+                $query = "SELECT tourcode, inboundlocal FROM tour WHERE startdate >= '$startdate' AND startdate <= '$enddate' AND confirmation = 1 AND guideid = '$guide'"; 
             }
 
             $qresult = mysqli_query($mysqli, $query);
