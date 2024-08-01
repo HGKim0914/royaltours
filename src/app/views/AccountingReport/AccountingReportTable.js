@@ -5,6 +5,7 @@ import DatabaseConnectionHelper from '../../helper/DatabaseConnectionHelper';
 //Import each section of table
 import FirstTable from './AccountingReportTableFirst';
 import SecondTable from './AccountingReportTableSecond';
+import GuideFeeAndCommisionTable from './GuideFeeAndCommissionTable';
 const TotalTable = React.lazy(() => import("./AccountingReportTableTotal"));
 
 var totalProfitShopping = 0;
@@ -62,6 +63,24 @@ class AccountingReportTable extends Component{
         };
 
         //Call data
+        this.callTourProfitData();
+        this.callRestData();
+        this.callHotelData();
+        this.callAttrData();
+        this.callCarRental();
+        this.callMiscExpense();
+
+        this.callShoppingProfit();
+        this.callOptionProfit();
+        this.callHBProfit();
+
+        this.callPlusFactor();
+        this.callMinusFactor();
+        this.callGuideTipInbound();
+        this.callGuideTipLocal();
+        this.callAdditionalNote();
+    }
+    componentDidMount() {
         this.callTourProfitData();
         this.callRestData();
         this.callHotelData();
@@ -153,7 +172,7 @@ class AccountingReportTable extends Component{
         if(this.state.guideTipLocal.length > 0){
             guideTipLocal = this.state.guideTipLocal;
         }
-        return(
+        return !this.props.tourinfo ? 'Loading...' : (
             <Suspense fallback={
                 <div className="loading">
                     <img id="loading-image"src={require('../../imgs/loading.gif')} alt="Loading..." /><br />
@@ -179,6 +198,13 @@ class AccountingReportTable extends Component{
                     />
                     <MemoTable data={this.state.additionalNote}/>
                     {totalNetIncome}
+                    <GuideFeeAndCommisionTable tourinfo={tourinfo}
+                        guideFee={miscExpense[2]}
+                        guideShoppingEarning={shoppingProfit}
+                        optionCost={optionProfit}
+                        optionPaid={attrExpense}
+                        companyCollectedAmount={minusfactor[1]}
+                    />
                 </div>
             </Suspense>
         );

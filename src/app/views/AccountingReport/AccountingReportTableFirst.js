@@ -3,6 +3,18 @@ import {Table, Modal} from 'react-materialize';
 import moment from 'moment';
 
 const FirstTable = (props) => {
+    if (props.tourinfo === undefined || props.tourinfo.length === 0) return <></>
+    if (props.restaurantExpense === undefined) return <></>
+    if (props.hotelExpense === undefined) return <></>
+    if (props.attrExpense === undefined) return <></>
+    if (props.carExpense === undefined) return <></>
+    if (props.miscExpense === undefined) return <></>
+    if (props.shoppingProfit === undefined) return <></>
+    if (props.optionProfit === undefined) return <></>
+    if (props.hbProfit === undefined) return <></>
+    if (props.totalData === undefined) return <></>
+    console.log(props)
+
     const restaurantTable = [];
     const hotelTable = [];
     const attrTable = [];

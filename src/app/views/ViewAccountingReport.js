@@ -52,7 +52,7 @@ class AccountingReport extends Component{
         }
          
         var btnObj = <div className="row btn-package">{btns}</div>;
-               
+        
         return(
             <Row>
                 {/* alert */}

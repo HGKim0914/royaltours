@@ -1074,12 +1074,14 @@ class MonthlyReport extends Component{
         console.log(startdate, enddate, guideId)
         console.log(Date.parse(startdate))
         console.log(Date.parse(enddate))
+        // var firstDay = new Date(startdate.getFullYear(), startdate.getMonth(), 1);
         if(startdate !== undefined && enddate !== undefined){
             $.ajax({
                 url: DatabaseConnectionHelper() + "GetMonthlyTourDataController.php",
                 type: "POST",
                 data: {
                     startdate: startdate,
+                    // startdate: firstDay,
                     enddate: enddate,
                     guideId: guideId,
                 },
@@ -1535,7 +1537,7 @@ class MonthlyReport extends Component{
             let data = JSON.parse(result);
             let inbound = [];
             let local = [];
-            
+
             for (let i = 0; i < data.length; i++) {
                 data[i][3] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
             }

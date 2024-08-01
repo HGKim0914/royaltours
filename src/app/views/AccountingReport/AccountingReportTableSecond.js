@@ -3,6 +3,17 @@ import {Table} from 'react-materialize';
 import $ from 'jquery';
 
 const SecondTable = (props) => {
+    if (!props.plusfactor) return <></>
+    if (!props.minusfactor) return <></>
+    if (!props.guideTipInbound) return <></>
+    if (!props.guideTipLocal) return <></>
+    console.log(props.plusfactor)
+
+    // console.log(props.plusfactor)
+    // console.log(props.minusfactor)
+    // console.log(props.guideTipInbound)
+    // console.log(props.guideTipLocal)
+
     var cashsettlementTotal = 0;
     //Length of plusfactor & minus factor
     const plusfactorObj = [];
