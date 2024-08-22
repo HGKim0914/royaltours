@@ -254,7 +254,6 @@ class MonthlyReport extends Component{
             totalNetIncomeArr.push(0);
             totalNetIncomeAccumulatedArr.push(0);
         }
-        console.log(this.state)
         // for (let i = 0; i < this.state.tourProfitInbound.length; i++) {
         //     if (this.state.tourProfitInbound[i][2].includes('2023-08')) {
         //         console.log(Date.parse(this.state.tourProfitInbound[i][2]));
@@ -1071,9 +1070,9 @@ class MonthlyReport extends Component{
     }
 
     callData = (startdate, enddate, guideId) => {
-        console.log(startdate, enddate, guideId)
-        console.log(Date.parse(startdate))
-        console.log(Date.parse(enddate))
+        // console.log(startdate, enddate, guideId)
+        // console.log(Date.parse(startdate))
+        // console.log(Date.parse(enddate))
         // var firstDay = new Date(startdate.getFullYear(), startdate.getMonth(), 1);
         if(startdate !== undefined && enddate !== undefined){
             $.ajax({
@@ -1087,7 +1086,6 @@ class MonthlyReport extends Component{
                 },
                 success: (result) =>{
                     this.setTourData(result);
-                    console.log(JSON.parse(result))
                 }
             });
         }
@@ -1100,11 +1098,6 @@ class MonthlyReport extends Component{
         var inboundData = [];
 
         for(var idx=0; idx < data.length; idx++){
-            // if(data[idx][9] === "로컬"){
-            //     localData.push(data[idx]);
-            // }else if(data[idx][9]  === "인바운드"){
-            //     inboundData.push(data[idx]);
-            // };
             if(data[idx][1] === "로컬"){
                 localData.push(data[idx]);
             }else if(data[idx][1]  === "인바운드"){
@@ -1182,31 +1175,33 @@ class MonthlyReport extends Component{
         //     }
         // });
     }
-
+    
     callShoppingData = () => {
         //Inbound
         $.ajax({
             url: DatabaseConnectionHelper() + "GetMonthlyShoppingDataController.php",
             type: "POST",
             data: {
-                data: this.state.inboundData
+                // data: this.state.inboundData
+                data: this.state.data
             },
             success: (result) =>{
-                this.setShoppingDataInbound(result);
+                // this.setShoppingDataInbound(result);
+                this.setShoppingData(result);
             }
         });
 
         //Local
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyShoppingDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.localData
-            },
-            success: (result) =>{
-                this.setShoppingDataLocal(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyShoppingDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.localData
+        //     },
+        //     success: (result) =>{
+        //         this.setShoppingDataLocal(result);
+        //     }
+        // });
     }
 
     callOptionData = () => {
@@ -1215,24 +1210,26 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyOptionDataController.php",
             type: "POST",
             data: {
-                data: this.state.inboundData
+                // data: this.state.inboundData
+                data: this.state.data
             },
             success: (result) =>{
-                this.setOptionDataInbound(result);
+                this.setOptionData(result);
+                // this.setOptionDataInbound(result);
             }
         });
 
         //Local
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyOptionDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.localData
-            },
-            success: (result) =>{
-                this.setOptionDataLocal(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyOptionDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.localData
+        //     },
+        //     success: (result) =>{
+        //         this.setOptionDataLocal(result);
+        //     }
+        // });
     }
 
     callHBData = () => {
@@ -1241,24 +1238,26 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyHBDataController.php",
             type: "POST",
             data: {
-                data: this.state.inboundData
+                // data: this.state.inboundData
+                data: this.state.data
             },
             success: (result) =>{
-                this.setHBDataInbound(result);
+                // this.setHBDataInbound(result);
+                this.setHBData(result);
             }
         });
 
         //Local
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyHBDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.localData
-            },
-            success: (result) =>{
-                this.setHBDataLocal(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyHBDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.localData
+        //     },
+        //     success: (result) =>{
+        //         this.setHBDataLocal(result);
+        //     }
+        // });
     }
 
     callRestaurantData = () => {
@@ -1267,41 +1266,58 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyRestaurantDataController.php",
             type: "POST",
             data: {
-                data: this.state.localData,
+                // data: this.state.localData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setRestaurantDataLocal(result);
+                // this.setRestaurantDataLocal(result);
+                this.setRestaurantData(result);
             }
         });
 
         //Inbound
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyRestaurantDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.inboundData,
-            },
-            success: (result) =>{
-                this.setRestaurantDataInbound(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyRestaurantDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.inboundData,
+        //     },
+        //     success: (result) =>{
+        //         this.setRestaurantDataInbound(result);
+        //     }
+        // });
     }
 
     callMiscExpenseData = async () => {
         //Get misc expense
-        var resultInbound = await setData('GetMonthlyMiscExpense.php', this.state.inboundData);
-        if(isJson(resultInbound)){
-            this.setState({
-                miscExpenseInbound: JSON.parse(resultInbound)
-            });
-        }
+        var data = await setData('GetMonthlyMiscExpense.php', this.state.data);
+        if (isJson(data)) {
+            data = JSON.parse(data);
+            let inbound = [];
+            let local = [];
 
-        var resultLocal = await setData('GetMonthlyMiscExpense.php', this.state.localData);
-        if(isJson(resultLocal)){
+            for (let i = 0; i < data.length; i++) {
+                data[i][3] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                miscExpenseLocal: JSON.parse(resultLocal)
+                miscExpenseInbound: inbound,
+                miscExpenseLocal: local
             });
         }
+        
+        // var resultInbound = await setData('GetMonthlyMiscExpense.php', this.state.inboundData);
+        // if(isJson(resultInbound)){
+        //     this.setState({
+        //         miscExpenseInbound: JSON.parse(resultInbound)
+        //     });
+        // }
+
+        // var resultLocal = await setData('GetMonthlyMiscExpense.php', this.state.localData);
+        // if(isJson(resultLocal)){
+        //     this.setState({
+        //         miscExpenseLocal: JSON.parse(resultLocal)
+        //     });
+        // }
     }
 
     callHotelData = () => {
@@ -1310,24 +1326,26 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyHotelDataController.php",
             type: "POST",
             data: {
-                data: this.state.localData,
+                // data: this.state.localData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setHotelDataLocal(result);
+                // this.setHotelDataLocal(result);
+                this.setHotelData(result);
             }
         });
 
         //Local
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyHotelDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.inboundData,
-            },
-            success: (result) =>{
-                this.setHotelDataInbound(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyHotelDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.inboundData,
+        //     },
+        //     success: (result) =>{
+        //         this.setHotelDataInbound(result);
+        //     }
+        // });
     }
 
     callAttrData = () => {
@@ -1335,23 +1353,25 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyAttrDataController.php",
             type: "POST",
             data: {
-                data: this.state.localData,
+                // data: this.state.localData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setAttrDataLocal(result);
+                // this.setAttrDataLocal(result);
+                this.setAttrData(result);
             }
         });
 
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyAttrDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.inboundData,
-            },
-            success: (result) =>{
-                this.setAttrDataInbound(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyAttrDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.inboundData,
+        //     },
+        //     success: (result) =>{
+        //         this.setAttrDataInbound(result);
+        //     }
+        // });
     }
 
     callCarRentalData = () => {
@@ -1359,23 +1379,25 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyCarRentalDataController.php",
             type: "POST",
             data: {
-                data: this.state.localData,
+                // data: this.state.localData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setCarRentalDataLocal(result);
+                // this.setCarRentalDataLocal(result);
+                this.setCarRentalData(result);
             }
         });
 
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyCarRentalDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.inboundData,
-            },
-            success: (result) =>{
-                this.setCarRentalDataInbound(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyCarRentalDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.inboundData,
+        //     },
+        //     success: (result) =>{
+        //         this.setCarRentalDataInbound(result);
+        //     }
+        // });
     }
 
     callExtraCarRentalData = () => {
@@ -1383,23 +1405,25 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyCarRentalExtraDataController.php",
             type: "POST",
             data: {
-                data: this.state.inboundData,
+                // data: this.state.inboundData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setCarRentalExtraDataInbound(result);
+                // this.setCarRentalExtraDataInbound(result);
+                this.setCarRentalExtraData(result);
             }
         });
 
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyCarRentalExtraDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.localData,
-            },
-            success: (result) =>{
-                this.setCarRentalExtraDataLocal(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyCarRentalExtraDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.localData,
+        //     },
+        //     success: (result) =>{
+        //         this.setCarRentalExtraDataLocal(result);
+        //     }
+        // });
     }
 
     callGasExpenseData = () => {
@@ -1407,23 +1431,25 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyGasExpenseDataController.php",
             type: "POST",
             data: {
-                data: this.state.localData,
+                // data: this.state.localData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setGasExpenseDataLocal(result);
+                // this.setGasExpenseDataLocal(result);
+                this.setGasExpenseData(result);
             }
         });
 
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyGasExpenseDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.inboundData,
-            },
-            success: (result) =>{
-                this.setGasExpenseDataInbound(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyGasExpenseDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.inboundData,
+        //     },
+        //     success: (result) =>{
+        //         this.setGasExpenseDataInbound(result);
+        //     }
+        // });
     }
 
     callParkingExpenseData = () => {
@@ -1431,23 +1457,25 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyParkingExpenseDataController.php",
             type: "POST",
             data: {
-                data: this.state.localData,
+                // data: this.state.localData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setParkingExpenseDataLocal(result);
+                // this.setParkingExpenseDataLocal(result);
+                this.setParkingExpenseData(result);
             }
         });
 
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyParkingExpenseDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.inboundData,
-            },
-            success: (result) =>{
-                this.setParkingExpenseDataInbound(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyParkingExpenseDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.inboundData,
+        //     },
+        //     success: (result) =>{
+        //         this.setParkingExpenseDataInbound(result);
+        //     }
+        // });
     }
 
     callGuideExpenseData = () => {
@@ -1456,81 +1484,100 @@ class MonthlyReport extends Component{
             url: DatabaseConnectionHelper() + "GetMonthlyGuideExpenseDataController.php",
             type: "POST",
             data: {
-                data: this.state.inboundData,
+                // data: this.state.inboundData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setGuideExpenseDataInbound(result);
+                // this.setGuideExpenseDataInbound(result);
+                this.setGuideExpenseData(result);
             }
         });
 
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyGuideExpenseDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.localData,
-            },
-            success: (result) =>{
-                this.setGuideExpenseDataLocal(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyGuideExpenseDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.localData,
+        //     },
+        //     success: (result) =>{
+        //         this.setGuideExpenseDataLocal(result);
+        //     }
+        // });
 
         //픽업비용
         $.ajax({
             url: DatabaseConnectionHelper() + "GetMonthlyGuidePickupExpenseDataController.php",
             type: "POST",
             data: {
-                data: this.state.inboundData,
+                // data: this.state.inboundData,
+                data: this.state.data,
             },
             success: (result) =>{
-                this.setGuidePickupExpenseDataInbound(result);
+                // this.setGuidePickupExpenseDataInbound(result);
+                this.setGuidePickupExpenseData(result);
             }
         });
 
-        $.ajax({
-            url: DatabaseConnectionHelper() + "GetMonthlyGuidePickupExpenseDataController.php",
-            type: "POST",
-            data: {
-                data: this.state.localData,
-            },
-            success: (result) =>{
-                this.setGuidePickupExpenseDataLocal(result);
-            }
-        });
+        // $.ajax({
+        //     url: DatabaseConnectionHelper() + "GetMonthlyGuidePickupExpenseDataController.php",
+        //     type: "POST",
+        //     data: {
+        //         data: this.state.localData,
+        //     },
+        //     success: (result) =>{
+        //         this.setGuidePickupExpenseDataLocal(result);
+        //     }
+        // });
     }
 
     //Get Guide profit
     callGuideProfit = async () => {
-        var resultInbound = await setData("GetGuideProfit.php", this.state.inboundData);
-        //SET GUIDE PROFIT DATA WHEN EXISTS
-        if(isJson(resultInbound)){
+        var data = await setData('GetGuideProfit.php', this.state.data);
+        if (isJson(data)) {
+            data = JSON.parse(data);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                guideProfitInbound: JSON.parse(resultInbound)
+                guideProfitInbound: inbound,
+                guideProfitLocal: local
             });
         }
+    //     var resultInbound = await setData("GetGuideProfit.php", this.state.inboundData);
+    //     //SET GUIDE PROFIT DATA WHEN EXISTS
+    //     if(isJson(resultInbound)){
+    //         this.setState({
+    //             guideProfitInbound: JSON.parse(resultInbound)
+    //         });
+    //     }
 
-        var resultLocal = await setData("GetGuideProfit.php", this.state.localData);
-        //calculate local
-        if(isJson(resultLocal)){
-            this.setState({
-                guideProfitLocal: JSON.parse(resultLocal)
-            });
-        }
+    //     var resultLocal = await setData("GetGuideProfit.php", this.state.localData);
+    //     //calculate local
+    //     if(isJson(resultLocal)){
+    //         this.setState({
+    //             guideProfitLocal: JSON.parse(resultLocal)
+    //         });
+    //     }
     }
 
-    callGuideExpense = async () => {
-        var resultInbound = await setData("GetGuideExpense.php", this.state.inboundData);
-        if(isJson(resultInbound)){
-            this.setState({
-                guideExpenseInbound: JSON.parse(resultInbound),
-            })
-        }
-        var resultLocal = await setData("GetGuideExpense.php", this.state.localData);
-        if(isJson(resultLocal)){
-            this.setState({
-                guideExpenseLocal: JSON.parse(resultLocal)
-            })
-        }
-    }
+    // 아무것도 안함
+    // callGuideExpense = async () => {
+    //     var resultInbound = await setData("GetGuideExpense.php", this.state.inboundData);
+    //     if(isJson(resultInbound)){
+    //         this.setState({
+    //             guideExpenseInbound: JSON.parse(resultInbound),
+    //         })
+    //     }
+    //     var resultLocal = await setData("GetGuideExpense.php", this.state.localData);
+    //     if(isJson(resultLocal)){
+    //         this.setState({
+    //             guideExpenseLocal: JSON.parse(resultLocal)
+    //         })
+    //     }
+    // }
     
     setTourProfitData = (result) => {
         if(result !== "" && result !== "false"){
@@ -1544,8 +1591,6 @@ class MonthlyReport extends Component{
             this.setState({
                 tourProfitInbound: inbound,
                 tourProfitLocal: local
-                // tourProfitInbound: inbound,
-                // tourProfitLocal: local
             })
         }
     }
@@ -1559,226 +1604,315 @@ class MonthlyReport extends Component{
     //     }
     // }
 
-    setGuideExpenseDataInbound = (result) => {
+    setGuideExpenseData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                guideExpenseInbound: data,
+                guideExpenseInbound: inbound,
+                guideExpenseLocal: local
             })
         }
     }
 
-    setGuideExpenseDataLocal = (result) => {
+    // setGuideExpenseDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             guideExpenseLocal: data,
+    //         })
+    //     }
+    // }
+
+    setGuidePickupExpenseData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                guideExpenseLocal: data,
+                guidePickupExpenseInbound: inbound,
+                guidePickupExpenseLocal: local
             })
         }
     }
 
-    setGuidePickupExpenseDataInbound = (result) => {
+    // setGuidePickupExpenseDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             guidePickupExpenseLocal: data,
+    //         })
+    //     }
+    // }
+
+    setCarRentalExtraData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                guidePickupExpenseInbound: data,
+                carRentalExtraExpenseInbound: inbound,
+                carRentalExtraExpenseLocal: local
             })
         }
     }
 
-    setGuidePickupExpenseDataLocal = (result) => {
+    // setCarRentalExtraDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             carRentalExtraExpenseLocal: data,
+    //         })
+    //     }
+    // }
+
+    setParkingExpenseData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                guidePickupExpenseLocal: data,
+                parkingExpenseInbound: inbound,
+                parkingExpenseLocal: local
             })
         }
     }
 
-    setCarRentalExtraDataInbound = (result) => {
+    // setParkingExpenseDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             parkingExpenseLocal: data,
+    //         })
+    //     }
+    // }
+
+    setGasExpenseData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                carRentalExtraExpenseInbound: data,
+                gasExpenseInbound: inbound,
+                gasExpenseLocal: local
             })
         }
     }
 
-    setCarRentalExtraDataLocal = (result) => {
+    // setGasExpenseDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             gasExpenseLocal: data,
+    //         })
+    //     }
+    // }
+
+    setCarRentalData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                carRentalExtraExpenseLocal: data,
+                carRentalExpenseInbound: inbound,
+                carRentalExpenseLocal: local
+            })
+        }
+    }
+    // setCarRentalDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             carRentalExpenseLocal: data,
+    //         })
+    //     }
+    // }
+
+    setAttrData = (result) => {
+        if(result !== "" && result !== "false"){
+            var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
+            this.setState({
+                attrExpenseInbound: inbound,
+                attrExpenseLocal: local
             })
         }
     }
 
-    setParkingExpenseDataInbound = (result) => {
+    // setAttrDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             attrExpenseLocal:data,
+    //         });
+    //     }
+    // }
+
+    setHotelData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                parkingExpenseInbound: data,
+                hotelExpenseInbound: inbound,
+                hotelExpenseLocal: local
             })
         }
     }
 
-    setParkingExpenseDataLocal = (result) => {
+    // setHotelDataInbound = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             hotelExpenseInbound:data,
+    //         });
+    //     }
+    // }
+
+    setRestaurantData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                parkingExpenseLocal: data,
+                restExpenseInbound: inbound,
+                restExpenseLocal: local
             })
-        }
-    }
-
-    setGasExpenseDataInbound = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                gasExpenseInbound: data,
-            })
-        }
-    }
-
-    setGasExpenseDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                gasExpenseLocal: data,
-            })
-        }
-    }
-
-    setCarRentalDataInbound = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                carRentalExpenseInbound: data,
-            })
-        }
-    }
-    setCarRentalDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                carRentalExpenseLocal: data,
-            })
-        }
-    }
-
-    setAttrDataInbound = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                attrExpenseInbound:data,
-            });
-        }
-    }
-
-    setAttrDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                attrExpenseLocal:data,
-            });
-        }
-    }
-
-    setHotelDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                hotelExpenseLocal:data,
-            });
-        }
-    }
-
-    setHotelDataInbound = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                hotelExpenseInbound:data,
-            });
-        }
-    }
-
-    setRestaurantDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-            this.setState({
-                restExpenseLocal: data,
-            });
         }
     }
     
-    setRestaurantDataInbound = (result) => {
+    // setRestaurantDataInbound = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             restExpenseInbound: data,
+    //         });
+    //     }
+    // }
+
+    setShoppingData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
+
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                restExpenseInbound: data,
-            });
+                shoppingProfitInbound: inbound,
+                shoppingProfitLocal: local
+            })
         }
     }
+    // setShoppingDataInbound = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         this.setState({
+    //             shoppingProfitInbound: data
+    //         })
+    //     }
+    // }
 
-    setShoppingDataInbound = (result) => {
+    // setShoppingDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+    //         console.log(data)
+    //         this.setState({
+    //             shoppingProfitLocal: data
+    //         })
+    //     }
+    // }
+
+    setOptionData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
 
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                shoppingProfitInbound: data
+                optionProfitInbound: inbound,
+                optionProfitLocal: local
             })
         }
     }
 
-    setShoppingDataLocal = (result) => {
+    // setOptionDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
+            
+    //         this.setState({
+    //             optionProfitLocal: data
+    //         });
+    //     }
+    // }
+
+    setHBData = (result) => {
         if(result !== "" && result !== "false"){
             var data = JSON.parse(result);
+            let inbound = [];
+            let local = [];
 
+            for (let i = 0; i < data.length; i++) {
+                data[i][4] === '로컬' ? local.push(data[i]) : inbound.push(data[i]);
+            }
             this.setState({
-                shoppingProfitLocal: data
+                hbProfitInbound: inbound,
+                hbProfitLocal: local
             })
         }
     }
 
-    setOptionDataInbound = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
+    // setHBDataLocal = (result) => {
+    //     if(result !== "" && result !== "false"){
+    //         var data = JSON.parse(result);
 
-            this.setState({
-                optionProfitInbound: data
-            });
-        }
-    }
-
-    setOptionDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-
-            this.setState({
-                optionProfitLocal: data
-            });
-        }
-    }
-
-    setHBDataInbound = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-
-            this.setState({
-                hbProfitInbound: data
-            });
-        }
-    }
-
-    setHBDataLocal = (result) => {
-        if(result !== "" && result !== "false"){
-            var data = JSON.parse(result);
-
-            this.setState({
-                hbProfitLocal: data
-            });
-        }
-    }
+    //         this.setState({
+    //             hbProfitLocal: data
+    //         });
+    //     }
+    // }
 }
 
 export default MonthlyReport;

@@ -60,6 +60,9 @@ class AccountingReportTable extends Component{
             totalProfitShopping: 0,
             totalProfitOption: 0,
             totalProfitHB: 0,
+
+            //테스트
+            // cashSettlement: 0,
         };
 
         //Call data
@@ -97,6 +100,9 @@ class AccountingReportTable extends Component{
         this.callGuideTipInbound();
         this.callGuideTipLocal();
         this.callAdditionalNote();
+
+        //테스트
+        // this.setCashSettlement();
     }
 
     render(){
@@ -113,6 +119,9 @@ class AccountingReportTable extends Component{
         var minusfactor = [];
         var guideTipInbound = [];
         var guideTipLocal = [];
+
+        // 테스트
+        // var cashSettlemexnt = this.state.cashSettlement;
         
         if(this.props.tourinfo) tourinfo = this.props.tourinfo;
 
@@ -172,6 +181,7 @@ class AccountingReportTable extends Component{
         if(this.state.guideTipLocal.length > 0){
             guideTipLocal = this.state.guideTipLocal;
         }
+
         return !this.props.tourinfo ? 'Loading...' : (
             <Suspense fallback={
                 <div className="loading">
@@ -179,7 +189,7 @@ class AccountingReportTable extends Component{
                     로딩중입니다. 잠시만 기다려주세요.
                 </div>}
             >
-                <div>
+                <div id="print-content">
                     <FirstTable tourinfo={tourinfo}
                         restaurantExpense={restaurantExpense}
                         hotelExpense={hotelExpense}
@@ -195,6 +205,7 @@ class AccountingReportTable extends Component{
                         minusfactor={minusfactor}
                         guideTipInbound={guideTipInbound}
                         guideTipLocal={guideTipLocal}
+                        // cashSettlement={this.setCashSettlement}
                     />
                     <MemoTable data={this.state.additionalNote}/>
                     {totalNetIncome}
@@ -536,6 +547,15 @@ class AccountingReportTable extends Component{
             })
         }
     }
+
+    // setCashSettlement = (result) => {
+    //     if(result !== 0 && result !== undefined){
+    //         //var data = JSON.parse(result);
+    //         this.setState({
+    //             cashSettlement: result,
+    //         })
+    //     }
+    // }
 }
 export default AccountingReportTable;
 

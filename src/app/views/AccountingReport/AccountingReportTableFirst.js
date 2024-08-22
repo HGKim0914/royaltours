@@ -13,7 +13,6 @@ const FirstTable = (props) => {
     if (props.optionProfit === undefined) return <></>
     if (props.hbProfit === undefined) return <></>
     if (props.totalData === undefined) return <></>
-    console.log(props)
 
     const restaurantTable = [];
     const hotelTable = [];
@@ -189,7 +188,7 @@ const FirstTable = (props) => {
                     {/* Hotel */}
                     <tr>
                         <th rowSpan={hotelExpenseIdx + 2}>호텔</th>
-                        <th>체크인 날짜 <br />& 기간</th>
+                        <th>체크인 날짜 & 기간</th>
                         <th colSpan="2">호텔명</th>
                         <th>지급방식</th>
                         <th>룸 수</th>
@@ -381,7 +380,7 @@ const DisplayHotelExpense = (props) => {
 
     return(
         <tr>
-            <td>{props.data[3]} {(days !== 0)? "& "+days+"박": null}</td>
+            <td>{props.data[3]}{(days !== 0)? " & "+days+"N": null}</td>
             <td colSpan="2">{(props.data[9] !== null)?props.data[9]:"-"}</td>
             <td>{(props.data[5] !== null)?props.data[5]:"-"}</td>
             <td>{(props.data[6] !== null)?props.data[6]:"-"}</td>

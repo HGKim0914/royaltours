@@ -9,7 +9,7 @@
             $row = [];
             for($idx = 0; $idx < count($data); $idx++){
                 $tourcode = $data[$idx][0];
-                $query = "SELECT r.tourcode, r.restid, r.restamount, tour.startdate
+                $query = "SELECT r.tourcode, r.restid, r.restamount, tour.startdate, tour.inboundlocal
                             FROM tour_restaurant AS r, tour 
                             WHERE r.tourcode = '$tourcode' AND r.tourcode = tour.tourcode";
                 $qresult = mysqli_query($mysqli, $query);

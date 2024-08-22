@@ -25,9 +25,10 @@ class TourList extends Component{
             </Col>
         );
     }
-
+    
     TourlistTableComponent = () => {
         let tourlist = [];
+        console.log(this.state.data)
         for(var idx=0; idx < this.state.data.length; idx++){
             // if (idx < 10) tourlist.push(<this.TourComponent key={idx} data={this.state.data[idx]} />);
             if (idx < 20) tourlist.push(
@@ -40,6 +41,7 @@ class TourList extends Component{
             );
             else break;
         }
+        console.log(tourlist)
 
         return(
             <div className="add-tour">

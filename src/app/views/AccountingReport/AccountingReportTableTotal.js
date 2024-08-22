@@ -15,11 +15,14 @@ const AccountingReportTableTotal = (props) => {
         data = ["$0", "$0", "$0", "$0", "$0", "$0", "$0"];
     }
     
-    //total netincome
-    var tourExpense = $('#total-expense').children().last().text();
-    var totalProfit = $('#total-profit').children().last().text();
-    totalNetIncome = parseFloat(totalProfit.replace('$', '')) - parseFloat(tourExpense.replace('$', '')) + parseFloat(tourProfit);
+    let tourExpense = 0;
+    let totalProfit = 0;
 
+    tourExpense = $('#total-expense').children().last().text();
+    totalProfit = $('#total-profit').children().last().text();
+    totalNetIncome = parseFloat(totalProfit.replace('$', '')) - parseFloat(tourExpense.replace('$', '')) + parseFloat(tourProfit);
+    //total netincome
+    
     return(
         <Table className="accounting-total">
             <thead>

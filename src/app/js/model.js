@@ -12,6 +12,5 @@ export const setData = (URL, param) => {
             // console.log(r);
         }
     });
-
     return result;
 }

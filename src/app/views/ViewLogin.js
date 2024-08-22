@@ -63,6 +63,13 @@ class Loginpage extends Component{
         if(this.state.msg !== ""){
             msg = this.state.msg;
         }
+
+        document.body.onkeydown = function(e){
+            if (e.key === "Enter") {
+                this.loginHandler();
+            }
+        };
+
         return(
             <Row>
             {/* Title */}
@@ -80,7 +87,7 @@ class Loginpage extends Component{
                     {/* <form action={DatabaseConnectionHelper() + "LoginController.php"} method="POST"> */}
                     <form>
                         <input placeholder="아이디" type="text" name="id" id="input-id" ref={(obj) => this.idObj = obj}/> <br />
-                        <input placeholder="비밀번호" type="password" name="password" id="input-pwd" ref={(obj) => this.pwdObj = obj}/><br /><br />
+                        <input placeholder="비밀번호" type="password" name="password" id="input-pwd" ref={(obj) => this.pwdObj = obj} onKeyDown={this.loginHandler}/><br /><br />
                         <input type="button" value="로그인" className="btn" id="btn-login" onClick={this.loginHandler}/>
                         <div className="dir-register">
                             <a href="/register">
@@ -99,8 +106,9 @@ class Loginpage extends Component{
     }
 
     //Login Button Event Handler
-    loginHandler = () => {
+    loginHandler = (e) => {
         if(this.idObj.value !== "" && this.pwdObj.value !== ""){
+             
             $.ajax({
                 url: DatabaseConnectionHelper() + "LoginController.php",
                 type: "POST",
@@ -135,5 +143,6 @@ class Loginpage extends Component{
                 msg: <p id="msg-login-fail"><img src={require('../imgs/warning.png')} alt="img-warning"/>아이디와 비밀번호를 모두 입력해주세요.</p>
             });
         }
+    
     }
 }

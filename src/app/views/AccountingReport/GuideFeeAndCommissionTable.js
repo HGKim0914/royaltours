@@ -25,9 +25,8 @@ const GuideFeeAndCommisionTable = (props) => {
 
     
     let guideFee = 0;
-    if (props.guideFee !== undefined) guideFee = props.guideFee[5];
-
-    // console.log(props.guideShoppingEarning)
+    if (props.guideFee !== undefined) guideFee = props.guideFee[5] ? Number(props.guideFee[5]) : 0;
+    
     let guideShoppingTableObj = [];
     let guideShoppingSum = 0;
     if (props.guideShoppingEarning !== undefined && props.guideShoppingEarning.length > 0) {
@@ -39,58 +38,37 @@ const GuideFeeAndCommisionTable = (props) => {
             guideShoppingTableObj.push(<tr key={shopName}><td>{shopName}</td><td>${guideShoppingEarning}</td></tr>)
         }
     }
-
-    // console.log(props.optionCost)
-    // console.log(props.optionPaid)
+    if (isNaN(guideShoppingSum)) guideShoppingSum = 0;
     
     let ccAmountDiffDepositObj = [];
-    let diffAmountSum = 0;
-    // let optionPaidObj = "";
-    // if (props.optionPaid !== undefined) optionPaidObj = props.optionPaid;
-    let optionPaidTableObj = [];
     let companyCollectedAmount = 0;
     if (props.companyCollectedAmount !== undefined) companyCollectedAmount = props.companyCollectedAmount[3] ? props.companyCollectedAmount[3] : 0;
-    let rowSpan = 1;
-    // console.log(props.companyCollectedAmount)
+
     let depositNeededAmount = 0;
 
-    // console.log(optionPaid)
-    // if (props.optionProfit !== undefined && props.optionCost.length > 0 && props.optionPaid !== undefined) {
-        for (let i = 0; i < props.optionCost.length; i++) {
-            let optionName = props.optionCost[i][11];
-            let cardPaidAmount = props.optionCost[i][4];
-            depositNeededAmount += Number(cardPaidAmount);
-            
+    for (let i = 0; i < props.optionCost.length; i++) {
+        let optionName = props.optionCost[i][11];
+        let cardPaidAmount = props.optionCost[i][4];
+        depositNeededAmount += Number(cardPaidAmount);
+        
+        ccAmountDiffDepositObj.push(
+            <tr key={optionName}>
+                <td>{optionName}</td>
+                <td>${cardPaidAmount}</td>
+                {i === 0 ? <td rowSpan={props.optionCost.length}>${companyCollectedAmount}</td> : null}
+            </tr>
+        )
+        
+    }
+    depositNeededAmount = Number(depositNeededAmount) - Number(companyCollectedAmount);
 
-            // rowSpan += 1;
-            ccAmountDiffDepositObj.push(
-                <tr key={optionName}>
-                    <td>{optionName}</td>
-                    <td>${cardPaidAmount}</td>
-                    {i === 0 ? <td rowSpan={props.optionCost.length}>${companyCollectedAmount}</td> : null}
-                </tr>
-            )
-            
-
-            // for (let j = 0; j < props.optionPaid.length; j++) {
-
-                
-
-            //     console.log("asd")
-            //     if (optionName === props.optionPaid[j][8]) {
-                    
-            //     }
-            // }
-            
-            // diffAmountSum += Number(depositNeededAmount);
-
-            // ccAmountDiffDepositObj.push(<tr key={optionName}><td>{optionName}</td><td>${cardPaidAmount}</td><td>${companyCollectAmount}</td><td>${depositNeededAmount}</td></tr>);
-        }
-        depositNeededAmount = Number(depositNeededAmount) - Number(companyCollectedAmount);
-    // }
-
+    let settleAmount = Number($('#cashsettlement').text().replace("$", ""));
+    let amountAfterDeduction = 0;
+    amountAfterDeduction = (settleAmount + Number(guideFee) + Number(guideShoppingSum) - Number(depositNeededAmount)).toFixed(2);
+    
     return(
         <>
+            {guideFee <= 0 ? <></> :
             <Table className="accounting-total">
                 <thead>
                     <tr>
@@ -114,15 +92,16 @@ const GuideFeeAndCommisionTable = (props) => {
                         <td>{tourEndDate}</td>
                         <td>{getDateDiff(tourStartDate, tourEndDate) + 1}</td>
                         {/* <td></td> */}
-                        <td>${guideFee}</td>
+                        <td>{guideFee.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
                     </tr>
                     <tr>
                         <td colSpan="4">소계</td>
-                        <td>$</td>
+                        <td>{guideFee.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
                     </tr>
                 </tbody>
-            </Table>
+            </Table>}
 
+            {guideShoppingSum <= 0 ? <></> :
             <Table className="accounting-total">
                 <thead>
                     <tr>
@@ -139,11 +118,12 @@ const GuideFeeAndCommisionTable = (props) => {
                     {guideShoppingTableObj}
                     <tr>
                         <td>소계</td>
-                        <td>${guideShoppingSum}</td>
+                        <td>{guideShoppingSum.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
                     </tr>
                 </tbody>
-            </Table>
-
+            </Table>}
+            
+            {depositNeededAmount === 0 ? <></> :
             <Table className="accounting-total">
                 <thead>
                     <tr>
@@ -161,11 +141,11 @@ const GuideFeeAndCommisionTable = (props) => {
                     {ccAmountDiffDepositObj}
                     <tr>
                         <td colSpan="2">소계 (a)-(b)</td>
-                        <td>${depositNeededAmount}</td>
+                        <td>{depositNeededAmount.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
                     </tr>
                 </tbody>
-            </Table>
-
+            </Table>}
+            
             <Table className="accounting-total">
                 <thead>
                     <tr>
@@ -176,18 +156,19 @@ const GuideFeeAndCommisionTable = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <th>정산금액</th>
-                        <th>가이드피 청구</th>
-                        <th>쇼핑 커미션 청구</th>
-                        <th>카드 지급액</th>
+                        <th>정산금액(+)</th>
+                        {guideFee <= 0 ? <></> : <th>가이드피 청구(+)</th>}
+                        {guideShoppingSum <= 0 ? <></> : <th>쇼핑 커미션 청구(+)</th>}
+                        {depositNeededAmount === 0 ? <></> : <th>카드 지급액(-)</th>}
                         <th>차감 후 금액</th>
                     </tr>
                     <tr>
-                        <td>${}</td>
-                        <td>${}</td>
-                        <td>${}</td>
-                        <td>${}</td>
-                        <td>${}</td>
+                        <td>{settleAmount.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
+                        {guideFee <= 0 ? <></> : <td>{guideFee.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>}
+                        {guideShoppingSum <= 0 ? <></> : <td>{guideShoppingSum.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>}
+
+                        {depositNeededAmount === 0 ? <></> : <td>{depositNeededAmount.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>}
+                        <td>${amountAfterDeduction.toLocaleString("en-US", {style: "currency",currency: "USD"})}</td>
                     </tr>
                 </tbody>
             </Table>

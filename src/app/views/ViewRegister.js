@@ -67,7 +67,7 @@ class ViewRegister extends Component{
                             <input type="password" name="password2" id="input-pwd2" value={this.state.pwd2} onChange={this.updatePwd2}/> 
                             {msgPwdNotMatching}
 
-                            <label>이름</label>
+                            <label>이름 (한글 이름을 입력해주세요)</label>
                             <input type="text" name="name" id="input-name" value={this.state.name} onChange={this.updateName}/> 
 
                             <label>인증코드</label>

@@ -105,14 +105,14 @@ class GuideView extends Component {
         //When the app is constructred, display corresponding data based on the date
         var start = tourFrom;
         var end = tourTo;
-
         for(var idx=0; idx<rawData.length; idx++){
             if(rawData[idx][0] >= start && rawData[idx][0] <= end){
                 if(tourcode === null) {
                     data.push(rawData[idx]);
                 }else{
                     //if tourcode is defined by user, display only corresponding data
-                    if(rawData[idx][1] === tourcode)  data.push(rawData[idx]);
+                    // if(rawData[idx][1] === tourcode)  data.push(rawData[idx]);
+                    if(rawData[idx][1].includes(tourcode))  data.push(rawData[idx]);
                     
                 }
             }
@@ -301,7 +301,8 @@ class SearchData extends Component{
                             </Col>
                             <Col s={3}>
                                 <label>행사명</label>
-                                <input type="text" value={this.state.tourcode} onChange={this.changeTourcode} id="input-tourcode" />
+                                {/* <input type="text" value={this.state.tourcode} onChange={this.changeTourcode} id="input-tourcode" /> */}
+                                <input type="text" onChange={this.changeTourcode} id="input-tourcode" />
                             </Col>
                             <Col s={3}>
                                 <div className="waves-effect waves-light btn" id="btn-search" onClick={this.searchDataSentToParent}>
@@ -333,9 +334,14 @@ class SearchData extends Component{
         //Today is max value for dateTo
     }
     changeTourcode = (obj) => {
+        // this.setState({
+        //     tourcode: obj.target.value,
+        // });
         this.setState({
             tourcode: obj.target.value,
-        });
+        }, () => {
+            this.searchDataSentToParent();
+        })
     }
 }
 

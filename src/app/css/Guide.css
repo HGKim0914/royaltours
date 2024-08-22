@@ -23,10 +23,10 @@
 }
 .tourlist .search .input #input-date,
 .tourlist .search .input #input-tourcode{
-    border: 1px solid rgb(219, 219, 219);
+    /* border: 1px solid rgb(219, 219, 219); */
     border-right: 0px;
     font-size: 0.8em;
-    padding-left: 20px; 
+    /* padding-left: 20px;  datepicker 드랍다운 안나오게 유발하던 것*/ 
     height: 40px;
     width: 100.1%;
     margin: 5px;

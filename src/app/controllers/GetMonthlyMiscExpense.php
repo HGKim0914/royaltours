@@ -8,7 +8,7 @@
         $row = array();
         for($idx = 0; $idx < count($data); $idx++){
             $tourcode = $data[$idx][0];
-            $query = "SELECT TM.`tourcode`, TM.`misexpenseamount`, T.`startdate`
+            $query = "SELECT TM.`tourcode`, TM.`misexpenseamount`, T.`startdate`, T.`inboundlocal`
                         FROM tour_misexpense AS TM
                         INNER JOIN tour AS T ON T.`tourcode` = TM.`tourcode`
                         WHERE TM.tourcode = '$tourcode' AND TM.`misexpenseid` = 6";

@@ -10,7 +10,7 @@
     if($mysqli){
         if(isset($_POST['uploader'])){
             $id = $_POST['uploader'];
-            $query = "SELECT tour_uploaderinfo.addeddate, tour.startdate, tour.enddate, tour.tourcode FROM tour, tour_uploaderinfo WHERE tour_uploaderinfo.userid = '$id' AND tour.tourcode = tour_uploaderinfo.tourcode ORDER BY tour_uploaderinfo.addeddate DESC";
+            $query = "SELECT tour_uploaderinfo.addeddate, tour.startdate, tour.enddate, tour.tourcode FROM tour, tour_uploaderinfo WHERE tour_uploaderinfo.userid = '$id' AND tour.tourcode = tour_uploaderinfo.tourcode ORDER BY tour_uploaderinfo.addeddate DESC LIMIT 30";
             $qresult = mysqli_query($mysqli, $query);
             $count = mysqli_num_rows($qresult);
     

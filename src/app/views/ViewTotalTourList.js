@@ -223,19 +223,18 @@ class ViewTotalTourList extends Component{
     }
     //Search Data
     displayData = (rawData, tourFrom, tourTo, name) => {
-        var guideName = name;
+        var searchName = name; // 투어이름 or 투어가이드 이름
         const data = [];
-
         //When the app is constructed, display corresponding data based on the date
         var start = tourFrom;
         var end = tourTo;
 
         for(var idx=0; idx < rawData.length; idx++){
             if(rawData[idx][0] >= start && rawData[idx][0] <= end){
-                if(guideName === null){
+                if(searchName === null){
                     data.push(rawData[idx]);
                 }else{
-                    if(rawData[idx][2] === guideName){
+                    if(rawData[idx][1].includes(searchName) || rawData[idx][2].toLowerCase().includes(searchName)){
                         data.push(rawData[idx]);
                     }
                 }
@@ -244,12 +243,12 @@ class ViewTotalTourList extends Component{
         return data;
     }
     
-    searchTourListEventHandler = (tourFrom, tourTo, guideName) => {
+    searchTourListEventHandler = (tourFrom, tourTo, searchName) => {
         var data;
-        if(guideName === ""){
+        if(searchName === ""){
             data = this.displayData(this.state.rawData, tourFrom, tourTo, null);
         }else{
-            data = this.displayData(this.state.rawData, tourFrom, tourTo, guideName);
+            data = this.displayData(this.state.rawData, tourFrom, tourTo, searchName);
         }
 
         //Get 10 tour items in each page
@@ -295,7 +294,7 @@ class SearchData extends Component{
     state = {
         tourFrom: this.props.tourFrom,
         tourTo: this.props.tourTo,
-        guideName: "",
+        tourName: "",
     }
     render(){
         return(
@@ -317,8 +316,9 @@ class SearchData extends Component{
                                     <input type="date" id="input-date" value={this.state.tourTo} onChange={this.changeDateToHandler}/>
                                 </Col>
                                 <Col s={3}>
-                                    <label>가이드 성함</label>
-                                    <input type="text" id="input-name" value={this.state.guideName} onChange={this.changeGuideName}/>
+                                    {/* <label>가이드 성함</label> */}
+                                    <label>투어 이름</label>
+                                    <input type="text" id="input-name" value={this.state.guideName} onKeyUp={this.changeTourName} />
                                 </Col>
                                 <Col s={3}>
                                     <div className="waves-effect waves-light btn" id="btn-search" onClick={this.searchDataSentToParent}>
@@ -346,13 +346,16 @@ class SearchData extends Component{
         });
         //Today is max value for dateTo
     }
-    changeGuideName = (obj) => {
+    changeTourName = (obj) => {
         this.setState({
-            guideName: obj.target.value,
+            tourName: obj.target.value,
+        }, () => {
+            this.searchDataSentToParent();
         })
+        
     }
     searchDataSentToParent = () => {
-        this.props.onClick(this.state.tourFrom, this.state.tourTo, this.state.guideName);
+        this.props.onClick(this.state.tourFrom, this.state.tourTo, this.state.tourName);
     }
 }
 

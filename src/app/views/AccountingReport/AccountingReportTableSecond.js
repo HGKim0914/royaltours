@@ -7,14 +7,9 @@ const SecondTable = (props) => {
     if (!props.minusfactor) return <></>
     if (!props.guideTipInbound) return <></>
     if (!props.guideTipLocal) return <></>
-    console.log(props.plusfactor)
 
-    // console.log(props.plusfactor)
-    // console.log(props.minusfactor)
-    // console.log(props.guideTipInbound)
-    // console.log(props.guideTipLocal)
+    let cashsettlementTotal = 0;
 
-    var cashsettlementTotal = 0;
     //Length of plusfactor & minus factor
     const plusfactorObj = [];
     var counter = 0;
@@ -103,6 +98,11 @@ const SecondTable = (props) => {
     //Add beef and honey info in cashsettlement
     cashsettlementTotal += ($('.cs-row-6').find('.amount').text())? parseFloat($('.cs-row-6').find('.amount').text()) : 0;
     cashsettlementTotal += ($('.cs-row-7').find('.amount').text())? parseFloat($('.cs-row-7').find('.amount').text()) : 0;
+
+    // setTimeout(function() { //Start the timer
+    //     props.cashSettlement(cashsettlementTotal) //After 1 second, set render to true
+    // }.bind(this), 1000)
+    
     
     return(
         <Table>
@@ -174,7 +174,7 @@ const SecondTable = (props) => {
                 </tr>
                 <tr id="total-netincome">
                     <th colSpan="3">정산금액</th>
-                    <th colSpan="5">${cashsettlementTotal.toFixed(2)}</th>
+                    <th colSpan="5" id="cashsettlement">${cashsettlementTotal.toFixed(2)}</th>
                 </tr>
             </tbody>
         </Table>

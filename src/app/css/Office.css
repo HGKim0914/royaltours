@@ -126,7 +126,8 @@
 
 /* Accounting Report */
 .accounting-report{
-    width: 8.5in;
+    /* width: 8.5in; 240817 전에 쓰던 리포트 가로 크기 */
+    width: 10in;
     height: 20in;
     margin: auto;
     margin-top: 10px;
@@ -156,6 +157,7 @@
     background: rgb(145, 145, 145);
 }
 .accounting-report Table thead th,
+/* .accounting-repot Table tr th#title, */
 .accounting-report Table tbody th{
     background: rgb(231, 231, 231);
 }

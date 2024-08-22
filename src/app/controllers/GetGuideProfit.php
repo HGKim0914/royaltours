@@ -7,7 +7,7 @@
         $row = array();
         foreach($data as $dvalue){
             $tourcode = $dvalue[0];
-            $query  =   "SELECT TP.`tourcode`, TP.`id`, TP.`amount`, T.`startdate` 
+            $query  =   "SELECT TP.`tourcode`, TP.`id`, TP.`amount`, T.`startdate`, T.`inboundlocal`
                         FROM tour_plusfactor AS TP
                         INNER JOIN tour AS T ON T.`tourcode` = TP.`tourcode`
                         WHERE TP.`tourcode`= '$tourcode' AND (TP.`id` = 4 OR TP.`id` = 8)";

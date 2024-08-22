@@ -805,6 +805,7 @@ class ViewAccountingform extends Component {
                  $(this).parent().parent().next().children('td').first().next().next().children('span').first().next().text(),
                  $(this).parent().parent().next().children('td').first().next().next().children('span').first().next().next().text()
             ]);
+
             return result;
         });
 
@@ -822,10 +823,14 @@ class ViewAccountingform extends Component {
             ]);
             return result;
         });
+        console.log("Shopping:", shopping.toArray())
+        console.log("option:", option.toArray())
+        console.log("HB:", hb.toArray())
 
         var param = [tourcode, shopping.toArray(), option.toArray(), hb.toArray()];
 
         var result = await setData("SaveProfitController.php", param);
+        console.log(result + "aa")
         if(result){
             this.setState({
                 savedProfit: true,
