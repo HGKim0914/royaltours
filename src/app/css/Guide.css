@@ -173,7 +173,8 @@
 .accounting-form .input .empty{
     color:white;
 }
-/* cash-settlement */
+
+/*************** CASH SETTLEMENT ***************/
 .accounting-form .cash-settlement .desc h6{
     text-align: center;
     margin-top: 30px;
@@ -263,70 +264,86 @@
     margin-top: 6px;
     padding-left: 20px;
 }
-/* expense */
+
+/***************** EXPENSE *****************/
 .accounting-form .expense .input Table{
-    margin: auto;
-    width: 950px;
+    /* margin: auto; */
+    /* width: 950px; */
+    width: 100%;
 }
 
 .accounting-form .expense .input .desc h6{
     text-align: center;
 }
-.accounting-form .expense Table tbody tr {
+.accounting-form .expense Table tbody tr,
+.accounting-form .expense Table tbody td {
     border: 1px solid white;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    place-items: center;
 }
 
-/* Restaurant */
+/************** RESTAURANT **************/
 .accounting-form .expense Table tbody tr #title-rest{
-    width: 100px;
+    /* width: 100px; */
+    width: auto;
 }
 .accounting-form .expense Table tbody tr #option-rest-name{
-    width: 200px;
-    height: 43px;
+    /* width: 200px; */
+    width: auto;
+    /* height: 43px; */
+    height: auto;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-rest-amount,
 .accounting-form .expense Table tbody tr #input-rest-num-people{
-    width: 200px;
-    height: 40px;
+    width: auto;
+    /* width: 200px; */
+    height: 28px;
+    /* height: 30px; */
     font-size: 0.9em;
     margin-right: 5px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
     padding-left: 20px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 .accounting-form .expense Table tbody tr #option-rest,
 .accounting-form .expense Table tbody tr #option-rest-paymentmethod{
-    width: 200px;
-    height: 42px;
+    /* width: 200px; */
+    width: auto;
+    /* height: 42px; */
+    height: 30px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
-/* Hotel */
+
+
+/***************** HOTEL *****************/
 .accounting-form .expense Table tbody tr #title-hotel{
-    width: 100px;
+    /* width: 100px; */
+    width: auto;
 }
 .accounting-form .expense Table tbody tr #option-hotel{
-    width: 260px;
-    height: 40px;
+    width: auto;
+    /* width: 260px; */
+    max-height: 28px;
+    /* height: 40px; */
     font-size: 0.9em;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    padding-left: 20px;
-    margin-bottom: -10px;
 }
 #option-hotel-paymentmethod{
-    width: 260px;
-    height: 40px;
+    width: auto;
+    /* width: 260px; */
+    max-height: 28px;
+    /* height: 40px; */
     font-size: 0.9em;
-    margin-right: 10px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    padding-left: 20px;
-    margin-bottom: -10px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-checkin,
 .accounting-form .expense Table tbody tr #input-hotel-checkout,
@@ -334,10 +351,11 @@
 .accounting-form .expense Table tbody tr #input-hotel-amount{
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    width: 240px;
-    height: 40px;
+    /* width: 240px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-amount{
     /* margin-top: 16px; */
@@ -345,20 +363,23 @@
     border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-expense-option{
-    width: 280px;
-    height: 42px;
-    margin-top: 10px;
+    /* width: 280px; */
+    width: auto;
+    /* height: 42px; */
+    height: auto;
+    /* margin-top: 10px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-expense-option-payment-method{
     width: 270px;
     height: 42px;
-    margin-bottom: 9px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
-/* Attraction */
+
+
+/****************** ATTRACTION ******************/
 .accounting-form .expense Table tbody tr #input-attr-amount,
 .accounting-form .expense Table tbody tr #input-attr-num-people,
 .accounting-form .expense Table tbody tr #input-attr-date{

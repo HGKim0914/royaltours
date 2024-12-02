@@ -108,6 +108,13 @@ class Expense extends Component{
                     </div>
                     <Table>
                         <tbody>
+                        <tr>
+                            <td>구분</td>
+                            <td>식당명</td>
+                            <td>지급방식</td>
+                            <td>인원</td>
+                            <td>금액</td>
+                        </tr>
                             <Restaurant title="D1.중식" list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>
                             <Restaurant title="D1.석식" list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>
                             {restaurantObj}
@@ -122,7 +129,17 @@ class Expense extends Component{
                         <input type="button" value="-" id="btn-remove" onClick={this.removeHotel}/>
                     </div>
                     <Table>
-                        {hotelObj}
+                        <tbody>
+                            <tr>
+                                <td>호텔명</td>
+                                <td>체크인</td>
+                                <td>체크아웃</td>
+                                <td>지급방식</td>
+                                <td>룸 수</td>
+                                <td>금액</td>
+                            </tr>
+                            {hotelObj}
+                        </tbody>
                     </Table>
                     <hr />
 
