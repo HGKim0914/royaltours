@@ -36,11 +36,11 @@ class Misc extends Component{
             <tr>
                 <td id="title-misc">{this.props.title}</td>
                 <td>
-                    <label>금액</label>
-                    <input type="number" name={this.props.idx} defaultValue={amount} onChange={this.updateAmount} id="input-misc-amount" ref={(obj) => this.totalAmountObj = obj}/>
+                    {/* <label>금액</label> */}
+                    <input type="number" name={this.props.idx} defaultValue={amount} onChange={this.updateAmount} id="input-misc-amount" ref={(obj) => this.totalAmountObj = obj} placeholder='금액'/>
                 </td>
                 <td>
-                    <label>지급방식</label>
+                    {/* <label>지급방식</label> */}
                     <select className="browser-default" name={this.props.idx} value={paymentmethod} onChange={this.updatePaymentMethod} id="option-misc-paymentmethod" ref={(obj) => this.paymentObj = obj}>
                         <option defaultValue="-">지급방식</option>
                         <option value="회사카드">회사카드</option>
@@ -50,8 +50,8 @@ class Misc extends Component{
                     </select>
                 </td>
                 <td colSpan="2">
-                    <label>비고</label>
-                    <input type="text" name={this.props.idx} defaultValue={memo} onChange={this.updateMemo} id="input-misc-memo" ref={(obj) => this.memoObj = obj}/>
+                    {/* <label>비고</label> */}
+                    <input type="text" name={this.props.idx} defaultValue={memo} onChange={this.updateMemo} id="input-misc-memo" ref={(obj) => this.memoObj = obj} placeholder='비고'/>
                 </td>
             </tr>
         );

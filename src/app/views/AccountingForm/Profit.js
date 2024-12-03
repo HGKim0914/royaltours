@@ -71,6 +71,13 @@ class Profit extends Component{
                     </div>
                     <Table>
                         <tbody>
+                            <tr>
+                                <td>쇼핑</td>
+                                <td>판매총액</td>
+                                <td>커미션 금액</td>
+                                <td>가이드 수입</td>
+                                <td>TC 수입</td>
+                            </tr>
                             {shoppingObj}
                         </tbody>
                     </Table>

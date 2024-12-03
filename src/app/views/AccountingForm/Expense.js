@@ -151,6 +151,13 @@ class Expense extends Component{
                     </div>
                     <Table>
                         <tbody>
+                            <tr>
+                                <td>날짜</td>
+                                <td>장소</td>
+                                <td>인원</td>
+                                <td>금액</td>
+                                <td>지급방식</td>
+                            </tr>
                             {attractionObj}
                         </tbody>
                     </Table>
@@ -163,7 +170,17 @@ class Expense extends Component{
                         <input type="button" value="-" id="btn-remove" onClick={this.removeCarRental}/>
                     </div>
                     <Table>
-                        {carrentalObj}
+                        <tbody>
+                            <tr>
+                                <td>FROM</td>
+                                <td>TO</td>
+                                <td>차량회사</td>
+                                <td>지급방식</td>
+                                <td>차량</td>
+                                <td>금액</td>
+                            </tr>
+                            {carrentalObj}
+                        </tbody>
                     </Table>
                     <hr />
 
@@ -175,6 +192,12 @@ class Expense extends Component{
                     </div>
                     <Table>
                         <tbody>
+                            <tr>
+                                <td>구분</td>
+                                <td>금액</td>
+                                <td>지급방식</td>
+                                <td>비고</td>
+                            </tr>
                             <Misc title="주차비용" data={this.state.dataMisc} onChange={this.props.onChange} idx={1}/>
                             <Misc title="가스비" data={this.state.dataMisc} onChange={this.props.onChange} idx={2}/>
                             <Misc title="가이드 지급비" data={this.state.dataMisc} onChange={this.props.onChange} idx={3}/>

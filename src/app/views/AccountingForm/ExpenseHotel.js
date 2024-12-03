@@ -159,6 +159,7 @@ class Hotel extends Component{
                     <input type="number" id="input-hotel-num-room" name={this.props.num} defaultValue={numroom} onChange={this.updateNumRoom} ref={(obj) => this.numRoomObj = obj} placeholder='룸 수'/>
                 </td>
                 <td>
+                    <br />
                     {/* <label>금액</label> */}
                     <input type="number" id="input-hotel-amount" name={this.props.num} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj} placeholder='금액'/>
                     <br /><label>방당 가격: ${amount.toFixed(2)}</label>

@@ -80,42 +80,71 @@ class CarRental extends Component{
         }
     
         return(
-            <tbody>
+            // <>
+            //     <tr>
+            //         <td rowSpan="2" id="title-carrental">
+            //             차량 No. {this.props.num} 
+            //         </td>
+            //         <td>
+            //             <label>차량회사</label>
+            //             <select className="browser-default" id="option-carrental-carcompany" name={this.props.num} value={carcompany} onChange={this.updateCarCompany} ref={(obj) => this.carcompanyObj = obj}>
+            //                 <option defaultValue="-">차량회사</option>
+            //                 {optionCarCompany}
+            //             </select>
+            //         </td>
+            //         <td>
+            //             <label>FROM (YYYY-MM-DD)</label><br />
+            //             <input type="date" id="input-carrental-from" name={this.props.num} defaultValue={startdate} onChange={this.updateStartDate} ref={(obj) => this.startdateObj = obj}/>
+            //         </td>
+            //         <td>
+            //             <label>TO (YYYY-MM-DD)</label><br />
+            //             <input type="date" id="input-carrental-to" name={this.props.num} defaultValue={enddate} onChange={this.updateEndDate} ref={(obj) => this.enddateObj = obj}/>
+            //         </td>
+            //     </tr>
+            //     <tr>
+            //         <td>
+            //             <label>차량</label><br />
+            //             <select className="browser-default" id="option-carrental-car" name={this.props.num} value={carrental} onChange={this.updateCarRental} ref={(obj) => this.carrentalObj = obj}>
+            //                 <option defaultValue="-">차량</option>
+            //                 {optionCarRental}
+            //             </select>
+            //         </td>
+            //         <td>
+            //             <label>금액</label><br />
+            //             <input type="number" id="input-carrental-amount" name={this.props.num} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalamountObj = obj}/><br />
+            //             <label>하루 금액: ${amount.toFixed(2)} </label>
+            //         </td>
+            //         <td>
+            //             <label>지급방식</label><br />
+            //             <select className="browser-default" id="option-carrental-paymentmethod" name={this.props.num} value={paymentmethod} onChange={this.updatePaymentMethod} ref={(obj) => this.paymentObj = obj}>
+            //                 <option defaultValue="-">지급방식</option>
+            //                 <option value="회사카드">회사카드</option>
+            //                 <option value="회사체크">회사체크</option>
+            //                 <option value="가이드페이">가이드페이</option>
+            //                 <option value="Reimbersement">Reimbersement</option>
+            //             </select>
+            //         </td>
+            //     </tr>
+            // </>
+            <>
                 <tr>
-                    <td rowSpan="2" id="title-carrental">
-                        차량 No. {this.props.num} 
+                    <td>
+                        {/* <label>FROM (YYYY-MM-DD)</label><br /> */}
+                        <input type="date" id="input-carrental-from" name={this.props.num} defaultValue={startdate} onChange={this.updateStartDate} ref={(obj) => this.startdateObj = obj}/>
                     </td>
                     <td>
-                        <label>차량회사</label>
+                        {/* <label>TO (YYYY-MM-DD)</label><br /> */}
+                        <input type="date" id="input-carrental-to" name={this.props.num} defaultValue={enddate} onChange={this.updateEndDate} ref={(obj) => this.enddateObj = obj}/>
+                    </td>
+                    <td>
+                        {/* <label>차량회사</label> */}
                         <select className="browser-default" id="option-carrental-carcompany" name={this.props.num} value={carcompany} onChange={this.updateCarCompany} ref={(obj) => this.carcompanyObj = obj}>
                             <option defaultValue="-">차량회사</option>
                             {optionCarCompany}
                         </select>
                     </td>
                     <td>
-                        <label>FROM (YYYY-MM-DD)</label><br />
-                        <input type="date" id="input-carrental-from" name={this.props.num} defaultValue={startdate} onChange={this.updateStartDate} ref={(obj) => this.startdateObj = obj}/>
-                    </td>
-                    <td>
-                        <label>TO (YYYY-MM-DD)</label><br />
-                        <input type="date" id="input-carrental-to" name={this.props.num} defaultValue={enddate} onChange={this.updateEndDate} ref={(obj) => this.enddateObj = obj}/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>차량</label><br />
-                        <select className="browser-default" id="option-carrental-car" name={this.props.num} value={carrental} onChange={this.updateCarRental} ref={(obj) => this.carrentalObj = obj}>
-                            <option defaultValue="-">차량</option>
-                            {optionCarRental}
-                        </select>
-                    </td>
-                    <td>
-                        <label>금액</label><br />
-                        <input type="number" id="input-carrental-amount" name={this.props.num} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalamountObj = obj}/><br />
-                        <label>하루 금액: ${amount.toFixed(2)} </label>
-                    </td>
-                    <td>
-                        <label>지급방식</label><br />
+                        {/* <label>지급방식</label><br /> */}
                         <select className="browser-default" id="option-carrental-paymentmethod" name={this.props.num} value={paymentmethod} onChange={this.updatePaymentMethod} ref={(obj) => this.paymentObj = obj}>
                             <option defaultValue="-">지급방식</option>
                             <option value="회사카드">회사카드</option>
@@ -124,8 +153,21 @@ class CarRental extends Component{
                             <option value="Reimbersement">Reimbersement</option>
                         </select>
                     </td>
+                    <td>
+                        {/* <label>차량</label><br /> */}
+                        <select className="browser-default" id="option-carrental-car" name={this.props.num} value={carrental} onChange={this.updateCarRental} ref={(obj) => this.carrentalObj = obj}>
+                            <option defaultValue="-">차량</option>
+                            {optionCarRental}
+                        </select>
+                    </td>
+                    <td>
+                        <br />
+                        {/* <label>금액</label><br /> */}
+                        <input type="number" id="input-carrental-amount" name={this.props.num} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalamountObj = obj} placeholder='금액'/><br />
+                        <label>하루 금액: ${amount.toFixed(2)} </label>
+                    </td>
                 </tr>
-            </tbody>
+            </>
         );
     }
 
