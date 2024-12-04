@@ -28,12 +28,12 @@ class CashSettlementPlusFactor extends Component{
             <tr className={(hidden)? 'hidden' : ''}>
                 <td style={{width: '250px'}}>{this.props.title}</td>
                 <td>
-                    <label>금액</label><br />
-                    <input type="number" id={"input-plus-amount"} name={this.props.idx} defaultValue={amount} onChange={this.updateAmount} ref={(obj)=>this.amountObj = obj}/>
+                    {/* <label>금액</label><br /> */}
+                    <input type="number" id={"input-plus-amount"} name={this.props.idx} defaultValue={amount} onChange={this.updateAmount} ref={(obj)=>this.amountObj = obj} placeholder='금액'/>
                 </td>
                 <td>
-                    <label>비고</label><br />
-                    <input type="text" id={"input-plus-memo"} name={this.props.idx} defaultValue={memo} onChange={this.updateMemo} ref={(obj) => this.memoObj = obj}/>
+                    {/* <label>비고</label><br /> */}
+                    <input type="text" id={"input-plus-memo"} name={this.props.idx} defaultValue={memo} onChange={this.updateMemo} ref={(obj) => this.memoObj = obj} placeholder='비고'/>
                 </td>
             </tr>
         );

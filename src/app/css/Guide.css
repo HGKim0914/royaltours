@@ -177,32 +177,36 @@
 /*************** CASH SETTLEMENT ***************/
 .accounting-form .cash-settlement .desc h6{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 .accounting-form .cash-settlement Table{
-    width: 950px;
-    margin: auto;
+    width: 100%;
 }
-.accounting-form .cash-settlement Table tbody tr{
+.accounting-form .cash-settlement Table tbody tr td{
     border: 1px solid white;
     font-size: 1.1em;
+    text-align: center;
 }
 .accounting-form .cash-settlement Table tbody tr td #input-plus-amount,
 .accounting-form .cash-settlement Table tbody tr td #input-minus-amount{
+    /* width: 250px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    height: 40px;
     font-size: 0.9em;
-    padding-left: 20px;
-    width: 250px;
+    padding-left: 8px;
 }
 .accounting-form .cash-settlement Table tbody tr td #input-plus-memo,
 .accounting-form .cash-settlement Table tbody tr td #input-minus-memo{
-    height: 40px;
-    font-size: 0.9em;
-    padding-left: 20px;
+    /* width: 400px; */
     width: 400px;
+    /* height: 40px; */
+    max-height: 28px;
+    font-size: 0.9em;
+    padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
@@ -271,6 +275,8 @@
     /* margin: auto; */
     /* width: 950px; */
     width: 100%;
+    margin: auto;
+    padding: 0;
 }
 
 .accounting-form .expense .input .desc h6{
@@ -534,8 +540,7 @@
 }
 .accounting-form .profit Table tbody tr #input-shopping-amount,
 .accounting-form .profit Table tbody tr #input-option-originalprice,
-.accounting-form .profit Table tbody tr #input-option-saleprice,
-.accounting-form .profit Table tbody tr #input-option-misc{
+.accounting-form .profit Table tbody tr #input-option-saleprice{
     /* width: 250px; */
     width: auto;
     /* height: 40px; */
@@ -546,39 +551,56 @@
     border-radius: 5px;
     /* margin-top: 9px; */
 }
+.accounting-form .profit Table tbody tr #input-option-misc{
+    width: 100%;
+    max-height: 28px;
+    font-size: 0.9em;
+    padding-left: 5px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+}
 
 /******************* 꿀 육포 *******************/
 .accounting-form .profit Table tbody tr #option-beefandhoney-com{
-    height: 43px;
-    width: 210px;
+    /* width: 210px; */
+    width: auto;
+    /* height: 43px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
     /* margin: 0px; */
 }
 
 .accounting-form .profit Table tbody tr #input-beefandhoney-num{
-    width: 210px;
+    /* width: 210px; */
+    width: auto;
+    /* height: 40px; */
+    height: 28px;
     font-size: 0.9em;
     padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    height: 40px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 .accounting-form .profit Table tbody tr #input-beefandhoney-originalprice,
 .accounting-form .profit Table tbody tr #input-beefandhoney-amount{
-    width: 210px;
+    /* width: 210px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    height: 40px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
+
+
 .accounting-form .profit Table tbody tr #output-commission,
 .accounting-form .profit Table tbody tr #output-guide,
 .accounting-form .profit Table tbody tr #output-tc{
-    width: 100px;
+    /* width: 100px; */
+    width: auto;
 }
 
 /* Add or remove component button */

@@ -77,51 +77,89 @@ class OptionProfit extends Component{
             optionOption.push(<option key={idx} value={this.props.list[idx][0]}>{this.props.list[idx][1]}</option>);
         }
         return(
-            <tbody>
-                <tr>
-                    <td rowSpan={2} style={{width: '100px'}}>
-                        옵션 No. {this.props.idx}
-                    </td>
-                    <td>
-                        <label>선택관광</label>
-                        <select className="browser-default" id="option-option-name" name={this.props.idx} value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
-                            <option defaultValue="-">선택관광</option>
-                            {optionOption}
-                        </select>
-                    </td>
-                    <td>
-                        <label>판매총액</label>
-                        <input type="text" id="input-option-saleprice" name={this.props.idx} defaultValue={salePrice} onChange={this.updateSalePrice} ref={(obj) => this.salePriceObj = obj}/>
-                    </td>
-                    <td>
-                        <br />
-                        <label>총 원가</label>
-                        <input type="text" id="input-option-originalprice" name={this.props.idx} defaultValue={originalPrice} onChange={this.updateOriginalPrice} ref={(obj) => this.originalPriceObj = obj}/>
-                        <br />
-                        <label>차액: ${netIncome.toFixed(2)}</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>수입분배</label>
-                        <select className="browser-default" id="option-option-com" name={this.props.idx} value={com} onChange={this.updateCom} ref={(obj) => this.comObj = obj}>
-                            <option defaultValue="-">수입분배</option>
-                            <option value="1">9 : 1</option>
-                            <option value="2">8 : 2</option>
-                            <option value="3">7 : 3</option>
-                            <option value="4">6 : 4</option>
-                            <option value="5">5 : 5</option>
-                        </select>
-                    </td>
-                    <td>
-                        <label>비고</label><br />
-                        <input type="text" id="input-option-misc" name={this.props.idx} defaultValue={misc} onChange={this.updateMisc} ref={(obj) => this.miscObj = obj}/>
-                    </td>
-                    <td id="output-guide">
-                        가이드 수입: $<span>{guideProfit.toFixed(2)}</span><span id="hidden-amount">{companyProfit.toFixed(2)}</span><span id="hidden-amount">{tcProfit.toFixed(2)}</span>
-                    </td>
-                </tr>
-            </tbody>
+            <>
+            {/* <tr>
+                <td rowSpan={2} style={{width: '100px'}}>
+                    옵션 No. {this.props.idx}
+                </td>
+                <td>
+                    <label>선택관광</label>
+                    <select className="browser-default" id="option-option-name" name={this.props.idx} value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
+                        <option defaultValue="-">선택관광</option>
+                        {optionOption}
+                    </select>
+                </td>
+                <td>
+                    <label>판매총액</label>
+                    <input type="text" id="input-option-saleprice" name={this.props.idx} defaultValue={salePrice} onChange={this.updateSalePrice} ref={(obj) => this.salePriceObj = obj}/>
+                </td>
+                <td>
+                    <br />
+                    <label>총 원가</label>
+                    <input type="text" id="input-option-originalprice" name={this.props.idx} defaultValue={originalPrice} onChange={this.updateOriginalPrice} ref={(obj) => this.originalPriceObj = obj}/>
+                    <br />
+                    <label>차액: ${netIncome.toFixed(2)}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>수입분배</label>
+                    <select className="browser-default" id="option-option-com" name={this.props.idx} value={com} onChange={this.updateCom} ref={(obj) => this.comObj = obj}>
+                        <option defaultValue="-">수입분배</option>
+                        <option value="1">9 : 1</option>
+                        <option value="2">8 : 2</option>
+                        <option value="3">7 : 3</option>
+                        <option value="4">6 : 4</option>
+                        <option value="5">5 : 5</option>
+                    </select>
+                </td>
+                <td>
+                    <label>비고</label><br />
+                    <input type="text" id="input-option-misc" name={this.props.idx} defaultValue={misc} onChange={this.updateMisc} ref={(obj) => this.miscObj = obj}/>
+                </td>
+                <td id="output-guide">
+                    가이드 수입: $<span>{guideProfit.toFixed(2)}</span><span id="hidden-amount">{companyProfit.toFixed(2)}</span><span id="hidden-amount">{tcProfit.toFixed(2)}</span>
+                </td>
+            </tr> */}
+            <tr>
+                <td>
+                    {/* <label>선택관광</label> */}
+                    <select className="browser-default" id="option-option-name" name={this.props.idx} value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
+                        <option defaultValue="-">선택관광</option>
+                        {optionOption}
+                    </select>
+                </td>
+                <td>
+                    {/* <label>판매총액</label> */}
+                    <input type="text" id="input-option-saleprice" name={this.props.idx} defaultValue={salePrice} onChange={this.updateSalePrice} ref={(obj) => this.salePriceObj = obj} placeholder='판매총액'/>
+                </td>
+                <td>
+                    <br />
+                    {/* <label>총 원가</label> */}
+                    <input type="text" id="input-option-originalprice" name={this.props.idx} defaultValue={originalPrice} onChange={this.updateOriginalPrice} ref={(obj) => this.originalPriceObj = obj} placeholder='원가'/>
+                    <br />
+                    <label>차액: ${netIncome.toFixed(2)}</label>
+                </td>
+                <td>
+                    {/* <label>수입분배</label> */}
+                    <select className="browser-default" id="option-option-com" name={this.props.idx} value={com} onChange={this.updateCom} ref={(obj) => this.comObj = obj}>
+                        <option defaultValue="-">수입분배</option>
+                        <option value="1">9 : 1</option>
+                        <option value="2">8 : 2</option>
+                        <option value="3">7 : 3</option>
+                        <option value="4">6 : 4</option>
+                        <option value="5">5 : 5</option>
+                    </select>
+                </td>
+                <td>
+                    {/* <label>비고</label><br /> */}
+                    <input type="text" id="input-option-misc" name={this.props.idx} defaultValue={misc} onChange={this.updateMisc} ref={(obj) => this.miscObj = obj} placeholder='비고'/>
+                </td>
+                <td id="output-guide">
+                    $<span>{guideProfit.toFixed(2)}</span><span id="hidden-amount">{companyProfit.toFixed(2)}</span><span id="hidden-amount">{tcProfit.toFixed(2)}</span>
+                </td>
+            </tr>
+            </>
         );
     }
 

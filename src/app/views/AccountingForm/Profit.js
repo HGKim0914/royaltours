@@ -89,22 +89,44 @@ class Profit extends Component{
                         <input type="button" value="-" id="btn-remove" onClick={this.removeOption}/>
                     </div>
                     <Table>
-                        {optionObj}
+                        <tbody>
+                            <tr>
+                                <td>선택관광</td>
+                                <td>판매총액</td>
+                                <td>원가</td>
+                                <td>수입 분배</td>
+                                <td>비고</td>
+                                <td>가이드 수입</td>
+                            </tr>
+                            {optionObj}
+                        </tbody>
                     </Table>
                     <hr />
                     {/* Honey and beef */}
                     <h6>꿀</h6>
                     <Table>
                         <tbody>
-                            <ProfitHoneyAndBeef idx={"1"} onChange={this.props.onChange} data={this.state.dataHoneyBeef} tccom={this.state.tc} tc={this.props.tc}/>
+                            <tr>
+                                <td>판매갯수</td>
+                                <td>판매총액</td>
+                                <td>총 원가</td>
+                                <td>수입분배</td>
+                            </tr>
+                            <ProfitHoneyAndBeef idx={"1"} onChange={this.props.onChange} data={this.state.dataHoneyBeef} tccom={this.state.tc} tc={this.props.tc} title="꿀"/>
                         </tbody>
                     </Table>
-                    <hr />
+                    {/* <hr /> */}
                     {/* Honey and beef */}
                     <h6>육포</h6>
                     <Table>
                         <tbody>
-                            <ProfitHoneyAndBeef idx={"2"} onChange={this.props.onChange} data={this.state.dataHoneyBeef} tccom={this.state.tc} tc={this.props.tc}/>
+                            <tr>
+                                <td>판매갯수</td>
+                                <td>판매총액</td>
+                                <td>총 원가</td>
+                                <td>수입분배</td>
+                            </tr>
+                            <ProfitHoneyAndBeef idx={"2"} onChange={this.props.onChange} data={this.state.dataHoneyBeef} tccom={this.state.tc} tc={this.props.tc} title="육포"/>
                         </tbody>
                     </Table>
                 </div>

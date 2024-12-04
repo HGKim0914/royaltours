@@ -32,11 +32,11 @@ class CashSettlementMinusFactor extends Component{
             <tr>
                 <td style={{width: '250px'}}>{this.props.title}</td>
                 <td>
-                    <label>금액</label><br />
+                    {/* <label>금액</label><br /> */}
                     <input type="number" id={"input-minus-amount"} name={this.props.idx} defaultValue={amount} onChange={this.updateAmount} ref={(obj) => this.amountObj = obj}/>
                 </td>
                 <td>
-                    <label>비고</label><br />
+                    {/* <label>비고</label><br /> */}
                     <input type="text" id={"input-minus-memo"} name={this.props.idx} defaultValue={memo} onChange={this.updateMemo} ref={(obj) => this.memoObj = obj}/>
                 </td>
             </tr>
