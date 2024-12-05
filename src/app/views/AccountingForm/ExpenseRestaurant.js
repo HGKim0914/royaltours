@@ -81,7 +81,7 @@ class Restaurant extends Component{
                 //     </select>
                 // </td>
             // </tr>
-            <tr>
+            <tr id={this.props.title.includes("석식") ? 'lastMealOfTheDay' : ''}>
                 <td id="title-rest">{this.props.title}</td>
                 <td>
                     <select value={name} className="browser-default" id="option-rest-name" name={this.props.title} onChange={this.updateRestName} ref={(obj)=>this.nameObj = obj}>

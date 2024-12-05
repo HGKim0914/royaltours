@@ -291,6 +291,10 @@
     place-items: center;
 }
 
+.accounting-form .expense Table tbody #lastMealOfTheDay {
+    border-bottom: 2px solid #b3b3b3;
+}
+
 
 /************** RESTAURANT **************/
 .accounting-form .expense Table tbody tr #title-rest{
