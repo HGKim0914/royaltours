@@ -208,9 +208,9 @@ const FirstTable = (props) => {
                         <th colSpan="2">장소</th>
                         <th>지급방식</th>
                         <th>인원</th>
-                        <th>인당 금액</th>
-                        <th>금액</th>
-                    </tr>
+                        <th>인당 금액</th> 
+                        <th>금액</th> 
+                    </tr> 
                     {attrTable}
                     <tr>
                         <td colSpan="6" id="total-title">소계</td>
@@ -342,12 +342,11 @@ export default FirstTable;
 const DisplayRestaurantExpense = (props) => {
     var eachCost = 0;
     var totalCost = 0;
-
+    console.log(props)
     if(props.data[4] !== null && props.data[5] !== null) eachCost = props.data[5] / props.data[4];   // 룸당 가격
     if(props.data[5] !== null)  totalCost = parseFloat(props.data[5]); // 전체 가격
 
     let paymentMethod = (props.data && props.data[3] === "가이드페이")? "guide-pay" : "other-pay";
-
     return(
         <tr>
             <td>{props.data[2]}</td>

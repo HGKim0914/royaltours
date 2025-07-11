@@ -70,9 +70,9 @@ class Expense extends Component{
 
         for(var idx=0; idx<this.state.numOfRest; idx++){
             var day = idx + 2;
-            restaurantObj.push(<Restaurant title={"D" + day + ".조식"} key={"조식" + idx} list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>);
-            restaurantObj.push(<Restaurant title={"D" + day + ".중식"} key={"중식" + idx} list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>);
-            restaurantObj.push(<Restaurant title={"D" + day + ".석식"} key={"석식" + idx} list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>);
+            restaurantObj.push(<Restaurant title={"D" + day + ".a조식"} key={"조식" + idx} list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>);
+            restaurantObj.push(<Restaurant title={"D" + day + ".b중식"} key={"중식" + idx} list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>);
+            restaurantObj.push(<Restaurant title={"D" + day + ".c석식"} key={"석식" + idx} list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>);
         }
 
         for(idx=0; idx<this.state.numOfHotel; idx++){
@@ -108,8 +108,8 @@ class Expense extends Component{
                     </div>
                     <Table>
                         <tbody>
-                            <Restaurant title="D1.중식" list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>
-                            <Restaurant title="D1.석식" list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>
+                            <Restaurant title="D1.a중식" list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>
+                            <Restaurant title="D1.b석식" list={this.state.listRest} data={this.state.dataRest} onChange={this.props.onChange}/>
                             {restaurantObj}
                         </tbody>
                     </Table>

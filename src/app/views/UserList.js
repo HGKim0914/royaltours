@@ -74,12 +74,12 @@ const UserData = (props) => {
         var shoppinglist = props.com.map(function(list){
             if(list[3] === props.data[0]){
                 return list;
-            }
+            } 
             return null;
         });
 
         com.push(<Modal key="modal" trigger={<Button id="btn-guide-com">가이드 컴조정</Button>}>
-                    <GuideComAdjustment shoppingList={shoppinglist} guideName={props.data[1]} guideId={props.data[0]}/>
+                    <GuideComAdjustment shoppingList={shoppinglist} guideName={props.data[1]} guideId={props.data[0]}/> 
                 </Modal>
         );
     }else{
@@ -225,18 +225,20 @@ class GuideComAdjustment extends Component{
     //SAVE
     saveData = async () => {
         const data = [];
-
+        
         if(this.state.editMode){
             this.setState({
                 editMode: !(this.state.editMode),
             });
-
+            
             var guideId = this.props.guideId;
             //In edit mode
             $('input[type="number"]').each(function(){
-                data.push([guideId, $(this).prop('name'), $(this).val()]);
+                if ($(this).val()) {
+                    data.push([guideId, $(this).prop('name'), $(this).val()]);
+                }
             });
-
+            
             const result = await setData("SaveGuidecom.php", data);
             if(result){
                 $('.statusMsg').append('<p className="font-green small left" style="color:green">저장 되었습니다.</p>');
