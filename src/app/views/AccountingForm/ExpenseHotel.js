@@ -82,39 +82,70 @@ class Hotel extends Component{
         
 
         return(
-            <tbody>
+            // <tbody>
+            // <tr>
+            //     <td rowSpan="2" id="title-hotel">호텔 No.{this.props.num}</td>
+            //     <td>
+            //         <label>호텔명</label>
+            //         <select className="browser-default" name={this.props.num} id="option-hotel" value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
+            //             <option defaultValue="-">호텔명</option>
+            //             {optionHotel}
+            //         </select>
+            //     </td>
+            //     <td>
+            //         <label>체크인 (YYYY-MM-DD)</label><br />
+            //         <input type="date" id="input-hotel-checkin" name={this.props.num} defaultValue={checkin} onChange={this.updateCheckInDate} ref={(obj) => this.checkInObj = obj}/>
+            //         {/* <DatePicker value={checkin} name={this.props.num} id="input-hotel-checkin" onChange={this.updateCheckInDate} ref={(obj) => this.checkInObj = obj}/> */}
+            //     </td>
+            //     <td>
+            //         <label>체크아웃 (YYYY-MM-DD)</label><br />
+            //         <input type="date" id="input-hotel-checkout" name={this.props.num}  defaultValue={checkout} onChange={this.updateCheckOutDate} ref={(obj)=> this.checkOutObj = obj}/>
+            //         {/* <DatePicker value={checkout} name={this.props.num} id="input-hotel-checkout" onChange={this.updateCheckOutDate} ref={(obj)=>this.checkOutObj = obj} /> */}
+            //     </td>
+            // </tr>
+            // <tr>
+            //     <td>
+            //         <label>룸 수</label>
+            //         <input type="number" id="input-hotel-num-room" name={this.props.num} defaultValue={numroom} onChange={this.updateNumRoom} ref={(obj) => this.numRoomObj = obj}/>
+            //     </td>
+            //     <td>
+            //         <label>금액</label>
+            //         <input type="number" id="input-hotel-amount" name={this.props.num} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj}/>
+            //         <br /><label>방당 가격: ${amount.toFixed(2)}</label>
+            //     </td>
+            //     <td>
+            //         <label>지급방식</label>
+            //         <select className="browser-default" id="option-hotel-paymentmethod" name={this.props.num} value={paymentmethod} onChange={this.updatePaymentmethod} ref={(obj) => this.paymentmethodObj = obj}>
+            //             <option defaultValue="-">지급방식</option>
+            //             <option value="회사카드">회사카드</option>
+            //             <option value="회사체크">회사체크</option>
+            //             <option value="가이드페이">가이드페이</option>
+            //             <option value="Reimbersement">Reimbersement</option>
+            //         </select>
+            //     </td>
+            // </tr>
+            // </tbody>
+            
             <tr>
-                <td rowSpan="2" id="title-hotel">호텔 No.{this.props.num}</td>
                 <td>
-                    <label>호텔명</label>
+                    {/* <label>호텔명</label> */}
                     <select className="browser-default" name={this.props.num} id="option-hotel" value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
                         <option defaultValue="-">호텔명</option>
                         {optionHotel}
                     </select>
                 </td>
                 <td>
-                    <label>체크인 (YYYY-MM-DD)</label><br />
+                    {/* <label>체크인 (YYYY-MM-DD)</label><br /> */}
                     <input type="date" id="input-hotel-checkin" name={this.props.num} defaultValue={checkin} onChange={this.updateCheckInDate} ref={(obj) => this.checkInObj = obj}/>
                     {/* <DatePicker value={checkin} name={this.props.num} id="input-hotel-checkin" onChange={this.updateCheckInDate} ref={(obj) => this.checkInObj = obj}/> */}
                 </td>
                 <td>
-                    <label>체크아웃 (YYYY-MM-DD)</label><br />
+                    {/* <label>체크아웃 (YYYY-MM-DD)</label><br /> */}
                     <input type="date" id="input-hotel-checkout" name={this.props.num}  defaultValue={checkout} onChange={this.updateCheckOutDate} ref={(obj)=> this.checkOutObj = obj}/>
                     {/* <DatePicker value={checkout} name={this.props.num} id="input-hotel-checkout" onChange={this.updateCheckOutDate} ref={(obj)=>this.checkOutObj = obj} /> */}
                 </td>
-            </tr>
-            <tr>
                 <td>
-                    <label>룸 수</label>
-                    <input type="number" id="input-hotel-num-room" name={this.props.num} defaultValue={numroom} onChange={this.updateNumRoom} ref={(obj) => this.numRoomObj = obj}/>
-                </td>
-                <td>
-                    <label>금액</label>
-                    <input type="number" id="input-hotel-amount" name={this.props.num} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj}/>
-                    <br /><label>방당 가격: ${amount.toFixed(2)}</label>
-                </td>
-                <td>
-                    <label>지급방식</label>
+                    {/* <label>지급방식</label> */}
                     <select className="browser-default" id="option-hotel-paymentmethod" name={this.props.num} value={paymentmethod} onChange={this.updatePaymentmethod} ref={(obj) => this.paymentmethodObj = obj}>
                         <option defaultValue="-">지급방식</option>
                         <option value="회사카드">회사카드</option>
@@ -123,8 +154,18 @@ class Hotel extends Component{
                         <option value="Reimbersement">Reimbersement</option>
                     </select>
                 </td>
+                <td>
+                    {/* <label>룸 수</label> */}
+                    <input type="number" id="input-hotel-num-room" name={this.props.num} defaultValue={numroom} onChange={this.updateNumRoom} ref={(obj) => this.numRoomObj = obj} placeholder='룸 수'/>
+                </td>
+                <td>
+                    <br />
+                    {/* <label>금액</label> */}
+                    <input type="number" id="input-hotel-amount" name={this.props.num} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj} placeholder='금액'/>
+                    <br /><label>방당 가격: ${amount.toFixed(2)}</label>
+                </td>
+                
             </tr>
-            </tbody>
         );
     }
 

@@ -74,6 +74,11 @@ class CashSettlement extends Component{
                     </div>
                     <Table>
                         <tbody>
+                            <tr>
+                                <td>구분</td>
+                                <td>금액</td>
+                                <td>비고</td>
+                            </tr>
                             <PlusFactor title={"행사비 수령"} idx={1} data={this.state.dataPlusFactor} name="tour-total-plus" onChange={this.props.onChange} />
                             <PlusFactor title={"행사비 현지수금"} idx={2} data={this.state.dataPlusFactor} name="tour-local-plus" onChange={this.props.onChange} />
                             <PlusFactor title={"쇼핑매출&가이드 수금"} idx={3} data={this.state.dataPlusFactor} name="tour-guide-plus" onChange={this.props.onChange} />
@@ -93,6 +98,11 @@ class CashSettlement extends Component{
                     </div>
                     <Table>
                         <tbody>
+                            <tr>
+                                <td>구분</td>
+                                <td>금액</td>
+                                <td>비고</td>
+                            </tr>
                             <MinusFactor title={"회사가 수금한 가이드 팁(로컬행사)"} name="tour-guide-minus" idx={1} data={this.state.dataMinusFactor} onChange={this.props.onChange}/>
                             <MinusFactor title={"옵션포함의 경우 옵션비용"} name="tour-option-minus" idx={2} data={this.state.dataMinusFactor} onChange={this.props.onChange}/>
                             {minusMiscObj}

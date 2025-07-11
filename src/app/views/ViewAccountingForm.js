@@ -158,10 +158,6 @@ class ViewAccountingform extends Component {
                         <TourInfo info={this.state.tourInfo} />
                         <TourInfoForm info={this.state.tourInfo} onChange={this.updateTourinfo}/>
                     </div>
-                    <div className="cash-settlement">
-                        {/* 정산관리 */}
-                        <CashSettlement onChange={this.updateCashSettlement} onClick={this.updateCashSettlementRemove} onLoadedData={this.dataLoaded}/>
-                    </div>
                     <div className="expense">
                         {/* 지출 관리 */}
                         <Expense onChange={this.updateExpense} onClick={this.updateExpenseRemove} onLoadedData={this.dataLoaded}/>
@@ -170,6 +166,11 @@ class ViewAccountingform extends Component {
                         {/* 수입 관리 */}
                         <Profit onChange={this.updateProfit} onClick={this.updateProfitRemove} tc={this.state.tc} guidename={this.state.tourInfo[12]} guideid={this.state.tourInfo[2]} onLoadedData={this.dataLoaded}/>
                     </div>
+                    <div className="cash-settlement">
+                        {/* 정산관리 */}
+                        <CashSettlement onChange={this.updateCashSettlement} onClick={this.updateCashSettlementRemove} onLoadedData={this.dataLoaded}/>
+                    </div>
+                    
                     <div className="admin-section">
                         <AdminSection onChange={this.updateTourProfit} onLoadedData={this.dataLoaded}/>
                     </div>

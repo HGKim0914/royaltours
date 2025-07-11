@@ -32,6 +32,7 @@ class ProfitHoneyAndBeef extends Component{
 
         tccom = this.props.tccom;
 
+        console.log(this.props.title)
         if(this.state.num !== ""){
             num = this.state.num;
         }
@@ -64,26 +65,57 @@ class ProfitHoneyAndBeef extends Component{
         }
 
         return(
+            // <tr>
+            //     <td>
+            //         <br />
+            //         <label id="label-beefandhoney-num">판매갯수</label>
+            //         <input type="text" name={this.props.idx} id="input-beefandhoney-num" onChange={this.updateNum} defaultValue={num} ref={(obj) => this.numObj = obj}/><br />
+            //         <label><span style={{color:"white"}}>.</span></label>
+            //     </td>
+            //     <td>
+            //         {/* <br /> */}
+            //         <label>판매총액</label>
+            //         <input type="text" name={this.props.idx} id="input-beefandhoney-amount" onChange={this.updateAmount} defaultValue={salePrice} ref={(obj) => this.salePriceObj = obj}/><br />
+            //     </td>
+            //     <td>
+            //         {/* <br /> */}
+            //         <label>총 원가</label>
+            //         <input type="text" name={this.props.idx} id="input-beefandhoney-originalprice" onChange={this.updateOriginalPrice} defaultValue={originalPrice} ref={(obj) => this.originalPriceObj = obj}/><br />
+            //     </td>
+            //     <td id="output-guide">
+            //         <br />
+            //         <label>수입분배</label>
+            //         <select className="browser-default" id="option-beefandhoney-com" name={this.props.idx} value={com} onChange={this.updateCom} ref={(obj) => this.comObj = obj}>
+            //             <option defaultValue="-">수입분배</option>
+            //             <option value="1">9 : 1</option>
+            //             <option value="2">8 : 2</option>
+            //             <option value="3">7 : 3</option>
+            //             <option value="4">6 : 4</option>
+            //             <option value="5">5 : 5</option>
+            //         </select>
+            //         <label>가이드 수입: $<span>{guideProfit.toFixed(2)}</span></label>
+            //         <span id="hidden-amount">{companyProfit.toFixed(2)}</span>
+            //         <span id="hidden-amount">{tcProfit.toFixed(2)}</span>
+            //     </td>
+            // </tr>
             <tr>
                 <td>
-                    <br />
-                    <label id="label-beefandhoney-num">판매갯수</label>
-                    <input type="text" name={this.props.idx} id="input-beefandhoney-num" onChange={this.updateNum} defaultValue={num} ref={(obj) => this.numObj = obj}/><br />
-                    <label><span style={{color:"white"}}>.</span></label>
+                    {/* <label id="label-beefandhoney-num">판매갯수</label> */}
+                    <input type="text" name={this.props.idx} id="input-beefandhoney-num" onChange={this.updateNum} defaultValue={num} ref={(obj) => this.numObj = obj} placeholder='판매갯수'/><br />
                 </td>
                 <td>
                     {/* <br /> */}
-                    <label>판매총액</label>
-                    <input type="text" name={this.props.idx} id="input-beefandhoney-amount" onChange={this.updateAmount} defaultValue={salePrice} ref={(obj) => this.salePriceObj = obj}/><br />
+                    {/* <label>판매총액</label> */}
+                    <input type="text" name={this.props.idx} id="input-beefandhoney-amount" onChange={this.updateAmount} defaultValue={salePrice} ref={(obj) => this.salePriceObj = obj} placeholder='판매갯수'/><br />
                 </td>
                 <td>
                     {/* <br /> */}
-                    <label>총 원가</label>
-                    <input type="text" name={this.props.idx} id="input-beefandhoney-originalprice" onChange={this.updateOriginalPrice} defaultValue={originalPrice} ref={(obj) => this.originalPriceObj = obj}/><br />
+                    {/* <label>총 원가</label> */}
+                    <input type="text" name={this.props.idx} id="input-beefandhoney-originalprice" onChange={this.updateOriginalPrice} defaultValue={originalPrice} ref={(obj) => this.originalPriceObj = obj} placeholder='총 원가'/><br />
                 </td>
                 <td id="output-guide">
                     <br />
-                    <label>수입분배</label>
+                    {/* <label>수입분배</label> */}
                     <select className="browser-default" id="option-beefandhoney-com" name={this.props.idx} value={com} onChange={this.updateCom} ref={(obj) => this.comObj = obj}>
                         <option defaultValue="-">수입분배</option>
                         <option value="1">9 : 1</option>

@@ -80,26 +80,48 @@ class ShoppingProfit extends Component{
         }
 
         return(
+            // <tr>
+            //     <td>
+            //         <label>쇼핑내역</label><br />
+            //         <select className="browser-default" id="option-shopping-name" name={this.props.idx} value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
+            //             <option defaultValue="-">쇼핑내역</option>
+            //             {optionShopping}
+            //         </select>
+            //     </td>
+            //     <td>
+            //         <label>판매총액</label><br />
+            //         <input type="text" id="input-shopping-amount" name={this.props.idx} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj} />
+            //     </td>
+            //     <td id="output-commission">
+            //         커미션 금액: $<span>{companyProfit.toFixed(2)}</span>
+            //     </td>
+            //     <td id="output-guide">
+            //         가이드 수입: $<span>{guideProfit.toFixed(2)}</span>
+            //     </td>
+            //     <td id="output-tc">
+            //         TC수입: $<span>{tcProfit.toFixed(2)}</span>
+            //     </td>
+            // </tr>
             <tr>
                 <td>
-                    <label>쇼핑내역</label><br />
+                    {/* <label>쇼핑내역</label><br /> */}
                     <select className="browser-default" id="option-shopping-name" name={this.props.idx} value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
                         <option defaultValue="-">쇼핑내역</option>
                         {optionShopping}
                     </select>
                 </td>
                 <td>
-                    <label>판매총액</label><br />
-                    <input type="text" id="input-shopping-amount" name={this.props.idx} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj} />
+                    {/* <label>판매총액</label><br /> */}
+                    <input type="text" id="input-shopping-amount" name={this.props.idx} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj} placeholder="판매총액" />
                 </td>
                 <td id="output-commission">
-                    커미션 금액: $<span>{companyProfit.toFixed(2)}</span>
+                    $<span>{companyProfit.toFixed(2)}</span>
                 </td>
                 <td id="output-guide">
-                    가이드 수입: $<span>{guideProfit.toFixed(2)}</span>
+                    $<span>{guideProfit.toFixed(2)}</span>
                 </td>
                 <td id="output-tc">
-                    TC수입: $<span>{tcProfit.toFixed(2)}</span>
+                    $<span>{tcProfit.toFixed(2)}</span>
                 </td>
             </tr>
         );

@@ -173,35 +173,40 @@
 .accounting-form .input .empty{
     color:white;
 }
-/* cash-settlement */
+
+/*************** CASH SETTLEMENT ***************/
 .accounting-form .cash-settlement .desc h6{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 .accounting-form .cash-settlement Table{
-    width: 950px;
-    margin: auto;
+    width: 100%;
 }
-.accounting-form .cash-settlement Table tbody tr{
+.accounting-form .cash-settlement Table tbody tr td{
     border: 1px solid white;
     font-size: 1.1em;
+    text-align: center;
 }
 .accounting-form .cash-settlement Table tbody tr td #input-plus-amount,
 .accounting-form .cash-settlement Table tbody tr td #input-minus-amount{
+    /* width: 250px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    height: 40px;
     font-size: 0.9em;
-    padding-left: 20px;
-    width: 250px;
+    padding-left: 8px;
 }
 .accounting-form .cash-settlement Table tbody tr td #input-plus-memo,
 .accounting-form .cash-settlement Table tbody tr td #input-minus-memo{
-    height: 40px;
-    font-size: 0.9em;
-    padding-left: 20px;
+    /* width: 400px; */
     width: 400px;
+    /* height: 40px; */
+    max-height: 28px;
+    font-size: 0.9em;
+    padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
@@ -263,70 +268,94 @@
     margin-top: 6px;
     padding-left: 20px;
 }
-/* expense */
+
+
+/***************** EXPENSE *****************/
 .accounting-form .expense .input Table{
+    /* margin: auto; */
+    /* width: 950px; */
+    width: 100%;
     margin: auto;
-    width: 950px;
+    padding: 0;
 }
 
 .accounting-form .expense .input .desc h6{
     text-align: center;
 }
-.accounting-form .expense Table tbody tr {
+.accounting-form .expense Table tbody tr,
+.accounting-form .expense Table tbody td {
     border: 1px solid white;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    place-items: center;
 }
 
-/* Restaurant */
+.accounting-form .expense Table tbody #lastMealOfTheDay {
+    border-bottom: 2px solid #b3b3b3;
+}
+
+
+/************** RESTAURANT **************/
 .accounting-form .expense Table tbody tr #title-rest{
-    width: 100px;
+    /* width: 100px; */
+    width: auto;
 }
 .accounting-form .expense Table tbody tr #option-rest-name{
-    width: 200px;
-    height: 43px;
+    /* width: 200px; */
+    width: auto;
+    /* height: 43px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-rest-amount,
 .accounting-form .expense Table tbody tr #input-rest-num-people{
-    width: 200px;
-    height: 40px;
+    width: auto;
+    /* width: 200px; */
+    max-height: 28px;
+    /* height: 30px; */
     font-size: 0.9em;
     margin-right: 5px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    padding-left: 20px;
-    margin-top: 5px;
+    padding-left: 8px;
+    /* margin-top: 5px; */
 }
 .accounting-form .expense Table tbody tr #option-rest,
 .accounting-form .expense Table tbody tr #option-rest-paymentmethod{
-    width: 200px;
-    height: 42px;
+    /* width: 200px; */
+    width: auto;
+    /* height: 42px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
-/* Hotel */
+
+
+/***************** HOTEL *****************/
 .accounting-form .expense Table tbody tr #title-hotel{
-    width: 100px;
+    /* width: 100px; */
+    width: auto;
 }
 .accounting-form .expense Table tbody tr #option-hotel{
-    width: 260px;
-    height: 40px;
+    width: auto;
+    /* width: 260px; */
+    max-height: 28px;
+    /* height: 40px; */
     font-size: 0.9em;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    padding-left: 20px;
-    margin-bottom: -10px;
 }
 #option-hotel-paymentmethod{
-    width: 260px;
-    height: 40px;
+    width: auto;
+    /* width: 260px; */
+    max-height: 28px;
+    /* height: 40px; */
     font-size: 0.9em;
-    margin-right: 10px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    padding-left: 20px;
-    margin-bottom: -10px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-checkin,
 .accounting-form .expense Table tbody tr #input-hotel-checkout,
@@ -334,10 +363,12 @@
 .accounting-form .expense Table tbody tr #input-hotel-amount{
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    width: 240px;
-    height: 40px;
+    /* width: 240px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-amount{
     /* margin-top: 16px; */
@@ -345,45 +376,56 @@
     border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-expense-option{
-    width: 280px;
-    height: 42px;
-    margin-top: 10px;
+    /* width: 280px; */
+    width: auto;
+    /* height: 42px; */
+    height: auto;
+    /* margin-top: 10px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #input-hotel-expense-option-payment-method{
     width: 270px;
     height: 42px;
-    margin-bottom: 9px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
-/* Attraction */
+
+
+/****************** ATTRACTION ******************/
 .accounting-form .expense Table tbody tr #input-attr-amount,
 .accounting-form .expense Table tbody tr #input-attr-num-people,
 .accounting-form .expense Table tbody tr #input-attr-date{
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    width: 170px;
-    height: 40px;
+    /* width: 170px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
 }
 .accounting-form .expense Table tbody tr #option-attr,
 .accounting-form .expense Table tbody tr #option-attr-paymentmethod{
-    width: 180px;
-    height: 42px;
-    margin-bottom: 10px;
+    /* width: 180px; */
+    width: auto;
+    /* height: 42px; */
+    max-height: 28px;
+    /* margin-bottom: 10px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
-/* Car rental */
+
+
+/******************* CAR RENTAL *******************/
 .accounting-form .expense Table tbody tr #title-carrental{
     width: 100px;
 }
 .accounting-form .expense Table tbody tr #option-carrental-carcompany{
-    width: 250px;
-    height: 42px;
+    /* width: 250px; */
+    width: auto;
+    /* height: 42px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
@@ -392,63 +434,74 @@
 .accounting-form .expense Table tbody tr #input-carrental-amount{
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    width: 230px;
-    height: 40px;
+    /* width: 230px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
 }
 .accounting-form .expense Table tbody tr #option-carrental-car,
 .accounting-form .expense Table tbody tr #option-carrental-paymentmethod{
-    height: 42px;
-    margin-bottom: 23px;
-    width: 250px;
+    /* width: 250px; */
+    width: auto;
+    /* height: 42px; */
+    max-height: 28px;
+    /* margin-bottom: 23px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
+
+
+/************** MISC EXPENSE ***************/
 .accounting-form .expense Table tbody tr #title-misc{
-    width: 400px;
+    /* width: 400px; */
+    width: 150px;
 }
 .accounting-form .expense Table tbody tr #input-misc-amount{
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    width: 200px;
-    height: 40px;
+    /* width: 200px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
-/* .accounting-form .expense Table tbody tr #option-carrental-paymentmethod{
-    height: 42px;
-    width: 200px;
-} */
-/* Misc */
 .accounting-form .expense Table tbody tr #input-misc-memo{
+    /* width: 260px; */
+    max-width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
     font-size: 0.9em;
-    height: 40px;
-    width: 260px;
-    margin-top: 7px;
-    padding-left: 20px;
+    /* margin-top: 7px; */
+    padding-left: 8px;
 }
 .accounting-form .expense Table tbody tr #input-misc-name{
+    /* width: 180px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
     font-size: 0.9em;
-    height: 40px;
-    padding-left: 20px;
-    width: 180px;
+    padding-left: 8px;
     margin-top: 8px;
 }
 .accounting-form .expense Table tbody tr #input-misc-amount{
-    margin-top: 8px;
+    /* margin-top: 8px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
 .accounting-form .expense Table tbody tr #option-misc-paymentmethod{
-    height: 42px;
-    width: 200px;
+    width: auto;
+    /* width: 200px; */
+    max-height: 28px;
+    /* height: 42px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
@@ -458,70 +511,100 @@
     margin-top: 50px;
     margin-bottom: 30px;
 }
-/* PROFIT */
+
+
+/********************** PROFIT **********************/
 .accounting-form .profit Table{
-    width: 950px;
-    margin: auto;
+    /* width: 950px; */
+    width: 100%;
+    /* margin: auto; */
 }
-.accounting-form .profit Table tbody tr{
+.accounting-form .profit Table tbody tr td{
     border: 1px solid white;
+    padding: 0;
+    text-align: center;
+    place-items: center;
 }
 .accounting-form .profit .input .desc h6{
     text-align: center;
 }
+
+/************************ SHOPPING ************************/
 .accounting-form .profit Table tbody tr #option-shopping-name,
 .accounting-form .profit Table tbody tr #option-option-com,
 .accounting-form .profit Table tbody tr #option-option-name{
-    height: 43px;
-    width: 270px;
-    margin: 0px;
-    margin-top: 5px;
+    /* width: 270px; */
+    width: auto;
+    /* height: 43px; */
+    max-height: 28px;
+    /* margin: 0px; */
+    /* margin-top: 5px; */
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
 .accounting-form .profit Table tbody tr #input-shopping-amount,
 .accounting-form .profit Table tbody tr #input-option-originalprice,
-.accounting-form .profit Table tbody tr #input-option-saleprice,
-.accounting-form .profit Table tbody tr #input-option-misc{
-    width: 250px;
+.accounting-form .profit Table tbody tr #input-option-saleprice{
+    /* width: 250px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    height: 40px;
-    margin-top: 9px;
+    /* margin-top: 9px; */
 }
+.accounting-form .profit Table tbody tr #input-option-misc{
+    width: 100%;
+    max-height: 28px;
+    font-size: 0.9em;
+    padding-left: 5px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+}
+
+/******************* 꿀 육포 *******************/
 .accounting-form .profit Table tbody tr #option-beefandhoney-com{
-    height: 43px;
-    width: 210px;
+    /* width: 210px; */
+    width: auto;
+    /* height: 43px; */
+    max-height: 28px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
     /* margin: 0px; */
 }
 
 .accounting-form .profit Table tbody tr #input-beefandhoney-num{
-    width: 210px;
+    /* width: 210px; */
+    width: auto;
+    /* height: 40px; */
+    height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    height: 40px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 .accounting-form .profit Table tbody tr #input-beefandhoney-originalprice,
 .accounting-form .profit Table tbody tr #input-beefandhoney-amount{
-    width: 210px;
+    /* width: 210px; */
+    width: auto;
+    /* height: 40px; */
+    max-height: 28px;
     font-size: 0.9em;
-    padding-left: 20px;
+    padding-left: 8px;
     border: 1px solid #b3b3b3;
     border-radius: 5px;
-    height: 40px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
+
+
 .accounting-form .profit Table tbody tr #output-commission,
 .accounting-form .profit Table tbody tr #output-guide,
 .accounting-form .profit Table tbody tr #output-tc{
-    width: 100px;
+    /* width: 100px; */
+    width: auto;
 }
 
 /* Add or remove component button */

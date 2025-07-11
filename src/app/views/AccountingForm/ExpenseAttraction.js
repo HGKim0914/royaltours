@@ -58,30 +58,63 @@ class Attraction extends Component{
         }
 
         return(
+            // <tr>
+            //     <td>
+            //         <label>날짜 (YYYY-MM-DD)</label>
+            //         <input type="date" id="input-attr-date" name={this.props.idx} defaultValue={visitdate} onChange={this.updateDate} ref={(obj) => this.dateObj = obj}/>
+            //     </td>
+            //     <td>
+            //         <label>장소명</label>
+            //         <select className="browser-default" id="option-attr" name={this.props.idx} value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
+            //             <option defaultValue="-">장소명</option>
+            //             {optionAttr}
+            //         </select>
+            //     </td>
+            //     <td>
+            //         <label>인원</label>
+            //         <input type="number" id="input-attr-num-people" placeholder="인원" name={this.props.idx} defaultValue={numpax} onChange={this.updateNumPax} ref={(obj) => this.numpaxObj = obj}/>
+            //     </td>
+            //     <td>
+            //         <br />
+            //         <label>금액</label>
+            //         <input type="number" id="input-attr-amount" placeholder="금액" name={this.props.idx} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj}/><br />
+            //         <label>인당 금액: ${amount.toFixed(2)}</label>
+            //     </td>
+            //     <td>
+            //         <label>지급방식</label>
+            //         <select className="browser-default" id="option-attr-paymentmethod" name={this.props.idx} value={paymentmethod} onChange={this.updatePaymentMethod} ref={(obj) => this.paymentmethodObj = obj}>
+            //             <option defaultValue="-">지급방식</option>
+            //             <option value="회사카드">회사카드</option>
+            //             <option value="회사체크">회사체크</option>
+            //             <option value="가이드페이">가이드페이</option>
+            //             <option value="Reimbersement">Reimbersement</option>
+            //         </select>
+            //     </td>
+            // </tr>
             <tr>
                 <td>
-                    <label>날짜 (YYYY-MM-DD)</label>
+                    {/* <label>날짜 (YYYY-MM-DD)</label> */}
                     <input type="date" id="input-attr-date" name={this.props.idx} defaultValue={visitdate} onChange={this.updateDate} ref={(obj) => this.dateObj = obj}/>
                 </td>
                 <td>
-                    <label>장소명</label>
+                    {/* <label>장소명</label> */}
                     <select className="browser-default" id="option-attr" name={this.props.idx} value={name} onChange={this.updateName} ref={(obj) => this.nameObj = obj}>
                         <option defaultValue="-">장소명</option>
                         {optionAttr}
                     </select>
                 </td>
                 <td>
-                    <label>인원</label>
+                    {/* <label>인원</label> */}
                     <input type="number" id="input-attr-num-people" placeholder="인원" name={this.props.idx} defaultValue={numpax} onChange={this.updateNumPax} ref={(obj) => this.numpaxObj = obj}/>
                 </td>
                 <td>
                     <br />
-                    <label>금액</label>
+                    {/* <label>금액</label> */}
                     <input type="number" id="input-attr-amount" placeholder="금액" name={this.props.idx} defaultValue={totalAmount} onChange={this.updateTotalAmount} ref={(obj) => this.totalAmountObj = obj}/><br />
                     <label>인당 금액: ${amount.toFixed(2)}</label>
                 </td>
                 <td>
-                    <label>지급방식</label>
+                    {/* <label>지급방식</label> */}
                     <select className="browser-default" id="option-attr-paymentmethod" name={this.props.idx} value={paymentmethod} onChange={this.updatePaymentMethod} ref={(obj) => this.paymentmethodObj = obj}>
                         <option defaultValue="-">지급방식</option>
                         <option value="회사카드">회사카드</option>

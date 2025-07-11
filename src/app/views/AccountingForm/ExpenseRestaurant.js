@@ -51,27 +51,46 @@ class Restaurant extends Component{
         }
 
         return(
-            <tr>
+            // <tr>
+            //     <td id="title-rest">{this.props.title}</td>
+                // <td>
+                //     <label>식당명</label><br />
+                //     <select value={name} className="browser-default" id="option-rest-name" name={this.props.title} onChange={this.updateRestName} ref={(obj)=>this.nameObj = obj}>
+                //         <option defaultValue="-">식당명</option>
+                //         {optionRest}
+                //     </select>
+                // </td>
+                // <td>
+                //     <br />
+                //     <label>금액</label><br />
+                //     <input type="number" defaultValue={totalAmount} id="input-rest-amount" name={this.props.title} onChange={this.updateTotalAmount} ref={(obj)=> this.totalAmountObj = obj}/><br />
+                //     <label>인당 금액: ${amount.toFixed(2)}</label>
+                // </td>
+                // <td>
+                //     <label>인원</label><br />
+                //     <input type="number" id="input-rest-num-people" defaultValue={numPeople} name={this.props.title} onChange={this.updateNumPax} ref={(obj)=> this.numPaxObj = obj}/>
+                // </td>
+                // <td>
+                //     <label>지급방식</label><br />
+                //     <select value={paymentmethod} className="browser-default" id="option-rest-paymentmethod" name={this.props.title} onChange={this.updatePayment} ref={(obj) => this.paymentmethodObj = obj}>
+                //         <option defaultValue="-">지급방식</option>
+                //         <option value="회사카드">회사카드</option>
+                //         <option value="회사체크">회사체크</option>
+                //         <option value="가이드페이">가이드페이</option>
+                //         <option value="Reimbersement">Reimbersement</option>
+                //     </select>
+                // </td>
+            // </tr>
+            <tr id={this.props.title.includes("석식") ? 'lastMealOfTheDay' : ''}>
                 <td id="title-rest">{this.props.title}</td>
                 <td>
-                    <label>식당명</label><br />
                     <select value={name} className="browser-default" id="option-rest-name" name={this.props.title} onChange={this.updateRestName} ref={(obj)=>this.nameObj = obj}>
                         <option defaultValue="-">식당명</option>
                         {optionRest}
                     </select>
                 </td>
                 <td>
-                    <br />
-                    <label>금액</label><br />
-                    <input type="number" defaultValue={totalAmount} id="input-rest-amount" name={this.props.title} onChange={this.updateTotalAmount} ref={(obj)=> this.totalAmountObj = obj}/><br />
-                    <label>인당 금액: ${amount.toFixed(2)}</label>
-                </td>
-                <td>
-                    <label>인원</label><br />
-                    <input type="number" id="input-rest-num-people" defaultValue={numPeople} name={this.props.title} onChange={this.updateNumPax} ref={(obj)=> this.numPaxObj = obj}/>
-                </td>
-                <td>
-                    <label>지급방식</label><br />
+                    {/* <label>지급방식</label><br /> */}
                     <select value={paymentmethod} className="browser-default" id="option-rest-paymentmethod" name={this.props.title} onChange={this.updatePayment} ref={(obj) => this.paymentmethodObj = obj}>
                         <option defaultValue="-">지급방식</option>
                         <option value="회사카드">회사카드</option>
@@ -79,6 +98,16 @@ class Restaurant extends Component{
                         <option value="가이드페이">가이드페이</option>
                         <option value="Reimbersement">Reimbersement</option>
                     </select>
+                </td>
+                <td>
+                    {/* <label>인원</label><br /> */}
+                    <input type="number" id="input-rest-num-people" defaultValue={numPeople} name={this.props.title} onChange={this.updateNumPax} ref={(obj)=> this.numPaxObj = obj} placeholder='인원'/>
+                </td>
+                <td>
+                    <br />
+                    {/* <label>금액</label><br /> */}
+                    <input type="number" defaultValue={totalAmount} id="input-rest-amount" name={this.props.title} onChange={this.updateTotalAmount} ref={(obj)=> this.totalAmountObj = obj} placeholder='금액'/><br />
+                    <label>인당 금액: ${amount.toFixed(2)}</label>
                 </td>
             </tr>
         );
